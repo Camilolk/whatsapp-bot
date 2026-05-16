@@ -1,4 +1,11 @@
 {
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "description": "Bot de WhatsApp con runas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@whiskeysockets/baileys": "^7.0.0-rc11",
     "puppeteer": "^24.43.1",
