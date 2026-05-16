@@ -1,0 +1,796 @@
+{
+  "125022890909792": {
+    "nombre": "soberano del sexo",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "despierto",
+    "nucleo": "apagado",
+    "xp": 2400,
+    "recuerdos": [
+      {
+        "nombre": "[Silla Sombria] @125022890909792",
+        "desc": null
+      }
+    ],
+    "ecos": [],
+    "atributos": []
+  },
+  "269355065585709": {
+    "nombre": "oblivion",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "despierto",
+    "nucleo": "apagado",
+    "xp": 2918,
+    "recuerdos": [
+      {
+        "nombre": "[Roca Ordinaria]",
+        "desc": null
+      },
+      {
+        "nombre": "[Manto del Inframundo] @269355065585709",
+        "desc": null
+      },
+      {
+        "nombre": "[Pastel Infinito] @269355065585709",
+        "desc": null
+      }
+    ],
+    "ecos": [],
+    "atributos": [
+      {
+        "nombre": "[engendro del sueño] @269355065585709",
+        "desc": null
+      },
+      {
+        "nombre": "[Alma pristina] @269355065585709",
+        "desc": null
+      }
+    ]
+  },
+  "45062830428357": {
+    "nombre": "Camilolk",
+    "nombreVerdadero": "Dios del conocimiento",
+    "descVerdadero": null,
+    "rango": "divino",
+    "nucleo": "divino",
+    "xp": 6215,
+    "recuerdos": [
+      {
+        "nombre": "[papas] @45062830428357",
+        "desc": null
+      }
+    ],
+    "ecos": [
+      {
+        "nombre": "[Azathot]",
+        "desc": null
+      }
+    ],
+    "atributos": []
+  },
+  "201859235115260": {
+    "nombre": "C",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "despierto",
+    "nucleo": "apagado",
+    "xp": 112,
+    "recuerdos": [
+      {
+        "nombre": "[Paraguas plegable] \n@201859235115260",
+        "desc": null
+      }
+    ],
+    "ecos": [],
+    "atributos": []
+  },
+  "129819748634773": {
+    "nombre": "Alain",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 755,
+    "recuerdos": [
+      {
+        "nombre": "[fragmento de medianoche] @129819748634773",
+        "desc": null
+      }
+    ],
+    "ecos": [],
+    "atributos": []
+  },
+  "130258523160812": {
+    "nombre": "Lolimancer",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 545,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "123587767881813": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 1375,
+    "recuerdos": [
+      {
+        "nombre": "[Campana de plata] @123587767881813",
+        "desc": null
+      }
+    ],
+    "ecos": [],
+    "atributos": [
+      {
+        "nombre": "[Marca de Divinidad] @123587767881813",
+        "desc": null
+      }
+    ]
+  },
+  "211419815526560": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 100,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "146497358307412": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 185,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "58523744493748": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "5665883959486": {
+    "nombre": "Ascarlt",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 320,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "212468022395083": {
+    "nombre": "sovereign of the femboys",
+    "nombreVerdadero": "Elegido De La Buena Suerte @212468022395083",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 1015,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "123047239516388": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 60,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "45321132458024": {
+    "nombre": "Ruperto",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 85,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "212970869133436": {
+    "nombre": "MarRojo",
+    "nombreVerdadero": "God Of Comunity",
+    "descVerdadero": "[Dios Creador de la comunidad y actual regente del imperio hispano de Shadow Slave]",
+    "rango": "divino",
+    "nucleo": "divino",
+    "xp": 1001515,
+    "recuerdos": [
+      {
+        "nombre": "[Roca Ordinaria]  [Ss]⁩",
+        "desc": null
+      },
+      {
+        "nombre": "[Pastel Infinito] @⁨Darío [Ss]⁩",
+        "desc": null
+      }
+    ],
+    "ecos": [
+      {
+        "nombre": "[Parias] [Tudon] [issac] [Saul]",
+        "desc": null
+      },
+      {
+        "nombre": "[Adrian.2] + Un pendejo",
+        "desc": null
+      }
+    ],
+    "atributos": [
+      {
+        "nombre": "[Fuente de Divinidad] Descripción: Eres ma Fuente de toda la Divinidad existente.",
+        "desc": null
+      }
+    ]
+  },
+  "128123186184222": {
+    "nombre": "Sebastián Ceron",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "maestro",
+    "nucleo": "@128123186184222",
+    "xp": 4801,
+    "recuerdos": [
+      {
+        "nombre": "[Pastel sin fin] @128123186184222",
+        "desc": null
+      }
+    ],
+    "ecos": [],
+    "atributos": []
+  },
+  "27767215284224": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 60,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "91491410145355": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 45,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "105545214198015": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 25,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "256151933468880": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 115,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "128690507751634": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 20,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "126036318666953": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "16793607360600": {
+    "nombre": "Kaeby",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 790,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "207283845914781": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 85,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "8577150415023": {
+    "nombre": "Fabrizio",
+    "nombreVerdadero": "Dador de Las Sagradas Escrituras",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 1195,
+    "recuerdos": [
+      {
+        "nombre": "[El pecado de la insolencia]",
+        "desc": null
+      }
+    ],
+    "ecos": [],
+    "atributos": [
+      {
+        "nombre": "[marcado por el dios de la comunidad] @8577150415023",
+        "desc": null
+      }
+    ]
+  },
+  "81346764472441": {
+    "nombre": "elcalientito",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 275,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "139080352452821": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 15,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "228518231310518": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 35,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "87608893919346": {
+    "nombre": "B",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 225,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "81574615859372": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 10,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "23712648695839": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 220,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "64077305016420": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "127419231023296": {
+    "nombre": "…",
+    "nombreVerdadero": "Nacido para Reinar",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "173387964006558": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "187828147384331": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "10617226268873": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 20,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "131417459708051": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "249649873072305": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 70,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "279916021068008": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 40,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": [],
+    "titulo": null,
+    "aura": null,
+    "conjuros": []
+  },
+  "176463076716776": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 40,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": [],
+    "titulo": null,
+    "aura": null,
+    "conjuros": []
+  },
+  "124429698871549": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "169445200814093": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 30,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "163815001960582": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 10,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "38989797056686": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "48898454380676": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 10,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "130168161079303": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "121663656083611": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 50,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "2809411944534": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 40,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "261632848580692": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "120363402640768422": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "46673426432035": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 45,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "164411952115901": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 50,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "81347217481952": {
+    "nombre": "mata sapos",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 110,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "76421141643505": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "13610919162038": {
+    "nombre": "Devorador Mamario",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 330,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "235579123990686": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "93063418511440": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 35,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "52656634597614": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 5,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "154696853508261": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 35,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "54611129966830": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 15,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "107876794294306": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "221126575800575": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 20,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  },
+  "249692973723895": {
+    "nombre": "…",
+    "nombreVerdadero": "???",
+    "descVerdadero": null,
+    "rango": "durmiente",
+    "nucleo": "apagado",
+    "xp": 0,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": []
+  }
+}
