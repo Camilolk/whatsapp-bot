@@ -30,6 +30,156 @@ const RANGOS = [
 ];
 
 // =========================
+// ASPECTOS LEGADOS (DARK SOULS + SHADOW SLAVE)
+// =========================
+
+const ASPECTOS_LEGADOS = {
+    'Portador de Runas': {
+        nombre: 'Portador de Runas',
+        descripcion: 'Canalizas el poder de las runas ancestrales. Tu cuerpo es un recipiente de conocimiento olvidado.',
+        rareza: '⭐⭐⭐',
+        rangoMinimo: 'despierto',
+        pasos: 3,
+        efectos: {
+            multiplicadorXP: 1.2,
+            descripcionEfecto: '+20% XP por mensajes'
+        }
+    },
+    'Cazador de Sombras': {
+        nombre: 'Cazador de Sombras',
+        descripcion: 'Acechas en la penumbra. Los secretos oscuros se revelan ante tus ojos vigilantes.',
+        rareza: '⭐⭐⭐⭐',
+        rangoMinimo: 'maestro',
+        pasos: 4,
+        efectos: {
+            multiplicadorXP: 1.35,
+            descripcionEfecto: '+35% XP, acceso a !legadoinfo'
+        }
+    },
+    'Silenciador de Ecos': {
+        nombre: 'Silenciador de Ecos',
+        descripcion: 'Los ecos de otros se desvanecen ante tu presencia. Tu voluntad resuena con autoridad.',
+        rareza: '⭐⭐⭐⭐',
+        rangoMinimo: 'maestro',
+        pasos: 4,
+        efectos: {
+            multiplicadorXP: 1.3,
+            descripcionEfecto: '+30% XP, poder sobre ecos ajenos'
+        }
+    },
+    'Devorador de Recuerdos': {
+        nombre: 'Devorador de Recuerdos',
+        descripcion: 'Absorbes los recuerdos de otros. Su pasado se convierte en tu fortaleza.',
+        rareza: '⭐⭐⭐⭐⭐',
+        rangoMinimo: 'santo',
+        pasos: 5,
+        efectos: {
+            multiplicadorXP: 1.5,
+            descripcionEfecto: '+50% XP, robo de recuerdos'
+        }
+    },
+    'Maldito Eterno': {
+        nombre: 'Maldito Eterno',
+        descripcion: 'Una maldición ancestral te ata a la rueda del sufrimiento. Solo mediante el dolor comes poder.',
+        rareza: '⭐⭐⭐',
+        rangoMinimo: 'despierto',
+        pasos: 3,
+        efectos: {
+            multiplicadorXP: 1.15,
+            descripcionEfecto: '+15% XP, resistencia a maldiciones'
+        }
+    },
+    'Conspirador Profundo': {
+        nombre: 'Conspirador Profundo',
+        descripcion: 'Accedes a conocimientos prohibidos. Las entrañas del mundo revelan sus secretos.',
+        rareza: '⭐⭐⭐⭐',
+        rangoMinimo: 'maestro',
+        pasos: 4,
+        efectos: {
+            multiplicadorXP: 1.4,
+            descripcionEfecto: '+40% XP, verdades ocultas reveladas'
+        }
+    },
+    'Guardián del Umbral': {
+        nombre: 'Guardián del Umbral',
+        descripcion: 'Custodias la puerta entre mundos. Eres el centinela de lo prohibido y lo permitido.',
+        rareza: '⭐⭐⭐⭐',
+        rangoMinimo: 'santo',
+        pasos: 4,
+        efectos: {
+            multiplicadorXP: 1.38,
+            descripcionEfecto: '+38% XP, control de fronteras'
+        }
+    },
+    'Visionario Maldito': {
+        nombre: 'Visionario Maldito',
+        descripcion: 'Ves posibilidades que rompen la cordura. El futuro te susurra verdades terribles.',
+        rareza: '⭐⭐⭐⭐⭐',
+        rangoMinimo: 'supremo',
+        pasos: 5,
+        efectos: {
+            multiplicadorXP: 1.6,
+            descripcionEfecto: '+60% XP, predicciones fragmentadas'
+        }
+    },
+    'Fragmento del Vacío': {
+        nombre: 'Fragmento del Vacío',
+        descripcion: 'Una parte del nada te habita. Existes en el espacio entre existencias.',
+        rareza: '⭐⭐⭐⭐⭐',
+        rangoMinimo: 'supremo',
+        pasos: 5,
+        efectos: {
+            multiplicadorXP: 1.55,
+            descripcionEfecto: '+55% XP, manipulación del espacio'
+        }
+    },
+    'Heraldo de Calamidad': {
+        nombre: 'Heraldo de Calamidad',
+        descripcion: 'Anuncias el fin de eras. Tu presencia precede a la ruina y la transformación.',
+        rareza: '⭐⭐⭐⭐',
+        rangoMinimo: 'santo',
+        pasos: 4,
+        efectos: {
+            multiplicadorXP: 1.45,
+            descripcionEfecto: '+45% XP, aura de inevitable cambio'
+        }
+    },
+    'Tejedor de Destinos': {
+        nombre: 'Tejedor de Destinos',
+        descripcion: 'Alteras las hebras del destino. Lo que fue inevitable ahora es maleable.',
+        rareza: '⭐⭐⭐⭐⭐',
+        rangoMinimo: 'sagrado',
+        pasos: 5,
+        efectos: {
+            multiplicadorXP: 1.7,
+            descripcionEfecto: '+70% XP, reescritura de narrativas'
+        }
+    },
+    'Alma Gemela del Abismo': {
+        nombre: 'Alma Gemela del Abismo',
+        descripcion: 'El abismo reconoce tu esencia. Eres uno de los suyos, elevado y corrompido.',
+        rareza: '⭐⭐⭐⭐⭐',
+        rangoMinimo: 'sagrado',
+        pasos: 5,
+        efectos: {
+            multiplicadorXP: 1.65,
+            descripcionEfecto: '+65% XP, communión abismal'
+        }
+    },
+    'Divino Degenerado': {
+        nombre: 'Divino Degenerado',
+        descripcion: 'Fuiste tocado por lo divino pero corrompiste su esencia. Eres lo prohibido hecho carne.',
+        rareza: '⭐⭐⭐⭐⭐',
+        rangoMinimo: 'divino',
+        pasos: 5,
+        efectos: {
+            multiplicadorXP: 2.0,
+            descripcionEfecto: '+100% XP, gloria caída'
+        }
+    }
+};
+
+// =========================
 // SISTEMA DE XP Y RANGOS
 // =========================
 
@@ -77,6 +227,8 @@ function cargarUsuarios() {
             for (let key in usuariosData) {
                 if (usuariosData[key].xp === undefined) usuariosData[key].xp = 0;
                 if (usuariosData[key].nucleo === undefined) usuariosData[key].nucleo = 'apagado';
+                if (usuariosData[key].aspectoLegado === undefined) usuariosData[key].aspectoLegado = null;
+                if (usuariosData[key].pasosAspecto === undefined) usuariosData[key].pasosAspecto = 0;
             }
             
             return usuariosData;
@@ -135,6 +287,22 @@ function getMentionedUsers(message) {
 }
 
 // =========================
+// FUNCIÓN: Obtener aspecto legado aleatorio
+// =========================
+
+function obtenerAspectoAleatorio(rango) {
+    const aspectosDisponibles = Object.values(ASPECTOS_LEGADOS).filter(a => {
+        const rangos = ['durmiente', 'despierto', 'maestro', 'santo', 'supremo', 'sagrado', 'divino'];
+        const rangoUserIndex = rangos.indexOf(rango);
+        const rangoMinIndex = rangos.indexOf(a.rangoMinimo);
+        return rangoUserIndex >= rangoMinIndex;
+    });
+    
+    if (aspectosDisponibles.length === 0) return null;
+    return aspectosDisponibles[Math.floor(Math.random() * aspectosDisponibles.length)];
+}
+
+// =========================
 // FUNCIÓN: Calcular puntuación de rango
 // =========================
 
@@ -156,7 +324,16 @@ function añadirXP(userId, cantidad) {
     const rangoActual = user.rango;
     const config = XP_CONFIG[rangoActual];
     
-    const xpGanada = Math.floor(cantidad * config.multiplicador);
+    let xpGanada = Math.floor(cantidad * config.multiplicador);
+    
+    // Aplicar multiplicador del aspecto legado
+    if (user.aspectoLegado) {
+        const aspecto = ASPECTOS_LEGADOS[user.aspectoLegado];
+        if (aspecto && user.pasosAspecto >= aspecto.pasos) {
+            xpGanada = Math.floor(xpGanada * aspecto.efectos.multiplicadorXP);
+        }
+    }
+    
     const xpFinal = user.rango === 'divino' ? xpGanada * 3 : xpGanada;
     user.xp += xpFinal;
     
@@ -166,13 +343,29 @@ function añadirXP(userId, cantidad) {
         const nuevoRango = RANGOS[rangoIndex + 1];
         user.rango = nuevoRango;
         user.xp = 0;
+        
+        // Verificar si obtiene aspecto legado
+        let tieneAspecto = false;
+        if (!user.aspectoLegado) {
+            const random = Math.random();
+            const probabilidad = nuevoRango === 'despierto' ? 0.3 : nuevoRango === 'maestro' ? 0.4 : nuevoRango === 'santo' ? 0.5 : 0.6;
+            
+            if (random < probabilidad) {
+                user.aspectoLegado = obtenerAspectoAleatorio(nuevoRango).nombre;
+                user.pasosAspecto = 0;
+                tieneAspecto = true;
+            }
+        }
+        
         marcarParaGuardar();
         
         return {
             subioDe: true,
             rangoAnterior: rangoActual,
             rangoNuevo: nuevoRango,
-            xpGanada: xpFinal
+            xpGanada: xpFinal,
+            tieneAspecto,
+            aspecto: user.aspectoLegado
         };
     }
     
@@ -196,6 +389,7 @@ function añadirXPDirecto(userId, cantidad) {
     if (user.xp === undefined) user.xp = 0;
     
     const ascensos = [];
+    let nuevoAspecto = null;
     user.xp += cantidad;
     
     while (true) {
@@ -208,6 +402,18 @@ function añadirXPDirecto(userId, cantidad) {
             user.rango = RANGOS[rangoIndex + 1];
             user.xp -= config.xpRequerida;
             ascensos.push({ anterior, nuevo: user.rango });
+            
+            // Verificar aspecto
+            if (!user.aspectoLegado) {
+                const random = Math.random();
+                const probabilidad = user.rango === 'despierto' ? 0.3 : user.rango === 'maestro' ? 0.4 : user.rango === 'santo' ? 0.5 : 0.6;
+                
+                if (random < probabilidad) {
+                    user.aspectoLegado = obtenerAspectoAleatorio(user.rango).nombre;
+                    user.pasosAspecto = 0;
+                    nuevoAspecto = user.aspectoLegado;
+                }
+            }
         } else {
             break;
         }
@@ -225,7 +431,7 @@ function añadirXPDirecto(userId, cantidad) {
     if (user.xp < 0) user.xp = 0;
     marcarParaGuardar();
     
-    return { ascensos, rangoFinal: user.rango, xpFinal: user.xp };
+    return { ascensos, rangoFinal: user.rango, xpFinal: user.xp, nuevoAspecto };
 }
 
 // =========================
@@ -269,6 +475,13 @@ function format(u) {
     const xpActual = u.xp || 0;
     const xpRequerida = XP_CONFIG[u.rango].xpRequerida;
     
+    let aspectoInfo = '';
+    if (u.aspectoLegado) {
+        const aspecto = ASPECTOS_LEGADOS[u.aspectoLegado];
+        const progreso = Math.round((u.pasosAspecto / aspecto.pasos) * 100);
+        aspectoInfo = `\n🌑 ASPECTO LEGADO\n───────────────────────\n${aspecto.nombre} ${aspecto.rareza}\nProgreso: ${u.pasosAspecto}/${aspecto.pasos} (${progreso}%)`;
+    }
+    
     return (
 `━━━━━━━━━━━━━━━━━━━━━━━━━━━
        🔮 H E C H I Z O 🔮
@@ -300,7 +513,7 @@ ${formatSoloNombres(u.ecos)}
 
 ✨ ATRIBUTOS
 ───────────────────────
-${formatSoloNombres(u.atributos)}
+${formatSoloNombres(u.atributos)}${aspectoInfo}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━`
     );
@@ -350,7 +563,9 @@ function createUser() {
         xp: 0,
         recuerdos: [],
         ecos: [],
-        atributos: []
+        atributos: [],
+        aspectoLegado: null,
+        pasosAspecto: 0
     };
 }
 
@@ -413,7 +628,6 @@ async function start() {
             const isOwner = OWNERS.has(userId);
             let isAdmin = false;
             
-            // Detectar admin del grupo
             if (isGroup) {
                 try {
                     const groupMetadata = await sock.groupMetadata(rawFrom);
@@ -446,10 +660,14 @@ async function start() {
                 
                 if (resultadoXP.subioDe) {
                     const nombre = user.nombre;
+                    let msg = `🎆 ¡ASCENSO! 🎆\n\n${nombre} ha ascendido de rango\n\n${resultadoXP.rangoAnterior.toUpperCase()} → ${resultadoXP.rangoNuevo.toUpperCase()}\n\n⭐ ¡Felicidades! ⭐`;
                     
-                    await sock.sendMessage(rawFrom, {
-                        text: `🎆 ¡ASCENSO! 🎆\n\n${nombre} ha ascendido de rango\n\n${resultadoXP.rangoAnterior.toUpperCase()} → ${resultadoXP.rangoNuevo.toUpperCase()}\n\n⭐ ¡Felicidades! ⭐`
-                    });
+                    if (resultadoXP.tieneAspecto) {
+                        const aspecto = ASPECTOS_LEGADOS[resultadoXP.aspecto];
+                        msg += `\n\n🌑 ¡ASPECTO LEGADO OTORGADO!\n${aspecto.nombre} ${aspecto.rareza}\n\n"${aspecto.descripcion}"`;
+                    }
+                    
+                    await sock.sendMessage(rawFrom, { text: msg });
                 }
                 
                 return;
@@ -483,6 +701,7 @@ async function start() {
 
 📖 COMANDOS DE CONSULTA
 !runas, !nivel, !top, !miid
+!legado - Ver tu aspecto legado
 
 📜 VER DETALLES
 !vernombre, !veratributos, !verrecuerdos, !verecos
@@ -496,6 +715,7 @@ async function start() {
 !setverdadero <nombre>
 !xp @user <cantidad>
 !reset
+!desbloquearaspecto @user - Avanza paso del aspecto
 
 📌 SOLO OWNER
 !resetall
@@ -508,7 +728,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // TOP 10
+            // TOP 10 (CON MENCIONES)
             // =========================
 
             if (cmd === 'top') {
@@ -517,6 +737,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     nombre: user.nombre,
                     rango: user.rango,
                     xp: user.xp || 0,
+                    aspectoLegado: user.aspectoLegado,
                     puntuacion: calcularPuntuacionRango(user.rango, user.xp || 0)
                 }));
 
@@ -530,11 +751,15 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 const topLista = top10.map((user, index) => {
                     const config = XP_CONFIG[user.rango];
                     const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
-                    return `${medal} ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   💫 ${user.xp}/${config.xpRequerida} XP`;
+                    const aspectoInfo = user.aspectoLegado ? `\n   🌑 ${user.aspectoLegado}` : '';
+                    return `${medal} @${user.id}\n   📝 ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   💫 ${user.xp}/${config.xpRequerida} XP${aspectoInfo}`;
                 }).join('\n\n');
 
+                const mentions = top10.map(u => u.id + '@s.whatsapp.net');
+
                 return sock.sendMessage(rawFrom, {
-                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    🏆 TOP 10 PODEROSOS 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${topLista}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    🏆 TOP 10 PODEROSOS 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${topLista}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+                    mentions
                 });
             }
 
@@ -557,6 +782,42 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 
                 return sock.sendMessage(rawFrom, {
                     text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    📊 ESTADÍSTICAS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👤 ${target.nombre}\n⭐ ${target.rango.toUpperCase()}\n💫 ${target.nucleo}\n\n${barraXP}\n\n${xpActual} / ${config.xpRequerida} XP\nProgreso: ${porcentajeXP}%\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                });
+            }
+
+            // =========================
+            // LEGADO - Ver aspecto legado
+            // =========================
+
+            if (cmd === 'legado') {
+                if (!user.aspectoLegado) {
+                    return sock.sendMessage(rawFrom, { text: '⚠️ No posees un aspecto legado aún.' });
+                }
+                
+                const aspecto = ASPECTOS_LEGADOS[user.aspectoLegado];
+                const progreso = Math.round((user.pasosAspecto / aspecto.pasos) * 100);
+                const barra = crearBarra(progreso);
+                
+                return sock.sendMessage(rawFrom, {
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    🌑 ${aspecto.nombre.toUpperCase()} 🌑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${aspecto.rareza}
+
+"${aspecto.descripcion}"
+
+───────────────────────
+💫 DESBLOQUEANDO PODER
+
+${barra}
+
+Pasos: ${user.pasosAspecto}/${aspecto.pasos}
+
+⚡ Cuando se desbloquee:
+${aspecto.efectos.descripcionEfecto}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━`
                 });
             }
 
@@ -622,7 +883,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 'setrango', 'setnucleo', 'setverdadero', 'descverdadero',
                 'addatributo', 'addrecuerdo', 'addeco',
                 'delatributo', 'delrecuerdo', 'deleco',
-                'reset', 'xp'
+                'reset', 'xp', 'desbloquearaspecto'
             ];
 
             const ownerOnlyCmds = ['resetall'];
@@ -631,7 +892,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
             } else if (ownerOnlyCmds.includes(cmd)) {
                 if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
-            } else if (![  'help', 'top', 'nivel', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre'].includes(cmd)) {
+            } else if (![  'help', 'top', 'nivel', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'legado'].includes(cmd)) {
                 return;
             }
 
@@ -770,6 +1031,31 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     return sock.sendMessage(rawFrom, { text: `✅ Eco "${removed.nombre}" eliminado.` });
                 }
 
+                case 'desbloquearaspecto': {
+                    if (!target.aspectoLegado) {
+                        return sock.sendMessage(rawFrom, { text: '⚠️ Este usuario no tiene aspecto legado.' });
+                    }
+                    
+                    const aspecto = ASPECTOS_LEGADOS[target.aspectoLegado];
+                    
+                    if (target.pasosAspecto >= aspecto.pasos) {
+                        return sock.sendMessage(rawFrom, { text: '✨ Este aspecto ya está completamente desbloqueado.' });
+                    }
+                    
+                    target.pasosAspecto += 1;
+                    marcarParaGuardar();
+                    
+                    const progreso = Math.round((target.pasosAspecto / aspecto.pasos) * 100);
+                    const msg = target.pasosAspecto >= aspecto.pasos 
+                        ? `🎆 ¡ASPECTO LEGADO DESBLOQUEADO!\n\n${aspecto.nombre}\n\n${aspecto.efectos.descripcionEfecto}`
+                        : `📈 Progreso: ${target.pasosAspecto}/${aspecto.pasos}`;
+                    
+                    return sock.sendMessage(rawFrom, { 
+                        text: msg,
+                        mentions: [targetId + '@s.whatsapp.net']
+                    });
+                }
+
                 case 'reset': {
                     usuarios[targetId] = createUser();
                     marcarParaGuardar();
@@ -807,6 +1093,11 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                             respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
                         });
                         respuesta += `\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
+                    }
+                    
+                    if (resultado.nuevoAspecto) {
+                        const aspecto = ASPECTOS_LEGADOS[resultado.nuevoAspecto];
+                        respuesta += `\n\n🌑 ¡ASPECTO LEGADO OTORGADO!\n${aspecto.nombre} ${aspecto.rareza}\n\n"${aspecto.descripcion}"`;
                     }
                     
                     return sock.sendMessage(rawFrom, { 
