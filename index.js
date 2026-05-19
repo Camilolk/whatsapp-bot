@@ -1,7 +1,8 @@
-const qrcode = require('qrcode-terminal');
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const pino = require('pino');
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, proto } = require('@whiskeysockets/baileys');
 const fs = require('fs');
 const path = require('path');
+const qrcode = require('qrcode-terminal');
 
 // =========================
 // ⚔ CONFIG HECHIZO
@@ -14,6 +15,7 @@ const OWNERS = new Set([
     '573117415491',
     '5491128539362',
     '45062830428357',
+    '127419231023296',
     '212970869133436'
 ]);
 
@@ -32,41 +34,13 @@ const RANGOS = [
 // =========================
 
 const XP_CONFIG = {
-    durmiente: {
-        xpRequerida: 1500,
-        xpPorMensaje: 5,
-        multiplicador: 1
-    },
-    despierto: {
-        xpRequerida: 5000,
-        xpPorMensaje: 4,
-        multiplicador: 1.2
-    },
-    maestro: {
-        xpRequerida: 15000,
-        xpPorMensaje: 3,
-        multiplicador: 1.5
-    },
-    santo: {
-        xpRequerida: 50000,
-        xpPorMensaje: 2,
-        multiplicador: 2.5
-    },
-    supremo: {
-        xpRequerida: 150000,
-        xpPorMensaje: 1,
-        multiplicador: 4
-    },
-    sagrado: {
-        xpRequerida: 300000,
-        xpPorMensaje: 1,
-        multiplicador: 5
-    },
-    divino: {
-        xpRequerida: 1000000,
-        xpPorMensaje: 1,
-        multiplicador: 5
-    }
+    durmiente: { xpRequerida: 1500, xpPorMensaje: 5, multiplicador: 1 },
+    despierto: { xpRequerida: 5000, xpPorMensaje: 4, multiplicador: 1.2 },
+    maestro: { xpRequerida: 15000, xpPorMensaje: 3, multiplicador: 1.5 },
+    santo: { xpRequerida: 50000, xpPorMensaje: 2, multiplicador: 2.5 },
+    supremo: { xpRequerida: 150000, xpPorMensaje: 1, multiplicador: 4 },
+    sagrado: { xpRequerida: 300000, xpPorMensaje: 1, multiplicador: 5 },
+    divino: { xpRequerida: 1000000, xpPorMensaje: 1, multiplicador: 5 }
 };
 
 // =========================
@@ -87,12 +61,6 @@ function verificarCooldown(userId, comando, minutos) {
     COOLDOWNS[key] = ahora;
     return { activo: false, tiempoRestante: 0 };
 }
-
-// =========================
-// CACHE DE CONTACTOS
-// =========================
-
-const contactCache = {};
 
 // =========================
 // MEMORIA CON GUARDADO
@@ -142,30 +110,6 @@ function guardarUsuarios() {
 const usuarios = cargarUsuarios();
 
 // =========================
-// CLIENTE - OPTIMIZADO
-// =========================
-
-const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: {
-        headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu',
-            '--no-first-run',
-            '--no-default-browser-check',
-            '--disable-sync',
-            '--disable-extensions',
-            '--disable-component-extensions-with-background-pages',
-            '--disable-default-apps',
-            '--disable-preconnect'
-        ]
-    }
-});
-
-// =========================
 // UTILIDAD: extrae el ID limpio
 // =========================
 
@@ -173,46 +117,6 @@ function extractUserId(raw) {
     if (!raw) return null;
     const base = raw.includes('@') ? raw.split('@')[0] : raw;
     return base.replace(/\D/g, '') || null;
-}
-
-// =========================
-// UTILIDAD: obtener nombre del contacto CON CACHE
-// =========================
-
-async function obtenerNombreContacto(userId) {
-    try {
-        // Verificar cache primero
-        if (contactCache[userId]) {
-            return contactCache[userId];
-        }
-        
-        const contact = await client.getContactById(userId + '@c.us');
-        if (contact) {
-            const nombre = contact.name || contact.pushname || contact.shortName || null;
-            if (nombre) {
-                contactCache[userId] = nombre; // Guardar en cache
-            }
-            return nombre;
-        }
-        return null;
-    } catch (error) {
-        return null;
-    }
-}
-
-// =========================
-// UTILIDAD: parsea "nombre" "descripcion"
-// =========================
-
-function parseNombreDesc(args) {
-    const regex = /["'](.+?)["']\s*["'](.+?)["']/;
-    const match = args.match(regex);
-    if (match) return { nombre: match[1].trim(), desc: match[2].trim() };
-
-    const single = args.match(/["'](.+?)["']/);
-    if (single) return { nombre: single[1].trim(), desc: null };
-
-    return { nombre: args.trim(), desc: null };
 }
 
 // =========================
@@ -225,7 +129,7 @@ function calcularPuntuacionRango(rango, xp) {
 }
 
 // =========================
-// FUNCIÓN: Añadir XP (mensajes normales)
+// FUNCIÓN: Añadir XP
 // =========================
 
 function añadirXP(userId, cantidad) {
@@ -310,962 +214,18 @@ function añadirXPDirecto(userId, cantidad) {
 }
 
 // =========================
-// QR
+// UTILIDAD: parsea "nombre" "descripcion"
 // =========================
 
-client.on('qr', qr => {
-    qrcode.generate(qr, { small: true });
-});
-
-// =========================
-// READY
-// =========================
-
-client.on('ready', () => {
-    console.log(`
-🔮══════════════════════🔮
-   HECHIZO ESTABLE
-   RUNAS ACTIVAS
-   MODO OPTIMIZADO ⚡
-🔮══════════════════════🔮
-    `);
-    
-    // Guardar cada 2 minutos en lugar de 30 segundos
-    saveInterval = setInterval(guardarUsuarios, 120000);
-});
-
-// =========================
-// MENSAJES
-// =========================
-
-client.on('message', async (message) => {
-
-    const chat = await message.getChat();
-    const rawAuthor = message.author || message.from || '';
-    const userId = extractUserId(rawAuthor);
-
-    if (!userId) return;
-
-    const isOwner = OWNERS.has(userId);
-    
-    let isAdmin = false;
-    try {
-        if (chat.isGroup) {
-            const participant = chat.participants.find(p => {
-                const pId = p.id.user || p.id._serialized || extractUserId(p.id.toString());
-                return pId === userId;
-            });
-            if (participant && (participant.isAdmin === true || participant.isSuperAdmin === true)) {
-                isAdmin = true;
-            }
-        }
-    } catch (error) {
-        //
-    }
-    
-    const canUseAdminCmds = isOwner || isAdmin;
-
-    if (!usuarios[userId]) usuarios[userId] = createUser();
-    const user = usuarios[userId];
-
-    const body = (message.body || '').toString().trim();
-    
-    // =========================
-    // SISTEMA DE XP
-    // =========================
-    
-    if (!body.startsWith(PREFIX) && body.length > 0) {
-        const resultadoXP = añadirXP(userId, XP_CONFIG[user.rango].xpPorMensaje);
-        
-        if (resultadoXP.subioDe) {
-            const nombreContacto = await obtenerNombreContacto(userId);
-            const nombre = nombreContacto || user.nombre;
-            
-            await message.reply(
-`🎆 ¡ASCENSO! 🎆
-
-${nombre} ha ascendido de rango
-
-${resultadoXP.rangoAnterior.toUpperCase()} → ${resultadoXP.rangoNuevo.toUpperCase()}
-
-⭐ ¡Felicidades! ⭐`
-            );
-        }
-        
-        return;
-    }
-
-    if (!body.startsWith(PREFIX)) return;
-
-    const [cmdRaw, ...argsArr] = body.slice(PREFIX.length).split(' ');
-    const cmd = cmdRaw.toLowerCase();
-    const args = argsArr.join(' ').trim();
-
-    // =========================
-    // DEBUG ID
-    // =========================
-
-    if (cmd === 'miid') {
-        const nombreContacto = await obtenerNombreContacto(userId);
-        return message.reply(`🔮 Tu Hechizo ID:\n${userId}\n\nNombre: ${nombreContacto || 'No disponible'}\nIs Owner: ${isOwner}\nIs Admin: ${isAdmin}`);
-    }
-
-    // =========================
-    // HELP PRINCIPAL
-    // =========================
-
-    if (cmd === 'help' && args === '') {
-        return message.reply(
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        🔮 R U N A S 🔮
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📖 COMANDOS DE CONSULTA
-───────────────────────
-!runas          → Ver tus runas
-!runas @user    → Ver runas de otro
-!miid           → Tu ID real
-!nivel          → Tu nivel y XP
-!nivel @user    → Nivel de otro
-!top            → Top 10 mejores
-
-📜 VER DETALLES
-───────────────────────
-!vernombre      → Nombre verdadero
-!veratributos   → Atributos + desc
-!verrecuerdos   → Recuerdos + desc
-!verecos        → Ecos + desc
-
-Usa @usuario al final para ver de otros
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-👤 PARA TODOS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-!setnombre <name> → Elige tu nombre
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚙️ ADMIN/OWNER
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-👤 IDENTIDAD
-───────────────────────
-!setrango <rango>         → Tu rango
-!setrango @user <rango>   → Rango a otro
-!setnucleo <nucleo>       → Tu núcleo
-!setnucleo @user <nucleo> → Núcleo a otro
-!setverdadero <nombre>    → Nombre verdadero
-!descverdadero <desc>     → Descripción
-
-📝 AGREGAR RUNAS
-───────────────────────
-!addatributo "nombre" "desc"
-!addrecuerdo "nombre" "desc"
-!addeco "nombre" "desc"
-
-🗑️ ELIMINAR RUNAS
-───────────────────────
-!delatributo <nombre>
-!delrecuerdo <nombre>
-!deleco <nombre>
-
-⚡ XP Y RANKING
-───────────────────────
-!xp <cantidad> [@]      → Añadir XP
-!xp -<cantidad> [@]     → Restar XP
-
-🔄 RESETEAR
-───────────────────────
-!reset          → Resetea tus runas
-!reset @user    → Resetea a otro
-!resetall       → Resetea TODO ⚠️
-
-🎯 RANGOS DISPONIBLES
-───────────────────────
-${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-        );
-    }
-
-    // =========================
-    // HELP DIVINO
-    // =========================
-
-    if (cmd === 'divino') {
-        return message.reply(
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    👑 PODERES DIVINOS 👑
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🌟 SOLO PARA RANGO DIVINO 🌟
-
-⚡ OTORGAR XP
-!otorgar <xp> @user
-
-💫 IMPULSAR
-!impulsar @user
-
-⚖️ CASTIGAR
-!castigar <xp> @user
-
-📊 ESTADÍSTICAS
-!estadisticas
-
-🎁 RECOMPENSAR
-!recompensar <xp> @user "razón"
-
-🔮 INVOCAR
-!invocar "mensaje"
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-        );
-    }
-
-    // =========================
-    // TOP 10
-    // =========================
-
-    if (cmd === 'top') {
-        const usuariosArray = Object.entries(usuarios).map(([id, user]) => ({
-            id,
-            nombre: user.nombre,
-            rango: user.rango,
-            xp: user.xp || 0,
-            puntuacion: calcularPuntuacionRango(user.rango, user.xp || 0)
-        }));
-
-        usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
-
-        const top10 = usuariosArray.slice(0, 10);
-
-        if (top10.length === 0) {
-            return message.reply('⚠️ No hay usuarios con runas aún.');
-        }
-
-        const topLista = top10.map((user, index) => {
-            const config = XP_CONFIG[user.rango];
-            const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
-            return `${medal} ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   💫 ${user.xp}/${config.xpRequerida} XP`;
-        }).join('\n\n');
-
-        return message.reply(
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    🏆 TOP 10 PODEROSOS 🏆
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${topLista}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-        );
-    }
-
-    // =========================
-    // NIVEL Y XP
-    // =========================
-
-    if (cmd === 'nivel') {
-        let targetId = userId;
-        
-        if (message.mentionedIds && message.mentionedIds.length > 0) {
-            const rawMention = message.mentionedIds[0];
-            const mentionId = extractUserId(
-                typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-            );
-            if (mentionId && usuarios[mentionId]) {
-                targetId = mentionId;
-            }
-        }
-        
-        if (!usuarios[targetId]) return message.reply('⚠️ Ese usuario aún no tiene runas.');
-        
-        const target = usuarios[targetId];
-        let nombreContacto = await obtenerNombreContacto(targetId);
-        if (nombreContacto) target.nombre = nombreContacto;
-        const nombre = nombreContacto || target.nombre;
-        
-        const xpActual = target.xp || 0;
-        const config = XP_CONFIG[target.rango];
-        const porcentajeXP = Math.round((xpActual / config.xpRequerida) * 100);
-        const barraXP = crearBarra(porcentajeXP);
-        
-        const esDivino = target.rango === 'divino' ? '\n\n⚡ MULTIPLICADOR DIVINO x3 ACTIVO' : '';
-        
-        return message.reply(
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    📊 ESTADÍSTICAS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-👤 ${nombre}
-
-⭐ RANGO ACTUAL
-───────────────────────
-${target.rango.toUpperCase()}
-
-💫 NÚCLEO
-───────────────────────
-${target.nucleo || 'Sin núcleo'}
-
-📈 EXPERIENCIA
-───────────────────────
-${xpActual} / ${config.xpRequerida} XP
-
-${barraXP}
-
-Progreso: ${porcentajeXP}%
-${esDivino}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-        );
-    }
-
-    // =========================
-    // SETNOMBRE
-    // =========================
-
-    if (cmd === 'setnombre') {
-        if (!args) return message.reply('⚠️ Uso: !setnombre <nombre>');
-        user.nombre = args;
-        marcarParaGuardar();
-        return message.reply(`✨ Tu nombre ha sido cambiado a: ${args}`);
-    }
-
-    // =========================
-    // RESOLVER TARGET (lecturas)
-    // =========================
-
-    async function resolveReadTarget() {
-        if (message.mentionedIds && message.mentionedIds.length > 0) {
-            const rawMention = message.mentionedIds[0];
-            const mentionId = extractUserId(
-                typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-            );
-            if (!mentionId) return { id: null, u: null, err: '⚠️ No pude identificar a ese usuario.' };
-            if (!usuarios[mentionId]) return { id: mentionId, u: null, err: 'Las runas de ese ser aún no han sido escritas.' };
-            
-            const nombreContacto = await obtenerNombreContacto(mentionId);
-            if (nombreContacto) {
-                usuarios[mentionId].nombre = nombreContacto;
-            }
-            return { id: mentionId, u: usuarios[mentionId], err: null };
-        }
-        return { id: userId, u: user, err: null };
-    }
-
-    // =========================
-    // RUNAS
-    // =========================
-
-    if (cmd === 'runas') {
-        const { id, u, err } = await resolveReadTarget();
-        if (err) return message.reply(err);
-        return message.reply(format(u));
-    }
-
-    // =========================
-    // VERNOMBRE
-    // =========================
-
-    if (cmd === 'vernombre') {
-        const { id, u, err } = await resolveReadTarget();
-        if (err) return message.reply(err);
-
-        const desc = u.descVerdadero ? `${u.descVerdadero}` : 'Sin descripción.';
-        return message.reply(
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    ◈ NOMBRE VERDADERO ◈
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${u.nombreVerdadero}
-
-───────────────────────
-${desc}
-───────────────────────`
-        );
-    }
-
-    // =========================
-    // VERATRIBUTOS
-    // =========================
-
-    if (cmd === 'veratributos') {
-        const { id, u, err } = await resolveReadTarget();
-        if (err) return message.reply(err);
-        return message.reply(formatDetalle('ATRIBUTOS', u.atributos));
-    }
-
-    // =========================
-    // VERRECUERDOS
-    // =========================
-
-    if (cmd === 'verrecuerdos') {
-        const { id, u, err } = await resolveReadTarget();
-        if (err) return message.reply(err);
-        return message.reply(formatDetalle('RECUERDOS', u.recuerdos));
-    }
-
-    // =========================
-    // VERECOS
-    // =========================
-
-    if (cmd === 'verecos') {
-        const { id, u, err } = await resolveReadTarget();
-        if (err) return message.reply(err);
-        return message.reply(formatDetalle('ECOS', u.ecos));
-    }
-
-    // =========================
-    // PROTECCIÓN ADMIN/OWNER
-    // =========================
-
-    const adminCmds = [
-        'setverdadero', 'descverdadero',
-        'setrango', 'setnucleo',
-        'addatributo', 'addrecuerdo', 'addeco',
-        'delatributo', 'delrecuerdo', 'deleco',
-        'reset', 'resetall', 'xp',
-        'otorgar', 'impulsar', 'castigar',
-        'estadisticas', 'recompensar', 'invocar'
-    ];
-
-    if (adminCmds.includes(cmd)) {
-        if (!canUseAdminCmds) return message.reply('⚠️ No tienes permiso. Solo admins y owners.');
-    } else {
-        return;
-    }
-
-    // =========================
-    // EXTRAER TARGET Y PARÁMETROS
-    // =========================
-
-    let targetId = userId;
-    let hasMention = false;
-
-    if (message.mentionedIds && message.mentionedIds.length > 0) {
-        const rawMention = message.mentionedIds[0];
-        const mentionId = extractUserId(
-            typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-        );
-        if (mentionId) {
-            targetId = mentionId;
-            hasMention = true;
-        }
-    }
-
-    if (!usuarios[targetId]) usuarios[targetId] = createUser();
-    const target = usuarios[targetId];
-    
-    const nombreContactoTarget = await obtenerNombreContacto(targetId);
-    if (nombreContactoTarget) target.nombre = nombreContactoTarget;
-
-    // =========================
-    // COMANDOS
-    // =========================
-
-    switch (cmd) {
-
-        case 'setverdadero':
-            if (!args) return message.reply('⚠️ Uso: !setverdadero <nombre>');
-            target.nombreVerdadero = args;
-            marcarParaGuardar();
-            return message.reply(`✨ Nombre verdadero → ${args}`);
-
-        case 'descverdadero':
-            if (!args) return message.reply('⚠️ Uso: !descverdadero <descripcion>');
-            target.descVerdadero = args;
-            marcarParaGuardar();
-            return message.reply(`✨ Descripción actualizada.`);
-
-        case 'setrango': {
-            if (!args) return message.reply('⚠️ Uso: !setrango <rango> o !setrango @user <rango>');
-            
-            let rango = '';
-            
-            if (hasMention) {
-                rango = args.split(' ')[0].toLowerCase();
-            } else {
-                rango = args.toLowerCase();
-            }
-            
-            if (!RANGOS.includes(rango)) {
-                return message.reply(`⚠️ Rango inválido.\n\nVálidos:\n${RANGOS.join('\n')}`);
-            }
-            
-            target.rango = rango;
-            target.xp = 0;
-            marcarParaGuardar();
-            return message.reply(`✨ Rango de ${target.nombre} → ${rango.toUpperCase()}`);
-        }
-
-        case 'setnucleo': {
-            if (!args) return message.reply('⚠️ Uso: !setnucleo <nucleo> o !setnucleo @user <nucleo>');
-            
-            let nucleo = '';
-            
-            if (hasMention) {
-                nucleo = args.split(' ')[0];
-            } else {
-                nucleo = args;
-            }
-            
-            target.nucleo = nucleo;
-            marcarParaGuardar();
-            return message.reply(`✨ Núcleo de ${target.nombre} → ${nucleo}`);
-        }
-
-        case 'addatributo': {
-            if (!args) return message.reply('⚠️ Uso: !addatributo "nombre" "desc"');
-            const { nombre, desc } = parseNombreDesc(args);
-            const found = target.atributos.find(a => a.nombre.toLowerCase() === nombre.toLowerCase());
-            if (found) { 
-                if (desc) found.desc = desc;
-                marcarParaGuardar();
-                return message.reply(`✨ Atributo "${nombre}" actualizado.`);
-            }
-            target.atributos.push({ nombre, desc: desc || null });
-            marcarParaGuardar();
-            return message.reply(`✨ Atributo "${nombre}" agregado.`);
-        }
-
-        case 'addrecuerdo': {
-            if (!args) return message.reply('⚠️ Uso: !addrecuerdo "nombre" "desc"');
-            const { nombre, desc } = parseNombreDesc(args);
-            const found = target.recuerdos.find(r => r.nombre.toLowerCase() === nombre.toLowerCase());
-            if (found) { 
-                if (desc) found.desc = desc;
-                marcarParaGuardar();
-                return message.reply(`✨ Recuerdo "${nombre}" actualizado.`);
-            }
-            target.recuerdos.push({ nombre, desc: desc || null });
-            marcarParaGuardar();
-            return message.reply(`✨ Recuerdo "${nombre}" agregado.`);
-        }
-
-        case 'addeco': {
-            if (!args) return message.reply('⚠️ Uso: !addeco "nombre" "desc"');
-            const { nombre, desc } = parseNombreDesc(args);
-            const found = target.ecos.find(e => e.nombre.toLowerCase() === nombre.toLowerCase());
-            if (found) { 
-                if (desc) found.desc = desc;
-                marcarParaGuardar();
-                return message.reply(`✨ Eco "${nombre}" actualizado.`);
-            }
-            target.ecos.push({ nombre, desc: desc || null });
-            marcarParaGuardar();
-            return message.reply(`✨ Eco "${nombre}" agregado.`);
-        }
-
-        case 'delatributo': {
-            if (!args) return message.reply('⚠️ Uso: !delatributo <nombre>');
-            const index = target.atributos.findIndex(a => a.nombre.toLowerCase() === args.toLowerCase());
-            if (index === -1) return message.reply('⚠️ Ese atributo no existe.');
-            const removed = target.atributos.splice(index, 1)[0];
-            marcarParaGuardar();
-            return message.reply(`✅ Atributo "${removed.nombre}" eliminado.`);
-        }
-
-        case 'delrecuerdo': {
-            if (!args) return message.reply('⚠️ Uso: !delrecuerdo <nombre>');
-            const index = target.recuerdos.findIndex(r => r.nombre.toLowerCase() === args.toLowerCase());
-            if (index === -1) return message.reply('⚠️ Ese recuerdo no existe.');
-            const removed = target.recuerdos.splice(index, 1)[0];
-            marcarParaGuardar();
-            return message.reply(`✅ Recuerdo "${removed.nombre}" eliminado.`);
-        }
-
-        case 'deleco': {
-            if (!args) return message.reply('⚠️ Uso: !deleco <nombre>');
-            const index = target.ecos.findIndex(e => e.nombre.toLowerCase() === args.toLowerCase());
-            if (index === -1) return message.reply('⚠️ Ese eco no existe.');
-            const removed = target.ecos.splice(index, 1)[0];
-            marcarParaGuardar();
-            return message.reply(`✅ Eco "${removed.nombre}" eliminado.`);
-        }
-
-        case 'reset': {
-            let targetId2 = userId;
-            
-            if (message.mentionedIds && message.mentionedIds.length > 0) {
-                const rawMention = message.mentionedIds[0];
-                const mentionId = extractUserId(
-                    typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-                );
-                if (mentionId) targetId2 = mentionId;
-            }
-            
-            if (!canUseAdminCmds && targetId2 !== userId) {
-                return message.reply('⚠️ No tienes permiso para resetear a otro usuario.');
-            }
-            
-            usuarios[targetId2] = createUser();
-            marcarParaGuardar();
-            
-            const quien = targetId2 === userId ? 'Tus runas' : `Runas de ${targetId2}`;
-            return message.reply(`🔄 ${quien} han sido reseteadas.`);
-        }
-
-        case 'resetall': {
-            if (!isOwner) return message.reply('⚠️ Solo owners pueden hacer esto.');
-            
-            for (let key in usuarios) {
-                delete usuarios[key];
-            }
-            
-            marcarParaGuardar();
-            return message.reply(`🔄 TODAS las runas han sido reseteadas.`);
-        }
-
-        case 'xp': {
-            if (!args) return message.reply('⚠️ Uso: !xp <cantidad> [@usuario]');
-            
-            let xpStr = '';
-            
-            if (hasMention) {
-                xpStr = args.split(' ')[0];
-            } else {
-                xpStr = args.split(' ')[0];
-            }
-            
-            const cantidad = parseInt(xpStr);
-            
-            if (isNaN(cantidad)) return message.reply('⚠️ La cantidad debe ser un número.');
-            
-            const MAX_XP = 9999999999;
-            if (Math.abs(cantidad) > MAX_XP) {
-                return message.reply(`⚠️ Límite máximo: ${MAX_XP.toLocaleString()} XP.`);
-            }
-            
-            const resultado = añadirXPDirecto(targetId, cantidad);
-            
-            const cambioStr = cantidad > 0 
-                ? `✨ +${cantidad.toLocaleString()} XP`
-                : `⚡ ${cantidad.toLocaleString()} XP`;
-            
-            let respuesta = `${cambioStr} a ${target.nombre}\n\n`;
-            
-            if (resultado.ascensos.length > 0) {
-                respuesta += `🎆 ¡ASCENSOS! 🎆\n`;
-                resultado.ascensos.forEach(a => {
-                    respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
-                });
-                respuesta += '\n';
-            }
-            
-            const config = XP_CONFIG[resultado.rangoFinal];
-            respuesta += `⭐ Rango: ${resultado.rangoFinal.toUpperCase()}\n`;
-            respuesta += `💫 XP: ${resultado.xpFinal}/${config.xpRequerida}`;
-            
-            return message.reply(respuesta);
-        }
-
-        case 'otorgar': {
-            if (user.rango !== 'divino') {
-                return message.reply('⚠️ Solo rango DIVINO.');
-            }
-            
-            if (!message.mentionedIds || message.mentionedIds.length === 0) {
-                return message.reply('⚠️ Uso: !otorgar <xp> @usuario');
-            }
-            
-            const xpMatch = args.match(/^\d+/);
-            if (!xpMatch) return message.reply('⚠️ Uso: !otorgar <xp> @usuario');
-            
-            const xp = parseInt(xpMatch[0]);
-            if (xp > 150000) return message.reply('⚠️ Máximo: 150,000 XP.');
-            
-            const cooldown = verificarCooldown(userId, 'otorgar', 20);
-            if (cooldown.activo) {
-                return message.reply(`⏳ Espera ${cooldown.tiempoRestante} min.`);
-            }
-            
-            const rawMention = message.mentionedIds[0];
-            const otroId = extractUserId(
-                typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-            );
-            
-            if (!otroId) return message.reply('⚠️ Usuario no identificado.');
-            if (!usuarios[otroId]) usuarios[otroId] = createUser();
-            
-            const otro = usuarios[otroId];
-            const nombreContactoOtro = await obtenerNombreContacto(otroId);
-            if (nombreContactoOtro) otro.nombre = nombreContactoOtro;
-            
-            const resultado = añadirXPDirecto(otroId, xp);
-            const config = XP_CONFIG[resultado.rangoFinal];
-            
-            let respuesta = `✨ ${user.nombre} otorgó ${xp.toLocaleString()} XP a ${otro.nombre}\n\n`;
-            
-            if (resultado.ascensos.length > 0) {
-                respuesta += `🎆 ¡Ascensos! 🎆\n`;
-                resultado.ascensos.forEach(a => {
-                    respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
-                });
-                respuesta += '\n';
-            }
-            
-            respuesta += `⭐ Nuevo rango: ${resultado.rangoFinal.toUpperCase()}\n`;
-            respuesta += `💫 XP: ${resultado.xpFinal}/${config.xpRequerida}`;
-            
-            return message.reply(respuesta);
-        }
-
-        case 'impulsar': {
-            if (user.rango !== 'divino') {
-                return message.reply('⚠️ Solo rango DIVINO.');
-            }
-            
-            if (!message.mentionedIds || message.mentionedIds.length === 0) {
-                return message.reply('⚠️ Uso: !impulsar @usuario');
-            }
-            
-            const cooldown = verificarCooldown(userId, 'impulsar', 720);
-            if (cooldown.activo) {
-                return message.reply(`⏳ Espera ${cooldown.tiempoRestante} min.`);
-            }
-            
-            const rawMention = message.mentionedIds[0];
-            const otroId = extractUserId(
-                typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-            );
-            
-            if (!otroId) return message.reply('⚠️ Usuario no identificado.');
-            if (!usuarios[otroId]) return message.reply('⚠️ Sin runas.');
-            
-            const otro = usuarios[otroId];
-            const nombreContactoOtro = await obtenerNombreContacto(otroId);
-            if (nombreContactoOtro) otro.nombre = nombreContactoOtro;
-            
-            const config = XP_CONFIG[otro.rango];
-            
-            if (otro.rango === 'divino') {
-                return message.reply('⚠️ Ya es DIVINO.');
-            }
-            
-            const xpFaltante = config.xpRequerida - (otro.xp || 0);
-            const xpAOtorgar = Math.floor(xpFaltante * 0.6);
-            
-            const resultado = añadirXPDirecto(otroId, xpAOtorgar);
-            const configFinal = XP_CONFIG[resultado.rangoFinal];
-            
-            let respuesta = `🚀 ${user.nombre} impulsó a ${otro.nombre}\n\n`;
-            respuesta += `XP: ${xpAOtorgar.toLocaleString()} (60%)\n\n`;
-            
-            if (resultado.ascensos.length > 0) {
-                respuesta += `🎆 ¡Subió de rango! 🎆\n`;
-                resultado.ascensos.forEach(a => {
-                    respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
-                });
-                respuesta += '\n';
-            }
-            
-            respuesta += `⭐ Rango: ${resultado.rangoFinal.toUpperCase()}\n`;
-            respuesta += `💫 XP: ${resultado.xpFinal}/${configFinal.xpRequerida}`;
-            
-            return message.reply(respuesta);
-        }
-
-        case 'castigar': {
-            if (user.rango !== 'divino') {
-                return message.reply('⚠️ Solo rango DIVINO.');
-            }
-            
-            if (!message.mentionedIds || message.mentionedIds.length === 0) {
-                return message.reply('⚠️ Uso: !castigar <xp> @usuario');
-            }
-            
-            const xpMatch = args.match(/^\d+/);
-            if (!xpMatch) return message.reply('⚠️ Uso: !castigar <xp> @usuario');
-            
-            const xp = parseInt(xpMatch[0]);
-            if (xp > 150000) return message.reply('⚠️ Máximo: 150,000 XP.');
-            
-            const cooldown = verificarCooldown(userId, 'castigar', 45);
-            if (cooldown.activo) {
-                return message.reply(`⏳ Espera ${cooldown.tiempoRestante} min.`);
-            }
-            
-            const rawMention = message.mentionedIds[0];
-            const otroId = extractUserId(
-                typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-            );
-            
-            if (!otroId) return message.reply('⚠️ Usuario no identificado.');
-            if (!usuarios[otroId]) return message.reply('⚠️ Sin runas.');
-            
-            const otro = usuarios[otroId];
-            const nombreContactoOtro = await obtenerNombreContacto(otroId);
-            if (nombreContactoOtro) otro.nombre = nombreContactoOtro;
-            
-            const resultado = añadirXPDirecto(otroId, -xp);
-            const config = XP_CONFIG[resultado.rangoFinal];
-            
-            let respuesta = `⚡ ${user.nombre} castigó a ${otro.nombre}\n\n`;
-            respuesta += `XP: -${xp.toLocaleString()}\n\n`;
-            
-            if (resultado.ascensos.length > 0) {
-                respuesta += `📉 ¡Descendió! 📉\n`;
-                resultado.ascensos.forEach(a => {
-                    respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
-                });
-                respuesta += '\n';
-            }
-            
-            respuesta += `⭐ Rango: ${resultado.rangoFinal.toUpperCase()}\n`;
-            respuesta += `💫 XP: ${resultado.xpFinal}/${config.xpRequerida}`;
-            
-            return message.reply(respuesta);
-        }
-
-        case 'estadisticas': {
-            if (user.rango !== 'divino') {
-                return message.reply('⚠️ Solo rango DIVINO.');
-            }
-            
-            const usuariosArray = Object.entries(usuarios).map(([id, u]) => ({
-                id,
-                nombre: u.nombre,
-                rango: u.rango,
-                xp: u.xp || 0,
-                puntuacion: calcularPuntuacionRango(u.rango, u.xp || 0)
-            }));
-            
-            usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
-            
-            const top5 = usuariosArray.slice(0, 5);
-            const xpTotal = usuariosArray.reduce((sum, u) => sum + u.xp, 0);
-            
-            const top5Lista = top5.map((u, i) => {
-                const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}.`;
-                return `${medal} ${u.nombre} - ${u.rango.toUpperCase()}`;
-            }).join('\n');
-            
-            return message.reply(
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    📊 ESTADÍSTICAS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-👥 USUARIOS: ${usuariosArray.length}
-
-🏆 TOP 5
-${top5Lista}
-
-💫 XP TOTAL: ${xpTotal.toLocaleString()}
-
-📈 DISTRIBUCIÓN
-${RANGOS.map(r => {
-    const count = usuariosArray.filter(u => u.rango === r).length;
-    return `${r.toUpperCase()}: ${count}`;
-}).join('\n')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-            );
-        }
-
-        case 'recompensar': {
-            if (user.rango !== 'divino') {
-                return message.reply('⚠️ Solo rango DIVINO.');
-            }
-            
-            if (!message.mentionedIds || message.mentionedIds.length === 0) {
-                return message.reply('⚠️ Uso: !recompensar <xp> @usuario "razón"');
-            }
-            
-            const xpMatch = args.match(/^\d+/);
-            if (!xpMatch) return message.reply('⚠️ Uso: !recompensar <xp> @usuario "razón"');
-            
-            const xp = parseInt(xpMatch[0]);
-            if (xp > 150000) return message.reply('⚠️ Máximo: 150,000 XP.');
-            
-            const razonMatch = args.match(/"(.+?)"/);
-            const razon = razonMatch ? razonMatch[1] : 'Por un logro especial';
-            
-            const cooldown = verificarCooldown(userId, 'recompensar', 30);
-            if (cooldown.activo) {
-                return message.reply(`⏳ Espera ${cooldown.tiempoRestante} min.`);
-            }
-            
-            const rawMention = message.mentionedIds[0];
-            const otroId = extractUserId(
-                typeof rawMention === 'string' ? rawMention : rawMention._serialized || rawMention.toString()
-            );
-            
-            if (!otroId) return message.reply('⚠️ Usuario no identificado.');
-            if (!usuarios[otroId]) usuarios[otroId] = createUser();
-            
-            const otro = usuarios[otroId];
-            const nombreContactoOtro = await obtenerNombreContacto(otroId);
-            if (nombreContactoOtro) otro.nombre = nombreContactoOtro;
-            
-            const resultado = añadirXPDirecto(otroId, xp);
-            const config = XP_CONFIG[resultado.rangoFinal];
-            
-            let respuesta = `🎁 ${user.nombre} recompensó a ${otro.nombre}\n\n`;
-            respuesta += `✨ ${xp.toLocaleString()} XP\n`;
-            respuesta += `📋 ${razon}\n\n`;
-            
-            if (resultado.ascensos.length > 0) {
-                respuesta += `🎆 ¡Ascensos! 🎆\n`;
-                resultado.ascensos.forEach(a => {
-                    respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
-                });
-                respuesta += '\n';
-            }
-            
-            respuesta += `⭐ Rango: ${resultado.rangoFinal.toUpperCase()}\n`;
-            respuesta += `💫 XP: ${resultado.xpFinal}/${config.xpRequerida}`;
-            
-            return message.reply(respuesta);
-        }
-
-        case 'invocar': {
-            if (user.rango !== 'divino') {
-                return message.reply('⚠️ Solo rango DIVINO.');
-            }
-            
-            if (!args) return message.reply('⚠️ Uso: !invocar "mensaje"');
-            
-            const cooldown = verificarCooldown(userId, 'invocar', 60);
-            if (cooldown.activo) {
-                return message.reply(`⏳ Espera ${cooldown.tiempoRestante} min.`);
-            }
-            
-            const mensaje = args.replace(/^["']|["']$/g, '');
-            
-            const respuesta = `
-╔═══════════════════════════════════╗
-║  ⚡ INVOCACIÓN DIVINA ⚡          ║
-║                                   ║
-║  "${mensaje}"                    ║
-║                                   ║
-║  — ${user.nombre} —              ║
-╚═══════════════════════════════════╝
-            `;
-            
-            return message.reply(respuesta);
-        }
-
-        default:
-            return;
-    }
-
-});
-
-// =========================
-// MODELO
-// =========================
-
-function createUser() {
-    return {
-        nombre: '…',
-        nombreVerdadero: '???',
-        descVerdadero: null,
-        rango: 'durmiente',
-        nucleo: 'apagado',
-        xp: 0,
-        recuerdos: [],
-        ecos: [],
-        atributos: []
-    };
+function parseNombreDesc(args) {
+    const regex = /["'](.+?)["']\s*["'](.+?)["']/;
+    const match = args.match(regex);
+    if (match) return { nombre: match[1].trim(), desc: match[2].trim() };
+
+    const single = args.match(/["'](.+?)["']/);
+    if (single) return { nombre: single[1].trim(), desc: null };
+
+    return { nombre: args.trim(), desc: null };
 }
 
 // =========================
@@ -1331,10 +291,6 @@ ${formatSoloNombres(u.atributos)}
     );
 }
 
-// =========================
-// FORMATO DETALLE
-// =========================
-
 function formatDetalle(titulo, lista) {
     if (!lista.length) {
         return (
@@ -1366,7 +322,467 @@ ${items}
 }
 
 // =========================
-// INICIALIZACIÓN
+// MODELO
 // =========================
 
-client.initialize();
+function createUser() {
+    return {
+        nombre: '…',
+        nombreVerdadero: '???',
+        descVerdadero: null,
+        rango: 'durmiente',
+        nucleo: 'apagado',
+        xp: 0,
+        recuerdos: [],
+        ecos: [],
+        atributos: []
+    };
+}
+
+// =========================
+// INICIAR BOT
+// =========================
+
+async function start() {
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys');
+    
+    const sock = makeWASocket({
+        auth: state,
+        logger: pino({ level: 'silent' }),
+        printQRInTerminal: true
+    });
+
+    sock.ev.on('connection.update', (update) => {
+        const { connection, lastDisconnect, qr } = update;
+        
+        if (qr) {
+            qrcode.generate(qr, { small: true });
+        }
+        
+        if (connection === 'open') {
+            console.log(`
+🔮══════════════════════🔮
+   HECHIZO ESTABLE
+   RUNAS ACTIVAS
+   MODO OPTIMIZADO ⚡
+🔮══════════════════════🔮
+            `);
+            saveInterval = setInterval(guardarUsuarios, 120000);
+        }
+        
+        if (connection === 'close') {
+            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
+            console.log('Desconectado, reintentando...');
+            if (shouldReconnect) {
+                setTimeout(() => start(), 3000);
+            }
+        }
+    });
+
+    sock.ev.on('creds.update', saveCreds);
+
+    sock.ev.on('messages.upsert', async (m) => {
+        const message = m.messages[0];
+        if (!message.message) return;
+        if (message.key.fromMe) return;
+
+        const rawFrom = message.key.remoteJid;
+        const userId = extractUserId(rawFrom);
+        const isGroup = rawFrom.includes('@g.us');
+        
+        if (!userId) return;
+
+        const isOwner = OWNERS.has(userId);
+        let isAdmin = false;
+        
+        if (!usuarios[userId]) usuarios[userId] = createUser();
+        const user = usuarios[userId];
+
+        let body = '';
+        if (message.message.conversation) body = message.message.conversation;
+        else if (message.message.extendedTextMessage?.text) body = message.message.extendedTextMessage.text;
+        
+        body = body.trim();
+        
+        // =========================
+        // SISTEMA DE XP
+        // =========================
+        
+        if (!body.startsWith(PREFIX) && body.length > 0) {
+            const resultadoXP = añadirXP(userId, XP_CONFIG[user.rango].xpPorMensaje);
+            
+            if (resultadoXP.subioDe) {
+                const nombre = user.nombre;
+                
+                await sock.sendMessage(rawFrom, {
+                    text: `🎆 ¡ASCENSO! 🎆\n\n${nombre} ha ascendido de rango\n\n${resultadoXP.rangoAnterior.toUpperCase()} → ${resultadoXP.rangoNuevo.toUpperCase()}\n\n⭐ ¡Felicidades! ⭐`
+                });
+            }
+            
+            return;
+        }
+
+        if (!body.startsWith(PREFIX)) return;
+
+        const [cmdRaw, ...argsArr] = body.slice(PREFIX.length).split(' ');
+        const cmd = cmdRaw.toLowerCase();
+        const args = argsArr.join(' ').trim();
+
+        // =========================
+        // DEBUG ID
+        // =========================
+
+        if (cmd === 'miid') {
+            return sock.sendMessage(rawFrom, {
+                text: `🔮 Tu Hechizo ID:\n${userId}\n\nNombre: ${user.nombre}\nIs Owner: ${isOwner}`
+            });
+        }
+
+        // =========================
+        // HELP
+        // =========================
+
+        if (cmd === 'help' && args === '') {
+            return sock.sendMessage(rawFrom, {
+                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        🔮 R U N A S 🔮
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 COMANDOS DE CONSULTA
+!runas, !nivel, !top, !miid
+
+📜 VER DETALLES
+!vernombre, !veratributos, !verrecuerdos, !verecos
+
+👤 PARA TODOS
+!setnombre <name>
+
+⚙️ ADMIN/OWNER
+!setrango, !setnucleo, !setverdadero
+!addatributo, !addrecuerdo, !addeco
+!delatributo, !delrecuerdo, !deleco
+!reset, !resetall, !xp
+
+🎯 RANGOS
+${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+            });
+        }
+
+        // =========================
+        // TOP 10
+        // =========================
+
+        if (cmd === 'top') {
+            const usuariosArray = Object.entries(usuarios).map(([id, user]) => ({
+                id,
+                nombre: user.nombre,
+                rango: user.rango,
+                xp: user.xp || 0,
+                puntuacion: calcularPuntuacionRango(user.rango, user.xp || 0)
+            }));
+
+            usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
+            const top10 = usuariosArray.slice(0, 10);
+
+            if (top10.length === 0) {
+                return sock.sendMessage(rawFrom, { text: '⚠️ No hay usuarios con runas aún.' });
+            }
+
+            const topLista = top10.map((user, index) => {
+                const config = XP_CONFIG[user.rango];
+                const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
+                return `${medal} ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   💫 ${user.xp}/${config.xpRequerida} XP`;
+            }).join('\n\n');
+
+            return sock.sendMessage(rawFrom, {
+                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    🏆 TOP 10 PODEROSOS 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${topLista}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+            });
+        }
+
+        // =========================
+        // NIVEL
+        // =========================
+
+        if (cmd === 'nivel') {
+            const targetId = userId;
+            
+            if (!usuarios[targetId]) {
+                return sock.sendMessage(rawFrom, { text: '⚠️ Ese usuario aún no tiene runas.' });
+            }
+            
+            const target = usuarios[targetId];
+            const xpActual = target.xp || 0;
+            const config = XP_CONFIG[target.rango];
+            const porcentajeXP = Math.round((xpActual / config.xpRequerida) * 100);
+            const barraXP = crearBarra(porcentajeXP);
+            
+            return sock.sendMessage(rawFrom, {
+                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    📊 ESTADÍSTICAS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👤 ${target.nombre}\n⭐ ${target.rango.toUpperCase()}\n💫 ${target.nucleo}\n\n${barraXP}\n\n${xpActual} / ${config.xpRequerida} XP\nProgreso: ${porcentajeXP}%\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+            });
+        }
+
+        // =========================
+        // SETNOMBRE
+        // =========================
+
+        if (cmd === 'setnombre') {
+            if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnombre <nombre>' });
+            user.nombre = args;
+            marcarParaGuardar();
+            return sock.sendMessage(rawFrom, { text: `✨ Tu nombre ha sido cambiado a: ${args}` });
+        }
+
+        // =========================
+        // RUNAS
+        // =========================
+
+        if (cmd === 'runas') {
+            return sock.sendMessage(rawFrom, { text: format(user) });
+        }
+
+        // =========================
+        // VERNOMBRE
+        // =========================
+
+        if (cmd === 'vernombre') {
+            const desc = user.descVerdadero ? `${user.descVerdadero}` : 'Sin descripción.';
+            return sock.sendMessage(rawFrom, {
+                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    ◈ NOMBRE VERDADERO ◈\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${user.nombreVerdadero}\n\n───────────────────────\n${desc}\n───────────────────────`
+            });
+        }
+
+        // =========================
+        // VERATRIBUTOS
+        // =========================
+
+        if (cmd === 'veratributos') {
+            return sock.sendMessage(rawFrom, { text: formatDetalle('ATRIBUTOS', user.atributos) });
+        }
+
+        // =========================
+        // VERRECUERDOS
+        // =========================
+
+        if (cmd === 'verrecuerdos') {
+            return sock.sendMessage(rawFrom, { text: formatDetalle('RECUERDOS', user.recuerdos) });
+        }
+
+        // =========================
+        // VERECOS
+        // =========================
+
+        if (cmd === 'verecos') {
+            return sock.sendMessage(rawFrom, { text: formatDetalle('ECOS', user.ecos) });
+        }
+
+        // =========================
+        // PROTECCIÓN ADMIN/OWNER
+        // =========================
+
+        const adminCmds = [
+            'setverdadero', 'descverdadero',
+            'setrango', 'setnucleo',
+            'addatributo', 'addrecuerdo', 'addeco',
+            'delatributo', 'delrecuerdo', 'deleco',
+            'reset', 'resetall', 'xp',
+            'otorgar', 'impulsar', 'castigar',
+            'estadisticas', 'recompensar', 'invocar'
+        ];
+
+        if (adminCmds.includes(cmd)) {
+            if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo owners.' });
+        } else {
+            return;
+        }
+
+        // =========================
+        // COMANDOS ADMIN
+        // =========================
+
+        switch (cmd) {
+
+            case 'setverdadero':
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setverdadero <nombre>' });
+                user.nombreVerdadero = args;
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Nombre verdadero → ${args}` });
+
+            case 'descverdadero':
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !descverdadero <descripcion>' });
+                user.descVerdadero = args;
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Descripción actualizada.` });
+
+            case 'setrango': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setrango <rango>' });
+                
+                const rango = args.toLowerCase();
+                
+                if (!RANGOS.includes(rango)) {
+                    return sock.sendMessage(rawFrom, { text: `⚠️ Rango inválido.\n\n${RANGOS.join('\n')}` });
+                }
+                
+                user.rango = rango;
+                user.xp = 0;
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Rango → ${rango.toUpperCase()}` });
+            }
+
+            case 'setnucleo': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnucleo <nucleo>' });
+                user.nucleo = args;
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Núcleo → ${args}` });
+            }
+
+            case 'addatributo': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addatributo "nombre" "desc"' });
+                const { nombre, desc } = parseNombreDesc(args);
+                const found = user.atributos.find(a => a.nombre.toLowerCase() === nombre.toLowerCase());
+                if (found) { 
+                    if (desc) found.desc = desc;
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" actualizado.` });
+                }
+                user.atributos.push({ nombre, desc: desc || null });
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" agregado.` });
+            }
+
+            case 'addrecuerdo': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addrecuerdo "nombre" "desc"' });
+                const { nombre, desc } = parseNombreDesc(args);
+                const found = user.recuerdos.find(r => r.nombre.toLowerCase() === nombre.toLowerCase());
+                if (found) { 
+                    if (desc) found.desc = desc;
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" actualizado.` });
+                }
+                user.recuerdos.push({ nombre, desc: desc || null });
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" agregado.` });
+            }
+
+            case 'addeco': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addeco "nombre" "desc"' });
+                const { nombre, desc } = parseNombreDesc(args);
+                const found = user.ecos.find(e => e.nombre.toLowerCase() === nombre.toLowerCase());
+                if (found) { 
+                    if (desc) found.desc = desc;
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" actualizado.` });
+                }
+                user.ecos.push({ nombre, desc: desc || null });
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" agregado.` });
+            }
+
+            case 'delatributo': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delatributo <nombre>' });
+                const index = user.atributos.findIndex(a => a.nombre.toLowerCase() === args.toLowerCase());
+                if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese atributo no existe.' });
+                const removed = user.atributos.splice(index, 1)[0];
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✅ Atributo "${removed.nombre}" eliminado.` });
+            }
+
+            case 'delrecuerdo': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delrecuerdo <nombre>' });
+                const index = user.recuerdos.findIndex(r => r.nombre.toLowerCase() === args.toLowerCase());
+                if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese recuerdo no existe.' });
+                const removed = user.recuerdos.splice(index, 1)[0];
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✅ Recuerdo "${removed.nombre}" eliminado.` });
+            }
+
+            case 'deleco': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !deleco <nombre>' });
+                const index = user.ecos.findIndex(e => e.nombre.toLowerCase() === args.toLowerCase());
+                if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese eco no existe.' });
+                const removed = user.ecos.splice(index, 1)[0];
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✅ Eco "${removed.nombre}" eliminado.` });
+            }
+
+            case 'reset': {
+                usuarios[userId] = createUser();
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `🔄 Tus runas han sido reseteadas.` });
+            }
+
+            case 'resetall': {
+                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
+                
+                for (let key in usuarios) {
+                    delete usuarios[key];
+                }
+                
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `🔄 TODAS las runas han sido reseteadas.` });
+            }
+
+            case 'xp': {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp <cantidad>' });
+                
+                const cantidad = parseInt(args.split(' ')[0]);
+                
+                if (isNaN(cantidad)) return sock.sendMessage(rawFrom, { text: '⚠️ Debe ser un número.' });
+                
+                const resultado = añadirXPDirecto(userId, cantidad);
+                const config = XP_CONFIG[resultado.rangoFinal];
+                
+                let respuesta = `${cantidad > 0 ? '✨ +' : '⚡'}${cantidad} XP\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
+                
+                if (resultado.ascensos.length > 0) {
+                    respuesta = `🎆 ¡ASCENSO! 🎆\n\n`;
+                    resultado.ascensos.forEach(a => {
+                        respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
+                    });
+                    respuesta += `\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
+                }
+                
+                return sock.sendMessage(rawFrom, { text: respuesta });
+            }
+
+            case 'estadisticas': {
+                if (user.rango !== 'divino') {
+                    return sock.sendMessage(rawFrom, { text: '⚠️ Solo rango DIVINO.' });
+                }
+                
+                const usuariosArray = Object.entries(usuarios).map(([id, u]) => ({
+                    id,
+                    nombre: u.nombre,
+                    rango: u.rango,
+                    xp: u.xp || 0,
+                    puntuacion: calcularPuntuacionRango(u.rango, u.xp || 0)
+                }));
+                
+                usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
+                
+                const top5 = usuariosArray.slice(0, 5);
+                const xpTotal = usuariosArray.reduce((sum, u) => sum + u.xp, 0);
+                
+                const top5Lista = top5.map((u, i) => {
+                    const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}.`;
+                    return `${medal} ${u.nombre} - ${u.rango.toUpperCase()}`;
+                }).join('\n');
+                
+                return sock.sendMessage(rawFrom, {
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    📊 ESTADÍSTICAS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👥 USUARIOS: ${usuariosArray.length}\n\n🏆 TOP 5\n${top5Lista}\n\n💫 XP TOTAL: ${xpTotal.toLocaleString()}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                });
+            }
+
+            default:
+                return;
+        }
+
+    });
+}
+
+// Iniciar
+start().catch(err => {
+    console.log('Error fatal:', err);
+    setTimeout(() => start(), 5000);
+});
