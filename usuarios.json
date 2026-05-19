@@ -37,7 +37,8 @@
     ],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "269355065585709": {
     "nombre": "oblivion",
@@ -61,7 +62,8 @@
     ],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "45062830428357": {
     "nombre": "Camilolk",
@@ -69,13 +71,14 @@
     "descVerdadero": null,
     "rango": "divino",
     "nucleo": "apagado",
-    "xp": 1485,
+    "xp": 1740,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "201859235115260": {
     "nombre": "C",
@@ -83,7 +86,7 @@
     "descVerdadero": null,
     "rango": "despierto",
     "nucleo": "apagado",
-    "xp": 344,
+    "xp": 368,
     "recuerdos": [
       {
         "nombre": "[Paraguas plegable] \n@201859235115260",
@@ -98,7 +101,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "129819748634773": {
     "nombre": "Alain",
@@ -117,7 +121,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "130258523160812": {
     "nombre": "Lolimancer",
@@ -125,13 +130,14 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 700,
+    "xp": 725,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "123587767881813": {
     "nombre": "…",
@@ -155,7 +161,8 @@
     ],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "211419815526560": {
     "nombre": "…",
@@ -169,7 +176,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "146497358307412": {
     "nombre": "…",
@@ -183,7 +191,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "58523744493748": {
     "nombre": "…",
@@ -197,7 +206,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "5665883959486": {
     "nombre": "Ascarlt",
@@ -211,7 +221,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "212468022395083": {
     "nombre": "sovereign of the femboys",
@@ -219,13 +230,14 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 1050,
+    "xp": 1060,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "123047239516388": {
     "nombre": "…",
@@ -233,13 +245,14 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 115,
+    "xp": 120,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "45321132458024": {
     "nombre": "Ruperto",
@@ -247,13 +260,14 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 170,
+    "xp": 225,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "212970869133436": {
     "nombre": "…",
@@ -261,7 +275,7 @@
     "descVerdadero": null,
     "rango": "divino",
     "nucleo": "Titan",
-    "xp": 10000615,
+    "xp": 10000705,
     "recuerdos": [
       {
         "nombre": "[Acero perforante]",
@@ -306,7 +320,8 @@
     ],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "128123186184222": {
     "nombre": "Sebastián Ceron",
@@ -314,7 +329,7 @@
     "descVerdadero": null,
     "rango": "maestro",
     "nucleo": "@128123186184222",
-    "xp": 4801,
+    "xp": 4809,
     "recuerdos": [
       {
         "nombre": "[Pastel sin fin] @128123186184222",
@@ -325,7 +340,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "27767215284224": {
     "nombre": "…",
@@ -339,7 +355,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "91491410145355": {
     "nombre": "…",
@@ -353,7 +370,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "105545214198015": {
     "nombre": "<NameLess>",
@@ -367,7 +385,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "256151933468880": {
     "nombre": "…",
@@ -381,7 +400,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "128690507751634": {
     "nombre": "…",
@@ -395,7 +415,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "126036318666953": {
     "nombre": "…",
@@ -409,7 +430,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "16793607360600": {
     "nombre": "Kaeby",
@@ -423,7 +445,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "207283845914781": {
     "nombre": "…",
@@ -437,7 +460,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "8577150415023": {
     "nombre": "Fabrizio",
@@ -461,7 +485,8 @@
     ],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "81346764472441": {
     "nombre": "elcalientito",
@@ -475,7 +500,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "139080352452821": {
     "nombre": "…",
@@ -489,7 +515,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "228518231310518": {
     "nombre": "…",
@@ -503,7 +530,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "87608893919346": {
     "nombre": "B",
@@ -511,13 +539,14 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 150,
+    "xp": 205,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "81574615859372": {
     "nombre": "…",
@@ -531,7 +560,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "23712648695839": {
     "nombre": "…",
@@ -545,7 +575,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "64077305016420": {
     "nombre": "…",
@@ -559,7 +590,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "127419231023296": {
     "nombre": "Oliver",
@@ -582,7 +614,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "173387964006558": {
     "nombre": "…",
@@ -596,7 +629,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "187828147384331": {
     "nombre": "…",
@@ -610,7 +644,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "10617226268873": {
     "nombre": "…",
@@ -624,7 +659,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "131417459708051": {
     "nombre": "…",
@@ -638,7 +674,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "249649873072305": {
     "nombre": "…",
@@ -652,7 +689,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "279916021068008": {
     "nombre": "…",
@@ -669,7 +707,8 @@
     "conjuros": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "176463076716776": {
     "nombre": "…",
@@ -686,7 +725,8 @@
     "conjuros": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "124429698871549": {
     "nombre": "…",
@@ -700,7 +740,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "169445200814093": {
     "nombre": "…",
@@ -714,7 +755,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "163815001960582": {
     "nombre": "…",
@@ -728,7 +770,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "38989797056686": {
     "nombre": "…",
@@ -742,7 +785,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "48898454380676": {
     "nombre": "…",
@@ -756,7 +800,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "130168161079303": {
     "nombre": "…",
@@ -770,7 +815,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "121663656083611": {
     "nombre": "…",
@@ -778,13 +824,14 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 195,
+    "xp": 260,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "2809411944534": {
     "nombre": "…",
@@ -798,7 +845,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "261632848580692": {
     "nombre": "…",
@@ -812,7 +860,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "120363402640768422": {
     "nombre": "…",
@@ -826,7 +875,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "46673426432035": {
     "nombre": "…",
@@ -840,7 +890,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "164411952115901": {
     "nombre": "…",
@@ -854,7 +905,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "81347217481952": {
     "nombre": "mata sapos",
@@ -868,7 +920,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "76421141643505": {
     "nombre": "…",
@@ -882,7 +935,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "13610919162038": {
     "nombre": "Devorador Mamario",
@@ -890,13 +944,14 @@
     "descVerdadero": null,
     "rango": "despierto",
     "nucleo": "apagado",
-    "xp": 1068,
+    "xp": 1092,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "235579123990686": {
     "nombre": "…",
@@ -910,7 +965,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "93063418511440": {
     "nombre": "…",
@@ -924,7 +980,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "52656634597614": {
     "nombre": "…",
@@ -938,7 +995,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "154696853508261": {
     "nombre": "…",
@@ -952,7 +1010,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "54611129966830": {
     "nombre": "…",
@@ -966,7 +1025,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "107876794294306": {
     "nombre": "…",
@@ -980,7 +1040,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "221126575800575": {
     "nombre": "…",
@@ -994,7 +1055,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "249692973723895": {
     "nombre": "…",
@@ -1008,7 +1070,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "270604548763754": {
     "nombre": "…",
@@ -1022,7 +1085,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "47399661777069": {
     "nombre": "…",
@@ -1036,7 +1100,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "573117415491": {
     "nombre": "…",
@@ -1050,7 +1115,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "120363426037808444": {
     "nombre": "…",
@@ -1064,7 +1130,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "120363422708847390": {
     "nombre": "…",
@@ -1078,7 +1145,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "120363399971031775": {
     "nombre": "…",
@@ -1092,7 +1160,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "78877309329441": {
     "nombre": "…",
@@ -1100,13 +1169,14 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 445,
+    "xp": 470,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "57235002671347": {
     "nombre": "…",
@@ -1120,7 +1190,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "262409818226795": {
     "nombre": "…",
@@ -1134,7 +1205,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "172400037621827": {
     "nombre": "…",
@@ -1148,7 +1220,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "131400816705641": {
     "nombre": "…",
@@ -1162,7 +1235,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "241634977575001": {
     "nombre": "…",
@@ -1176,7 +1250,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "112115910209784": {
     "nombre": "…",
@@ -1190,7 +1265,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "248038656368692": {
     "nombre": "…",
@@ -1204,7 +1280,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "211376899367072": {
     "nombre": "…",
@@ -1218,7 +1295,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "259034007470082": {
     "nombre": "…",
@@ -1232,7 +1310,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "278717741961395": {
     "nombre": "…",
@@ -1246,7 +1325,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "87184161915111": {
     "nombre": "…",
@@ -1260,7 +1340,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "168934116471036": {
     "nombre": "…",
@@ -1274,7 +1355,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "81162013774040": {
     "nombre": "…",
@@ -1288,7 +1370,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "25130222772418": {
     "nombre": "…",
@@ -1302,7 +1385,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "51982039560238": {
     "nombre": "…",
@@ -1316,7 +1400,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "61259185700879": {
     "nombre": "…",
@@ -1330,7 +1415,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "164072079290391": {
     "nombre": "…",
@@ -1344,7 +1430,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "220417889415246": {
     "nombre": "…",
@@ -1358,7 +1445,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "211265196675112": {
     "nombre": "…",
@@ -1372,7 +1460,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "90933618016323": {
     "nombre": "…",
@@ -1386,7 +1475,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "261825769824377": {
     "nombre": "…",
@@ -1400,7 +1490,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "177682880958706": {
     "nombre": "…",
@@ -1414,7 +1505,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "211896640761921": {
     "nombre": "…",
@@ -1428,7 +1520,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "47328563285": {
     "nombre": "…",
@@ -1442,7 +1535,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "74380310773774": {
     "nombre": "…",
@@ -1456,7 +1550,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "47979113255061": {
     "nombre": "…",
@@ -1470,7 +1565,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "126886285942917": {
     "nombre": "…",
@@ -1484,7 +1580,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "49310754422905": {
     "nombre": "…",
@@ -1498,7 +1595,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "97212340142243": {
     "nombre": "…",
@@ -1512,7 +1610,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "168960255348819": {
     "nombre": "…",
@@ -1526,7 +1625,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "120903748853806": {
     "nombre": "…",
@@ -1540,7 +1640,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "252282268577998": {
     "nombre": "…",
@@ -1554,7 +1655,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "26912281858272": {
     "nombre": "…",
@@ -1568,7 +1670,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "196859876348105": {
     "nombre": "…",
@@ -1582,7 +1685,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "165069283401962": {
     "nombre": "…",
@@ -1596,7 +1700,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "136661983875084": {
     "nombre": "…",
@@ -1610,7 +1715,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "20379737260167": {
     "nombre": "…",
@@ -1624,7 +1730,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "196078192345172": {
     "nombre": "…",
@@ -1638,7 +1745,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "61714989093075": {
     "nombre": "…",
@@ -1652,7 +1760,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "215615965024350": {
     "nombre": "…",
@@ -1666,7 +1775,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "116316891553947": {
     "nombre": "…",
@@ -1680,7 +1790,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "21766927814901": {
     "nombre": "…",
@@ -1694,7 +1805,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "203779236491427": {
     "nombre": "…",
@@ -1708,7 +1820,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "22656271311084": {
     "nombre": "…",
@@ -1722,7 +1835,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "240922566590636": {
     "nombre": "…",
@@ -1736,7 +1850,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "164192371884163": {
     "nombre": "…",
@@ -1750,7 +1865,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "62792925208587": {
     "nombre": "…",
@@ -1764,7 +1880,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "90173006188606": {
     "nombre": "…",
@@ -1778,7 +1895,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "59992170344682": {
     "nombre": "…",
@@ -1792,7 +1910,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "146600236159067": {
     "nombre": "…",
@@ -1806,7 +1925,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "39204478275713": {
     "nombre": "…",
@@ -1820,7 +1940,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "55371423060126": {
     "nombre": "…",
@@ -1834,7 +1955,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "51668590792954": {
     "nombre": "…",
@@ -1848,7 +1970,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "45342020120652": {
     "nombre": "…",
@@ -1862,7 +1985,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "253051050930371": {
     "nombre": "…",
@@ -1876,7 +2000,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "201619169915096": {
     "nombre": "…",
@@ -1890,7 +2015,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "257707365924885": {
     "nombre": "…",
@@ -1904,7 +2030,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "53116296810529": {
     "nombre": "…",
@@ -1918,7 +2045,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "47743561162874": {
     "nombre": "…",
@@ -1932,7 +2060,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "14375322673326": {
     "nombre": "…",
@@ -1946,7 +2075,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "82562206662709": {
     "nombre": "…",
@@ -1960,7 +2090,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "259102542430308": {
     "nombre": "…",
@@ -1974,7 +2105,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "226817508171966": {
     "nombre": "…",
@@ -1988,7 +2120,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "209375411060966": {
     "nombre": "…",
@@ -2002,7 +2135,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "280255222780001": {
     "nombre": "…",
@@ -2016,7 +2150,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "9311673688190": {
     "nombre": "…",
@@ -2030,7 +2165,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "101288314421475": {
     "nombre": "…",
@@ -2044,7 +2180,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "227723528134880": {
     "nombre": "…",
@@ -2058,7 +2195,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "179576961503374": {
     "nombre": "…",
@@ -2072,7 +2210,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "25426676203634": {
     "nombre": "…",
@@ -2086,7 +2225,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "67758058385566": {
     "nombre": "…",
@@ -2100,7 +2240,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "92406523404296": {
     "nombre": "…",
@@ -2114,7 +2255,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "209968099794971": {
     "nombre": "…",
@@ -2128,7 +2270,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "109311682441262": {
     "nombre": "…",
@@ -2142,7 +2285,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "54825391755452": {
     "nombre": "…",
@@ -2156,7 +2300,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "125769711919318": {
     "nombre": "…",
@@ -2170,7 +2315,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "68479562547406": {
     "nombre": "…",
@@ -2184,7 +2330,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "5089620164711": {
     "nombre": "…",
@@ -2198,7 +2345,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "86415379587258": {
     "nombre": "…",
@@ -2212,7 +2360,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "17411898122384": {
     "nombre": "…",
@@ -2226,7 +2375,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "168422897922083": {
     "nombre": "…",
@@ -2240,7 +2390,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "113627805790292": {
     "nombre": "…",
@@ -2254,7 +2405,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "75411035840741": {
     "nombre": "…",
@@ -2268,7 +2420,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "111725554737230": {
     "nombre": "…",
@@ -2282,7 +2435,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "120675712925884": {
     "nombre": "…",
@@ -2296,7 +2450,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "21921630576693": {
     "nombre": "…",
@@ -2310,7 +2465,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "123295693324470": {
     "nombre": "…",
@@ -2324,7 +2480,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "116029279711233": {
     "nombre": "…",
@@ -2338,7 +2495,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "281123158536424": {
     "nombre": "…",
@@ -2352,7 +2510,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "191096080613530": {
     "nombre": "…",
@@ -2366,7 +2525,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "8388238913721": {
     "nombre": "…",
@@ -2380,7 +2540,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "203680502534218": {
     "nombre": "…",
@@ -2394,7 +2555,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "275917674909756": {
     "nombre": "…",
@@ -2408,7 +2570,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "243799590727807": {
     "nombre": "…",
@@ -2422,7 +2585,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "135188491296983": {
     "nombre": "…",
@@ -2436,7 +2600,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "212687518707960": {
     "nombre": "…",
@@ -2450,7 +2615,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "230824427397192": {
     "nombre": "…",
@@ -2464,7 +2630,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "56908551569440": {
     "nombre": "…",
@@ -2478,7 +2645,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "40716893990946": {
     "nombre": "…",
@@ -2492,7 +2660,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "58343204880424": {
     "nombre": "…",
@@ -2506,7 +2675,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "34759321337991": {
     "nombre": "…",
@@ -2520,7 +2690,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "102482332147794": {
     "nombre": "…",
@@ -2534,7 +2705,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "25237697605704": {
     "nombre": "…",
@@ -2548,7 +2720,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "113048371130411": {
     "nombre": "…",
@@ -2562,7 +2735,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "21548001960183": {
     "nombre": "…",
@@ -2576,7 +2750,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "125331558129669": {
     "nombre": "…",
@@ -2590,7 +2765,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "10140518449239": {
     "nombre": "…",
@@ -2604,7 +2780,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "85568683806784": {
     "nombre": "…",
@@ -2618,7 +2795,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "49353653809358": {
     "nombre": "…",
@@ -2632,7 +2810,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "239092440797359": {
     "nombre": "…",
@@ -2646,7 +2825,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "171734317670461": {
     "nombre": "…",
@@ -2660,7 +2840,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "211303884963896": {
     "nombre": "…",
@@ -2674,7 +2855,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "194287711031488": {
     "nombre": "…",
@@ -2688,7 +2870,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "43460891558021": {
     "nombre": "…",
@@ -2702,7 +2885,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "205462762950895": {
     "nombre": "…",
@@ -2716,7 +2900,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "174161175511084": {
     "nombre": "…",
@@ -2730,7 +2915,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "77181283733607": {
     "nombre": "…",
@@ -2744,7 +2930,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "89825113858167": {
     "nombre": "…",
@@ -2758,7 +2945,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "88077062123597": {
     "nombre": "…",
@@ -2772,7 +2960,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "89769698660571": {
     "nombre": "…",
@@ -2786,7 +2975,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "5287339651072": {
     "nombre": "…",
@@ -2800,7 +2990,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "249086661906572": {
     "nombre": "…",
@@ -2814,7 +3005,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "135287225237686": {
     "nombre": "…",
@@ -2828,7 +3020,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "156049130663938": {
     "nombre": "…",
@@ -2842,7 +3035,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "275458079867027": {
     "nombre": "…",
@@ -2856,7 +3050,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "243112681160804": {
     "nombre": "…",
@@ -2870,7 +3065,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "269470710919326": {
     "nombre": "…",
@@ -2884,7 +3080,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "116578750320670": {
     "nombre": "…",
@@ -2898,7 +3095,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "184009334214801": {
     "nombre": "…",
@@ -2912,7 +3110,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "232396402233593": {
     "nombre": "…",
@@ -2926,7 +3125,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "122415896080624": {
     "nombre": "…",
@@ -2940,7 +3140,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "269539363295435": {
     "nombre": "…",
@@ -2954,7 +3155,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "141562457657473": {
     "nombre": "…",
@@ -2968,7 +3170,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "111312734535703": {
     "nombre": "…",
@@ -2982,7 +3185,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "269354998452367": {
     "nombre": "…",
@@ -2996,7 +3200,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "234445151940734": {
     "nombre": "…",
@@ -3010,7 +3215,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "39118578962678": {
     "nombre": "…",
@@ -3024,7 +3230,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "48490398920771": {
     "nombre": "…",
@@ -3038,7 +3245,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "12945216020691": {
     "nombre": "…",
@@ -3052,7 +3260,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "102409351209129": {
     "nombre": "…",
@@ -3066,7 +3275,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "16982787231917": {
     "nombre": "…",
@@ -3080,7 +3290,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "212841399353503": {
     "nombre": "…",
@@ -3094,7 +3305,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "132959839502516": {
     "nombre": "…",
@@ -3108,7 +3320,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "238091696660721": {
     "nombre": "…",
@@ -3122,7 +3335,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "254339406934248": {
     "nombre": "…",
@@ -3136,7 +3350,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "190026684080226": {
     "nombre": "…",
@@ -3150,7 +3365,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "51814519058616": {
     "nombre": "…",
@@ -3164,7 +3380,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "201597376282872": {
     "nombre": "…",
@@ -3178,7 +3395,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "21857440927768": {
     "nombre": "…",
@@ -3192,7 +3410,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "35949497081883": {
     "nombre": "…",
@@ -3206,7 +3425,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "35008446234855": {
     "nombre": "…",
@@ -3220,7 +3440,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "59756517581041": {
     "nombre": "…",
@@ -3234,7 +3455,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "47562635612410": {
     "nombre": "…",
@@ -3248,7 +3470,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "153253190873101": {
     "nombre": "…",
@@ -3262,7 +3485,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "113825357508750": {
     "nombre": "…",
@@ -3276,7 +3500,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "150375445307525": {
     "nombre": "…",
@@ -3290,7 +3515,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "57432839614704": {
     "nombre": "…",
@@ -3304,7 +3530,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "67551262429354": {
     "nombre": "…",
@@ -3318,7 +3545,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "221324328841402": {
     "nombre": "…",
@@ -3332,7 +3560,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "246325249581168": {
     "nombre": "…",
@@ -3346,7 +3575,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "68539239125079": {
     "nombre": "…",
@@ -3360,7 +3590,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "66778151571682": {
     "nombre": "…",
@@ -3374,7 +3605,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "242339905826893": {
     "nombre": "…",
@@ -3388,7 +3620,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "85973182505152": {
     "nombre": "…",
@@ -3402,7 +3635,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "258153941868664": {
     "nombre": "…",
@@ -3416,7 +3650,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "66189858455573": {
     "nombre": "…",
@@ -3430,7 +3665,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "272138237952051": {
     "nombre": "…",
@@ -3444,7 +3680,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "164785077379149": {
     "nombre": "…",
@@ -3458,7 +3695,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "249348738805898": {
     "nombre": "…",
@@ -3472,7 +3710,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "41845967028289": {
     "nombre": "…",
@@ -3486,7 +3725,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "208597971685579": {
     "nombre": "…",
@@ -3500,7 +3740,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "37709896790145": {
     "nombre": "…",
@@ -3514,7 +3755,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "247493614956711": {
     "nombre": "…",
@@ -3528,7 +3770,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "74835761844237": {
     "nombre": "…",
@@ -3542,7 +3785,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "111673679597614": {
     "nombre": "…",
@@ -3556,7 +3800,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "189026225102993": {
     "nombre": "…",
@@ -3570,7 +3815,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "224940657766438": {
     "nombre": "…",
@@ -3584,7 +3830,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "216917725999257": {
     "nombre": "…",
@@ -3598,7 +3845,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "240204719911015": {
     "nombre": "…",
@@ -3612,7 +3860,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "73478736756795": {
     "nombre": "…",
@@ -3626,7 +3875,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "158184249536589": {
     "nombre": "…",
@@ -3640,7 +3890,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "269891902914602": {
     "nombre": "…",
@@ -3654,7 +3905,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "182574831919319": {
     "nombre": "…",
@@ -3668,7 +3920,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "105652034777148": {
     "nombre": "…",
@@ -3682,7 +3935,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "52816018182360": {
     "nombre": "…",
@@ -3696,7 +3950,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "273817855328462": {
     "nombre": "…",
@@ -3710,7 +3965,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "249606336208903": {
     "nombre": "…",
@@ -3724,7 +3980,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "22497273585876": {
     "nombre": "…",
@@ -3738,7 +3995,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "229227320344704": {
     "nombre": "…",
@@ -3752,7 +4010,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "97264601137380": {
     "nombre": "…",
@@ -3766,7 +4025,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "141923369091149": {
     "nombre": "…",
@@ -3780,7 +4040,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "69574678568971": {
     "nombre": "…",
@@ -3794,7 +4055,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "82966000717895": {
     "nombre": "…",
@@ -3808,7 +4070,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "208894441832464": {
     "nombre": "…",
@@ -3822,7 +4085,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "146763428184139": {
     "nombre": "…",
@@ -3836,7 +4100,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "86625312866512": {
     "nombre": "…",
@@ -3850,7 +4115,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "260605780988098": {
     "nombre": "…",
@@ -3864,7 +4130,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "226929227624629": {
     "nombre": "…",
@@ -3878,7 +4145,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "206390442344478": {
     "nombre": "…",
@@ -3892,7 +4160,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "72310119768073": {
     "nombre": "…",
@@ -3906,7 +4175,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "227109968580811": {
     "nombre": "…",
@@ -3920,7 +4190,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "131438968090759": {
     "nombre": "…",
@@ -3934,7 +4205,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "204934565879950": {
     "nombre": "…",
@@ -3948,7 +4220,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "106249051983913": {
     "nombre": "…",
@@ -3962,7 +4235,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "181720720638030": {
     "nombre": "…",
@@ -3976,7 +4250,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "149396545077340": {
     "nombre": "…",
@@ -3990,7 +4265,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "202478079455334": {
     "nombre": "…",
@@ -4004,7 +4280,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "202263465353344": {
     "nombre": "…",
@@ -4018,7 +4295,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "20504257810623": {
     "nombre": "…",
@@ -4032,7 +4310,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "169887448232088": {
     "nombre": "…",
@@ -4046,7 +4325,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "202074050568444": {
     "nombre": "…",
@@ -4060,7 +4340,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "228707075653730": {
     "nombre": "…",
@@ -4074,7 +4355,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "148189306998906": {
     "nombre": "…",
@@ -4088,7 +4370,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "87084891123769": {
     "nombre": "…",
@@ -4102,7 +4385,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "30507404370158": {
     "nombre": "…",
@@ -4116,7 +4400,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "199260796657762": {
     "nombre": "…",
@@ -4130,7 +4415,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "96194466443361": {
     "nombre": "…",
@@ -4144,7 +4430,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "113370510450940": {
     "nombre": "…",
@@ -4158,7 +4445,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "235673898475639": {
     "nombre": "…",
@@ -4172,7 +4460,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "108967766302940": {
     "nombre": "…",
@@ -4186,7 +4475,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "136000189784269": {
     "nombre": "…",
@@ -4200,7 +4490,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "201919482089660": {
     "nombre": "…",
@@ -4214,7 +4505,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "26637521399932": {
     "nombre": "…",
@@ -4228,7 +4520,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "150542915514418": {
     "nombre": "…",
@@ -4242,7 +4535,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "63179103178913": {
     "nombre": "…",
@@ -4256,7 +4550,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "112403639443637": {
     "nombre": "…",
@@ -4270,7 +4565,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "32113520840712": {
     "nombre": "…",
@@ -4284,7 +4580,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "238276581531685": {
     "nombre": "…",
@@ -4298,7 +4595,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "200464025026805": {
     "nombre": "…",
@@ -4312,7 +4610,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "55748860100736": {
     "nombre": "…",
@@ -4326,7 +4625,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "23957965111514": {
     "nombre": "…",
@@ -4340,7 +4640,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "19190031364227": {
     "nombre": "…",
@@ -4354,7 +4655,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "267310275281001": {
     "nombre": "…",
@@ -4368,7 +4670,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "277798669267198": {
     "nombre": "…",
@@ -4382,7 +4685,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "115286032290034": {
     "nombre": "…",
@@ -4396,7 +4700,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "13826120527992": {
     "nombre": "…",
@@ -4410,7 +4715,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "243624000409695": {
     "nombre": "…",
@@ -4424,7 +4730,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "248648709500995": {
     "nombre": "…",
@@ -4438,7 +4745,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "219211406262436": {
     "nombre": "…",
@@ -4452,7 +4760,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "259330158919796": {
     "nombre": "…",
@@ -4466,7 +4775,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "98518060552317": {
     "nombre": "…",
@@ -4480,7 +4790,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "78443433750683": {
     "nombre": "…",
@@ -4494,7 +4805,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "99828495294713": {
     "nombre": "…",
@@ -4508,7 +4820,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "214675417501879": {
     "nombre": "…",
@@ -4522,7 +4835,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "244676233842805": {
     "nombre": "…",
@@ -4536,7 +4850,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "117411588132955": {
     "nombre": "…",
@@ -4550,7 +4865,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "58484771029149": {
     "nombre": "…",
@@ -4564,7 +4880,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "122428629983253": {
     "nombre": "…",
@@ -4578,7 +4895,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "120310758134015": {
     "nombre": "…",
@@ -4592,7 +4910,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "226413881864276": {
     "nombre": "…",
@@ -4606,7 +4925,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "88377844084764": {
     "nombre": "…",
@@ -4620,7 +4940,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "87900851028169": {
     "nombre": "…",
@@ -4634,7 +4955,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "112618371031105": {
     "nombre": "…",
@@ -4648,7 +4970,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "123995856863266": {
     "nombre": "…",
@@ -4662,7 +4985,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "154988223438923": {
     "nombre": "…",
@@ -4676,7 +5000,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "59576145682443": {
     "nombre": "…",
@@ -4690,7 +5015,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "80599389831357": {
     "nombre": "…",
@@ -4704,7 +5030,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "168195298197646": {
     "nombre": "…",
@@ -4718,7 +5045,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "126199124746387": {
     "nombre": "…",
@@ -4732,7 +5060,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "56045716156453": {
     "nombre": "…",
@@ -4746,7 +5075,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "279009866842240": {
     "nombre": "…",
@@ -4760,7 +5090,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "48422098845792": {
     "nombre": "…",
@@ -4774,7 +5105,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "86625346441278": {
     "nombre": "…",
@@ -4788,7 +5120,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "181213830607087": {
     "nombre": "…",
@@ -4802,7 +5135,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "147330447704282": {
     "nombre": "…",
@@ -4816,7 +5150,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "196550789718213": {
     "nombre": "…",
@@ -4830,7 +5165,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "63917854355688": {
     "nombre": "…",
@@ -4844,7 +5180,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "42580909793362": {
     "nombre": "…",
@@ -4858,7 +5195,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "55559998967884": {
     "nombre": "…",
@@ -4872,7 +5210,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "262435588063401": {
     "nombre": "…",
@@ -4886,7 +5225,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "18632155349230": {
     "nombre": "…",
@@ -4900,7 +5240,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "38233933095145": {
     "nombre": "…",
@@ -4914,7 +5255,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "236558611402797": {
     "nombre": "…",
@@ -4928,7 +5270,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "112103260221674": {
     "nombre": "…",
@@ -4942,7 +5285,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "111407710400583": {
     "nombre": "…",
@@ -4956,7 +5300,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "107279709958206": {
     "nombre": "…",
@@ -4970,7 +5315,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "160477476831422": {
     "nombre": "…",
@@ -4984,7 +5330,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "93535864922199": {
     "nombre": "…",
@@ -4998,7 +5345,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "278885212143729": {
     "nombre": "…",
@@ -5012,7 +5360,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "76639731978245": {
     "nombre": "…",
@@ -5026,7 +5375,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "145105990201560": {
     "nombre": "…",
@@ -5040,7 +5390,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "239942944948326": {
     "nombre": "…",
@@ -5054,7 +5405,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "153777831194625": {
     "nombre": "…",
@@ -5068,7 +5420,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "58300020306099": {
     "nombre": "…",
@@ -5082,7 +5435,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "71167742324870": {
     "nombre": "…",
@@ -5096,7 +5450,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "39707392143522": {
     "nombre": "…",
@@ -5110,7 +5465,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "17227784945838": {
     "nombre": "…",
@@ -5124,7 +5480,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "195068925374713": {
     "nombre": "…",
@@ -5138,7 +5495,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "246363954630722": {
     "nombre": "…",
@@ -5152,7 +5510,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "217368395518190": {
     "nombre": "…",
@@ -5166,7 +5525,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "211390086283384": {
     "nombre": "…",
@@ -5180,7 +5540,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "128230627520655": {
     "nombre": "…",
@@ -5194,7 +5555,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "90809047249056": {
     "nombre": "…",
@@ -5208,7 +5570,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "258347165077541": {
     "nombre": "…",
@@ -5222,7 +5585,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "33672795316319": {
     "nombre": "…",
@@ -5236,7 +5600,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "36357351174213": {
     "nombre": "…",
@@ -5250,7 +5615,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "180590708015201": {
     "nombre": "…",
@@ -5264,7 +5630,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "121608274473214": {
     "nombre": "…",
@@ -5278,7 +5645,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "281213034082458": {
     "nombre": "…",
@@ -5292,7 +5660,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "171541077716998": {
     "nombre": "…",
@@ -5306,7 +5675,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "229802292342820": {
     "nombre": "…",
@@ -5320,7 +5690,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "187973572264056": {
     "nombre": "…",
@@ -5334,7 +5705,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "122961038160071": {
     "nombre": "…",
@@ -5348,7 +5720,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "64579178651888": {
     "nombre": "…",
@@ -5362,7 +5735,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "50298462703833": {
     "nombre": "…",
@@ -5376,7 +5750,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "263938725961821": {
     "nombre": "…",
@@ -5390,7 +5765,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "16935223828728": {
     "nombre": "…",
@@ -5404,7 +5780,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "43413646909621": {
     "nombre": "…",
@@ -5418,7 +5795,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "188798256324756": {
     "nombre": "…",
@@ -5432,7 +5810,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "113082512736480": {
     "nombre": "…",
@@ -5446,7 +5825,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "205617465712690": {
     "nombre": "…",
@@ -5460,7 +5840,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "191860903518277": {
     "nombre": "…",
@@ -5474,7 +5855,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "165871637028911": {
     "nombre": "…",
@@ -5488,7 +5870,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "126512774778929": {
     "nombre": "…",
@@ -5502,7 +5885,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "112984064004116": {
     "nombre": "…",
@@ -5516,7 +5900,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "103788337754367": {
     "nombre": "…",
@@ -5530,7 +5915,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "267602366595279": {
     "nombre": "…",
@@ -5544,7 +5930,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "22166426878027": {
     "nombre": "…",
@@ -5558,7 +5945,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "16539952636099": {
     "nombre": "…",
@@ -5572,7 +5960,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "158188359929946": {
     "nombre": "…",
@@ -5586,7 +5975,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "33964785971443": {
     "nombre": "…",
@@ -5600,7 +5990,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "273851829223555": {
     "nombre": "…",
@@ -5614,7 +6005,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "191611543760932": {
     "nombre": "…",
@@ -5628,7 +6020,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "178735265407226": {
     "nombre": "…",
@@ -5642,7 +6035,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "124309339152638": {
     "nombre": "…",
@@ -5656,7 +6050,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "124236559577163": {
     "nombre": "…",
@@ -5670,7 +6065,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "215010928271579": {
     "nombre": "…",
@@ -5684,7 +6080,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "7911514341377": {
     "nombre": "…",
@@ -5698,7 +6095,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "27797766541504": {
     "nombre": "…",
@@ -5712,7 +6110,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "191727507927099": {
     "nombre": "…",
@@ -5726,7 +6125,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "240213259477186": {
     "nombre": "…",
@@ -5740,7 +6140,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "137726749876254": {
     "nombre": "…",
@@ -5754,7 +6155,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "5751061876794": {
     "nombre": "…",
@@ -5768,7 +6170,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "122810445901826": {
     "nombre": "…",
@@ -5782,7 +6185,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "75346628104369": {
     "nombre": "…",
@@ -5796,7 +6200,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "65627385511987": {
     "nombre": "…",
@@ -5810,7 +6215,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "229737918124287": {
     "nombre": "…",
@@ -5824,7 +6230,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "221878060884111": {
     "nombre": "…",
@@ -5838,7 +6245,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "267237747331096": {
     "nombre": "…",
@@ -5852,7 +6260,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "113460184666245": {
     "nombre": "…",
@@ -5866,7 +6275,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "68977443217622": {
     "nombre": "…",
@@ -5880,7 +6290,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "201816469967065": {
     "nombre": "…",
@@ -5894,7 +6305,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "174848772964574": {
     "nombre": "…",
@@ -5908,7 +6320,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "309304811630": {
     "nombre": "…",
@@ -5922,7 +6335,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "165103374700600": {
     "nombre": "…",
@@ -5936,7 +6350,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "110497143758995": {
     "nombre": "…",
@@ -5950,7 +6365,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "28115359264810": {
     "nombre": "…",
@@ -5964,7 +6380,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "143464926826535": {
     "nombre": "…",
@@ -5978,7 +6395,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "229115063984159": {
     "nombre": "…",
@@ -5992,7 +6410,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "193342281400444": {
     "nombre": "…",
@@ -6006,7 +6425,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "77310116024335": {
     "nombre": "…",
@@ -6020,7 +6440,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "213116411506917": {
     "nombre": "…",
@@ -6034,7 +6455,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "247093797085190": {
     "nombre": "…",
@@ -6048,7 +6470,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "240544559161345": {
     "nombre": "…",
@@ -6062,7 +6485,8 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   },
   "231885519196233": {
     "nombre": "…",
@@ -6076,6 +6500,7 @@
     "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null
+    "cohorte": null,
+    "clase": "sin clase"
   }
 }

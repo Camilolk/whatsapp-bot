@@ -324,6 +324,14 @@ function obtenerAspectoAleatorio(rango) {
 }
 
 // =========================
+// FUNCIÓN: Obtener aspecto específico por nombre
+// =========================
+
+function obtenerAspectoPorNombre(nombre) {
+    return ASPECTOS_LEGADOS[nombre] || null;
+}
+
+// =========================
 // FUNCIÓN: Calcular puntuación de rango
 // =========================
 
@@ -575,18 +583,34 @@ function format(u) {
     const xpRequerida = XP_CONFIG[u.rango].xpRequerida;
     const barraXP = crearBarra(Math.round((xpActual / xpRequerida) * 100));
     
-    let aspectoInfo = '';
+    // Rango de Aspecto
+    let rangoAspecto = 'Sin aspecto';
+    let aspectoLegadoInfo = '';
+    
     if (u.aspectoLegado) {
         const aspecto = ASPECTOS_LEGADOS[u.aspectoLegado];
+        rangoAspecto = aspecto.rareza;
+        
         const progreso = Math.round((u.pasosAspecto / aspecto.pasos) * 100);
         const barraAspecto = crearBarra(progreso);
-        aspectoInfo = `\n\n🌑 ASPECTO LEGADO: ${aspecto.nombre} ${aspecto.rareza}\n   Progreso: ${barraAspecto}\n   ${u.pasosAspecto}/${aspecto.pasos}`;
+        
+        aspectoLegadoInfo = `
+
+🌑 ASPECTO LEGADO: ${aspecto.nombre}
+   ${aspecto.rareza}
+   Progreso: ${barraAspecto}
+   ${u.pasosAspecto}/${aspecto.pasos}`;
     }
     
+    // Cohorte
     let cohortInfo = '';
     if (u.cohorte && cohortes[u.cohorte]) {
         const cohorte = cohortes[u.cohorte];
-        cohortInfo = `\n\n🔮 COHORTE: ${cohorte.nombre}\n   Lider: @${cohorte.lider}\n   Miembros: ${cohorte.miembros.length}/5`;
+        cohortInfo = `
+
+🔮 COHORTE: ${cohorte.nombre}
+   👑 Líder: @${cohorte.lider}
+   👥 Miembros: ${cohorte.miembros.length}/5`;
     }
     
     return (
@@ -600,7 +624,7 @@ Nombre Verdadero: ${u.nombreVerdadero}
 
 Rango: ${u.rango.toUpperCase()}
 
-Clase: ${u.clase}
+Rango de Aspecto: ${rangoAspecto}
 
 Fragmentos de alma [XP]: ${xpActual}/${xpRequerida}
 ${barraXP}
@@ -612,7 +636,7 @@ Recuerdos:
 ${formatSoloNombres(u.recuerdos)}
 
 Atributos:
-${formatSoloNombres(u.atributos)}${aspectoInfo}${cohortInfo}
+${formatSoloNombres(u.atributos)}${aspectoLegadoInfo}${cohortInfo}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
     );
@@ -860,6 +884,11 @@ async function start() {
 !delrecuerdo <nombre>
 !deleco <nombre>
 
+🌑 ASPECTO LEGADO
+!addaspecto <nombre_aspecto>
+!addaspecto @user <nombre_aspecto>
+!listaraspetos
+
 🌑 COHORTE
 !crearcohorte <nombre>
 !unirseco <id>
@@ -877,6 +906,20 @@ async function start() {
 ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                });
+            }
+
+            // =========================
+            // LISTAR ASPECTOS
+            // =========================
+
+            if (cmd === 'listaraspetos') {
+                const aspectosList = Object.values(ASPECTOS_LEGADOS).map(a => 
+                    `• ${a.nombre} ${a.rareza}\n   Rango mín: ${a.rangoMinimo}\n   Pasos: ${a.pasos}`
+                ).join('\n\n');
+
+                return sock.sendMessage(rawFrom, {
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    🌑 ASPECTOS DISPONIBLES 🌑\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${aspectosList}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
                 });
             }
 
@@ -973,7 +1016,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // RUNAS - MODIFICADO
+            // RUNAS
             // =========================
 
             if (cmd === 'runas') {
@@ -1023,7 +1066,8 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 'setrango', 'setclase', 'setverdadero', 'descverdadero',
                 'addatributo', 'addrecuerdo', 'addeco',
                 'delatributo', 'delrecuerdo', 'deleco',
-                'reset', 'xp', 'desbloquearaspecto', 'crearcohorte'
+                'reset', 'xp', 'desbloquearaspecto', 'crearcohorte',
+                'addaspecto'
             ];
 
             const ownerOnlyCmds = ['resetall'];
@@ -1032,7 +1076,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
             } else if (ownerOnlyCmds.includes(cmd)) {
                 if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
-            } else if (![  'help', 'top', 'nivel', 'perfil', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'setclase', 'legado', 'unirseco', 'salirco', 'miscohortes', 'vercohorte'].includes(cmd)) {
+            } else if (![  'help', 'top', 'nivel', 'perfil', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'setclase', 'legado', 'unirseco', 'salirco', 'miscohortes', 'vercohorte', 'listaraspetos'].includes(cmd)) {
                 return;
             }
 
@@ -1169,6 +1213,50 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     const removed = target.ecos.splice(index, 1)[0];
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { text: `✅ Eco "${removed.nombre}" eliminado.` });
+                }
+
+                case 'addaspecto': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addaspecto <nombre_aspecto>\n        o !addaspecto @user <nombre_aspecto>' });
+                    
+                    // Si hay mención, tomar el aspecto del segundo argumento
+                    let nombreAspecto = args;
+                    
+                    if (mentions.length > 0) {
+                        // El usuario mencionado ya está en targetId
+                        const palabras = args.split(' ');
+                        nombreAspecto = palabras.slice(1).join(' ');
+                    }
+                    
+                    nombreAspecto = nombreAspecto.trim();
+                    
+                    const aspecto = obtenerAspectoPorNombre(nombreAspecto);
+                    
+                    if (!aspecto) {
+                        return sock.sendMessage(rawFrom, { text: `⚠️ Aspecto legado "${nombreAspecto}" no encontrado.\nUsa !listaraspetos para ver los disponibles.` });
+                    }
+                    
+                    // Validar si el usuario tiene el rango mínimo
+                    const rangoUserIndex = RANGOS.indexOf(target.rango);
+                    const rangoMinIndex = RANGOS.indexOf(aspecto.rangoMinimo);
+                    
+                    if (rangoUserIndex < rangoMinIndex) {
+                        return sock.sendMessage(rawFrom, { 
+                            text: `⚠️ @${targetId} no tiene el rango mínimo para este aspecto.\nRango requerido: ${aspecto.rangoMinimo.toUpperCase()}\nRango actual: ${target.rango.toUpperCase()}` 
+                        });
+                    }
+                    
+                    if (target.aspectoLegado) {
+                        return sock.sendMessage(rawFrom, { text: `⚠️ @${targetId} ya tiene un aspecto legado: ${target.aspectoLegado}` });
+                    }
+                    
+                    target.aspectoLegado = nombreAspecto;
+                    target.pasosAspecto = 0;
+                    marcarParaGuardar();
+                    
+                    return sock.sendMessage(rawFrom, { 
+                        text: `🌑 ¡ASPECTO LEGADO OTORGADO A @${targetId}!\n\n${aspecto.nombre} ${aspecto.rareza}\n\n"${aspecto.descripcion}"\n\n${aspecto.efectos.descripcionEfecto}`,
+                        mentions: [targetId + '@s.whatsapp.net']
+                    });
                 }
 
                 case 'desbloquearaspecto': {
