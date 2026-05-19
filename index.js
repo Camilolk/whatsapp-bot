@@ -227,7 +227,7 @@ function cargarUsuarios() {
             
             for (let key in usuariosData) {
                 if (usuariosData[key].xp === undefined) usuariosData[key].xp = 0;
-                if (usuariosData[key].nucleo === undefined) usuariosData[key].nucleo = 'apagado';
+                if (usuariosData[key].clase === undefined) usuariosData[key].clase = 'sin clase';
                 if (usuariosData[key].aspectoLegado === undefined) usuariosData[key].aspectoLegado = null;
                 if (usuariosData[key].pasosAspecto === undefined) usuariosData[key].pasosAspecto = 0;
                 if (usuariosData[key].cohorte === undefined) usuariosData[key].cohorte = null;
@@ -562,55 +562,59 @@ function crearBarra(porcentaje) {
 // =========================
 
 function formatSoloNombres(lista) {
-    if (!lista.length) return '       — vacío —';
-    return lista.map(item => `  ▪ ${item.nombre}`).join('\n');
+    if (!lista.length) return '   • Vacío';
+    return lista.map(item => `   • ${item.nombre}`).join('\n');
 }
+
+// =========================
+// FORMATO SIMPLE Y LIMPIO - MODIFICADO
+// =========================
 
 function format(u) {
     const xpActual = u.xp || 0;
     const xpRequerida = XP_CONFIG[u.rango].xpRequerida;
+    const barraXP = crearBarra(Math.round((xpActual / xpRequerida) * 100));
     
     let aspectoInfo = '';
     if (u.aspectoLegado) {
         const aspecto = ASPECTOS_LEGADOS[u.aspectoLegado];
         const progreso = Math.round((u.pasosAspecto / aspecto.pasos) * 100);
-        aspectoInfo = `\n🌑 ASPECTO LEGADO\n───────────────────────\n${aspecto.nombre} ${aspecto.rareza}\nProgreso: ${u.pasosAspecto}/${aspecto.pasos} (${progreso}%)`;
+        const barraAspecto = crearBarra(progreso);
+        aspectoInfo = `\n\n🌑 ASPECTO LEGADO: ${aspecto.nombre} ${aspecto.rareza}\n   Progreso: ${barraAspecto}\n   ${u.pasosAspecto}/${aspecto.pasos}`;
+    }
+    
+    let cohortInfo = '';
+    if (u.cohorte && cohortes[u.cohorte]) {
+        const cohorte = cohortes[u.cohorte];
+        cohortInfo = `\n\n🔮 COHORTE: ${cohorte.nombre}\n   Lider: @${cohorte.lider}\n   Miembros: ${cohorte.miembros.length}/5`;
     }
     
     return (
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       🔮 H E C H I Z O 🔮
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        📊 TUS RUNAS 📊
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📌 INFORMACIÓN BÁSICA
-───────────────────────
-👤 Nombre   ▸ ${u.nombre}
-⭐ Rango    ▸ ${u.rango}
-💫 Núcleo   ▸ ${u.nucleo}
+Nombre: ${u.nombre}
 
-📊 EXPERIENCIA
-───────────────────────
-XP: ${xpActual}/${xpRequerida}
+Nombre Verdadero: ${u.nombreVerdadero}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Rango: ${u.rango.toUpperCase()}
 
-◈ ${u.nombreVerdadero} ◈
+Clase: ${u.clase}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fragmentos de alma [XP]: ${xpActual}/${xpRequerida}
+${barraXP}
 
-📖 RECUERDOS
-───────────────────────
-${formatSoloNombres(u.recuerdos)}
-
-🌊 ECOS
-───────────────────────
+Ecos:
 ${formatSoloNombres(u.ecos)}
 
-✨ ATRIBUTOS
-───────────────────────
-${formatSoloNombres(u.atributos)}${aspectoInfo}
+Recuerdos:
+${formatSoloNombres(u.recuerdos)}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+Atributos:
+${formatSoloNombres(u.atributos)}${aspectoInfo}${cohortInfo}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
     );
 }
 
@@ -621,7 +625,7 @@ function formatDetalle(titulo, lista) {
     ${titulo}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-       — vacío —
+   • Vacío
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━`
         );
@@ -629,8 +633,8 @@ function formatDetalle(titulo, lista) {
 
     const items = lista.map(item => {
         return item.desc
-            ? `▪ ${item.nombre}\n   └─ ${item.desc}`
-            : `▪ ${item.nombre}\n   └─ Sin descripción.`;
+            ? `• ${item.nombre}\n   └─ ${item.desc}`
+            : `• ${item.nombre}\n   └─ Sin descripción.`;
     }).join('\n\n');
 
     return (
@@ -650,11 +654,11 @@ ${items}
 
 function createUser() {
     return {
-        nombre: '…',
+        nombre: 'Sin nombre',
         nombreVerdadero: '???',
         descVerdadero: null,
         rango: 'durmiente',
-        nucleo: 'apagado',
+        clase: 'sin clase',
         xp: 0,
         recuerdos: [],
         ecos: [],
@@ -685,6 +689,7 @@ async function start() {
         const { connection, lastDisconnect, qr } = update;
         
         if (qr) {
+            console.log('📱 Escanea este QR:');
             qrcode.generate(qr, { small: true });
         }
         
@@ -704,10 +709,11 @@ async function start() {
         if (connection === 'close') {
             const shouldReconnect = (lastDisconnect?.error)?.output?.statusCode !== DisconnectReason.loggedOut;
             if (shouldReconnect) {
-                console.log('🔄 Reconectando...');
+                console.log('🔄 Reconectando en 3 segundos...');
                 setTimeout(() => start(), 3000);
             } else {
-                console.log('❌ Desconectado permanentemente');
+                console.log('❌ Desconectado por logout - escanea QR nuevamente');
+                setTimeout(() => start(), 5000);
             }
         }
     });
@@ -826,11 +832,11 @@ async function start() {
             if (cmd === 'help' && args === '') {
                 return sock.sendMessage(rawFrom, {
                     text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        🔮 R U N A S 🔮
+        🔮 COMANDOS 🔮
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📖 COMANDOS DE CONSULTA
-!runas, !nivel, !top, !miid
+📖 CONSULTA
+!perfil, !nivel, !top, !miid
 !legado - Ver tu aspecto legado
 
 📜 VER DETALLES
@@ -838,14 +844,21 @@ async function start() {
 
 👤 PARA TODOS
 !setnombre <name>
+!setclase <clase>
 
 ⚙️ ADMIN/OWNER
 !setrango @user <rango>
-!setnucleo @user <nucleo>
+!setclase @user <clase>
 !setverdadero <nombre>
 !xp @user <cantidad>
 !reset @user
 !desbloquearaspecto @user
+!addatributo "nombre" "desc"
+!addrecuerdo "nombre" "desc"
+!addeco "nombre" "desc"
+!delatributo <nombre>
+!delrecuerdo <nombre>
+!deleco <nombre>
 
 🌑 COHORTE
 !crearcohorte <nombre>
@@ -876,6 +889,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     id,
                     nombre: user.nombre,
                     rango: user.rango,
+                    clase: user.clase,
                     xp: user.xp || 0,
                     aspectoLegado: user.aspectoLegado,
                     puntuacion: calcularPuntuacionRango(user.rango, user.xp || 0)
@@ -885,14 +899,14 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 const top10 = usuariosArray.slice(0, 10);
 
                 if (top10.length === 0) {
-                    return sock.sendMessage(rawFrom, { text: '⚠️ No hay usuarios con runas aún.' });
+                    return sock.sendMessage(rawFrom, { text: '⚠️ No hay usuarios aún.' });
                 }
 
                 const topLista = top10.map((user, index) => {
                     const config = XP_CONFIG[user.rango];
                     const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
                     const aspectoInfo = user.aspectoLegado ? `\n   🌑 ${user.aspectoLegado}` : '';
-                    return `${medal} @${user.id}\n   📝 ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   💫 ${user.xp}/${config.xpRequerida} XP${aspectoInfo}`;
+                    return `${medal} @${user.id}\n   📝 ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   🎓 ${user.clase}\n   💫 ${user.xp}/${config.xpRequerida} XP${aspectoInfo}`;
                 }).join('\n\n');
 
                 const mentions = top10.map(u => u.id + '@s.whatsapp.net');
@@ -904,25 +918,18 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // NIVEL
+            // NIVEL / PERFIL
             // =========================
 
-            if (cmd === 'nivel') {
+            if (cmd === 'perfil' || cmd === 'nivel') {
                 const targetId = userId;
                 
                 if (!usuarios[targetId]) {
-                    return sock.sendMessage(rawFrom, { text: '⚠️ Ese usuario aún no tiene runas.' });
+                    return sock.sendMessage(rawFrom, { text: '⚠️ Usuario no encontrado.' });
                 }
                 
                 const target = usuarios[targetId];
-                const xpActual = target.xp || 0;
-                const config = XP_CONFIG[target.rango];
-                const porcentajeXP = Math.round((xpActual / config.xpRequerida) * 100);
-                const barraXP = crearBarra(porcentajeXP);
-                
-                return sock.sendMessage(rawFrom, {
-                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    📊 ESTADÍSTICAS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👤 ${target.nombre}\n⭐ ${target.rango.toUpperCase()}\n💫 ${target.nucleo}\n\n${barraXP}\n\n${xpActual} / ${config.xpRequerida} XP\nProgreso: ${porcentajeXP}%\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-                });
+                return sock.sendMessage(rawFrom, { text: format(target) });
             }
 
             // =========================
@@ -951,11 +958,22 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnombre <nombre>' });
                 user.nombre = args;
                 marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Tu nombre ha sido cambiado a: ${args}` });
+                return sock.sendMessage(rawFrom, { text: `✨ Tu nombre: ${args}` });
             }
 
             // =========================
-            // RUNAS
+            // SETCLASE
+            // =========================
+
+            if (cmd === 'setclase') {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setclase <clase>' });
+                user.clase = args;
+                marcarParaGuardar();
+                return sock.sendMessage(rawFrom, { text: `✨ Tu clase: ${args}` });
+            }
+
+            // =========================
+            // RUNAS - MODIFICADO
             // =========================
 
             if (cmd === 'runas') {
@@ -1002,7 +1020,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             // =========================
 
             const adminCmds = [
-                'setrango', 'setnucleo', 'setverdadero', 'descverdadero',
+                'setrango', 'setclase', 'setverdadero', 'descverdadero',
                 'addatributo', 'addrecuerdo', 'addeco',
                 'delatributo', 'delrecuerdo', 'deleco',
                 'reset', 'xp', 'desbloquearaspecto', 'crearcohorte'
@@ -1014,7 +1032,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
             } else if (ownerOnlyCmds.includes(cmd)) {
                 if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
-            } else if (![  'help', 'top', 'nivel', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'legado', 'unirseco', 'salirco', 'miscohortes', 'vercohorte'].includes(cmd)) {
+            } else if (![  'help', 'top', 'nivel', 'perfil', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'setclase', 'legado', 'unirseco', 'salirco', 'miscohortes', 'vercohorte'].includes(cmd)) {
                 return;
             }
 
@@ -1071,15 +1089,15 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     });
                 }
 
-                case 'setnucleo': {
-                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnucleo @user <nucleo>' });
+                case 'setclase': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setclase @user <clase>' });
                     
-                    const nucleo = args.split(' ').pop();
+                    const clase = args.split(' ').pop();
                     
-                    target.nucleo = nucleo;
+                    target.clase = clase;
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { 
-                        text: `✨ Núcleo de @${targetId} → ${nucleo}`,
+                        text: `✨ Clase de @${targetId} → ${clase}`,
                         mentions: [targetId + '@s.whatsapp.net']
                     });
                 }
@@ -1182,7 +1200,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     usuarios[targetId] = createUser();
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { 
-                        text: `🔄 Runas de @${targetId} han sido reseteadas.`,
+                        text: `🔄 Perfil de @${targetId} ha sido reseteado.`,
                         mentions: [targetId + '@s.whatsapp.net']
                     });
                 }
@@ -1193,7 +1211,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     }
                     
                     marcarParaGuardar();
-                    return sock.sendMessage(rawFrom, { text: `🔄 TODAS las runas han sido reseteadas.` });
+                    return sock.sendMessage(rawFrom, { text: `🔄 TODOS los perfiles han sido reseteados.` });
                 }
 
                 case 'xp': {
