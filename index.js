@@ -575,7 +575,7 @@ function formatSoloNombres(lista) {
 }
 
 // =========================
-// FORMATO SIMPLE Y LIMPIO - MODIFICADO
+// FORMATO SIMPLE Y LIMPIO
 // =========================
 
 function format(u) {
@@ -583,7 +583,6 @@ function format(u) {
     const xpRequerida = XP_CONFIG[u.rango].xpRequerida;
     const barraXP = crearBarra(Math.round((xpActual / xpRequerida) * 100));
     
-    // Rango de Aspecto
     let rangoAspecto = 'Sin aspecto';
     let aspectoLegadoInfo = '';
     
@@ -602,7 +601,6 @@ function format(u) {
    ${u.pasosAspecto}/${aspecto.pasos}`;
     }
     
-    // Cohorte
     let cohortInfo = '';
     if (u.cohorte && cohortes[u.cohorte]) {
         const cohorte = cohortes[u.cohorte];
@@ -750,13 +748,6 @@ async function start() {
             if (!message.message) return;
             if (message.key.fromMe) return;
 
-            // Si bot desactivado, solo owners pueden usar
-            if (!botActivo) {
-                const rawFrom = message.key.remoteJid;
-                const userId = extractUserId(message.key.participant || rawFrom);
-                if (!OWNERS.has(userId)) return;
-            }
-
             const rawFrom = message.key.remoteJid;
             const userId = extractUserId(message.key.participant || rawFrom);
             const isGroup = rawFrom.includes('@g.us');
@@ -818,23 +809,53 @@ async function start() {
             const args = argsArr.join(' ').trim();
 
             // =========================
+            // DEFINIR COMANDOS PERMITIDOS
+            // =========================
+
+            const adminCmds = [
+                'setrango', 'setclase', 'setverdadero', 'descverdadero',
+                'addatributo', 'addrecuerdo', 'addeco',
+                'delatributo', 'delrecuerdo', 'deleco',
+                'reset', 'xp', 'desbloquearaspecto', 'crearcohorte',
+                'addaspecto'
+            ];
+
+            const ownerOnlyCmds = ['resetall', 'activarbot', 'desactivarbot', 'estadobot'];
+
+            const comandosPermitidos = [
+                'help', 'top', 'nivel', 'perfil', 'miid', 'runas', 'vernombre', 
+                'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'setclase', 
+                'legado', 'unirseco', 'salirco', 'miscohortes', 'vercohorte', 
+                'listaraspetos',
+                ...adminCmds,
+                ...ownerOnlyCmds
+            ];
+
+            if (!comandosPermitidos.includes(cmd)) return;
+
+            if (adminCmds.includes(cmd) && !canUseAdminCmds) {
+                return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
+            }
+
+            if (ownerOnlyCmds.includes(cmd) && !isOwner) {
+                return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
+            }
+
+            // =========================
             // COMANDOS OWNER ESPECIALES
             // =========================
 
             if (cmd === 'activarbot') {
-                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners' });
                 botActivo = true;
                 return sock.sendMessage(rawFrom, { text: '✅ Bot ACTIVADO - XP activo' });
             }
 
             if (cmd === 'desactivarbot') {
-                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners' });
                 botActivo = false;
                 return sock.sendMessage(rawFrom, { text: '❌ Bot DESACTIVADO - Solo owners pueden usar comandos' });
             }
 
             if (cmd === 'estadobot') {
-                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners' });
                 const estado = botActivo ? '✅ ACTIVO' : '❌ DESACTIVADO';
                 return sock.sendMessage(rawFrom, { text: `Estado del bot: ${estado}` });
             }
@@ -853,7 +874,7 @@ async function start() {
             // HELP
             // =========================
 
-            if (cmd === 'help' && args === '') {
+            if (cmd === 'help') {
                 return sock.sendMessage(rawFrom, {
                     text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━
         🔮 COMANDOS 🔮
@@ -965,14 +986,11 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             // =========================
 
             if (cmd === 'perfil' || cmd === 'nivel') {
-                const targetId = userId;
-                
-                if (!usuarios[targetId]) {
+                if (!usuarios[userId]) {
                     return sock.sendMessage(rawFrom, { text: '⚠️ Usuario no encontrado.' });
                 }
                 
-                const target = usuarios[targetId];
-                return sock.sendMessage(rawFrom, { text: format(target) });
+                return sock.sendMessage(rawFrom, { text: format(user) });
             }
 
             // =========================
@@ -1059,28 +1077,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // PROTECCIÓN ADMIN/OWNER
-            // =========================
-
-            const adminCmds = [
-                'setrango', 'setclase', 'setverdadero', 'descverdadero',
-                'addatributo', 'addrecuerdo', 'addeco',
-                'delatributo', 'delrecuerdo', 'deleco',
-                'reset', 'xp', 'desbloquearaspecto', 'crearcohorte',
-                'addaspecto'
-            ];
-
-            const ownerOnlyCmds = ['resetall'];
-
-            if (adminCmds.includes(cmd)) {
-                if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
-            } else if (ownerOnlyCmds.includes(cmd)) {
-                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
-            } else if (![  'help', 'top', 'nivel', 'perfil', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'setclase', 'legado', 'unirseco', 'salirco', 'miscohortes', 'vercohorte', 'listaraspetos'].includes(cmd)) {
-                return;
-            }
-
-            // =========================
             // OBTENER TARGET
             // =========================
 
@@ -1095,7 +1091,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             const target = usuarios[targetId];
 
             // =========================
-            // COMANDOS
+            // COMANDOS (Switch)
             // =========================
 
             switch (cmd) {
@@ -1218,11 +1214,9 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 case 'addaspecto': {
                     if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addaspecto <nombre_aspecto>\n        o !addaspecto @user <nombre_aspecto>' });
                     
-                    // Si hay mención, tomar el aspecto del segundo argumento
                     let nombreAspecto = args;
                     
                     if (mentions.length > 0) {
-                        // El usuario mencionado ya está en targetId
                         const palabras = args.split(' ');
                         nombreAspecto = palabras.slice(1).join(' ');
                     }
@@ -1235,7 +1229,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                         return sock.sendMessage(rawFrom, { text: `⚠️ Aspecto legado "${nombreAspecto}" no encontrado.\nUsa !listaraspetos para ver los disponibles.` });
                     }
                     
-                    // Validar si el usuario tiene el rango mínimo
                     const rangoUserIndex = RANGOS.indexOf(target.rango);
                     const rangoMinIndex = RANGOS.indexOf(aspecto.rangoMinimo);
                     
@@ -1273,7 +1266,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     target.pasosAspecto += 1;
                     marcarParaGuardar();
                     
-                    const progreso = Math.round((target.pasosAspecto / aspecto.pasos) * 100);
                     const msg = target.pasosAspecto >= aspecto.pasos 
                         ? `🎆 ¡ASPECTO LEGADO DESBLOQUEADO!\n\n${aspecto.nombre}\n\n${aspecto.efectos.descripcionEfecto}`
                         : `📈 Progreso: ${target.pasosAspecto}/${aspecto.pasos}`;
@@ -1334,7 +1326,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     });
                 }
 
-                // COHORTES
                 case 'crearcohorte': {
                     if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !crearcohorte <nombre>' });
                     const res = crearCohorte(args, userId);
@@ -1369,9 +1360,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                         mentions: [c.lider + '@s.whatsapp.net', ...c.miembros.map(m => m + '@s.whatsapp.net')]
                     });
                 }
-
-                default:
-                    return;
             }
 
         } catch (error) {
@@ -1381,7 +1369,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
     });
 }
 
-// Iniciar
 start().catch(err => {
     console.log('Error fatal:', err);
     setTimeout(() => start(), 5000);
