@@ -30,7 +30,7 @@ const RANGOS = [
 ];
 
 // =========================
-// ASPECTOS LEGADOS (DARK SOULS + SHADOW SLAVE)
+// ASPECTOS LEGADOS
 // =========================
 
 const ASPECTOS_LEGADOS = {
@@ -217,6 +217,7 @@ function verificarCooldown(userId, comando, minutos) {
 // =========================
 
 const DATA_FILE = path.join(__dirname, 'usuarios.json');
+const COHORTES_FILE = path.join(__dirname, 'cohortes.json');
 
 function cargarUsuarios() {
     if (fs.existsSync(DATA_FILE)) {
@@ -229,6 +230,7 @@ function cargarUsuarios() {
                 if (usuariosData[key].nucleo === undefined) usuariosData[key].nucleo = 'apagado';
                 if (usuariosData[key].aspectoLegado === undefined) usuariosData[key].aspectoLegado = null;
                 if (usuariosData[key].pasosAspecto === undefined) usuariosData[key].pasosAspecto = 0;
+                if (usuariosData[key].cohorte === undefined) usuariosData[key].cohorte = null;
             }
             
             return usuariosData;
@@ -240,8 +242,20 @@ function cargarUsuarios() {
     return {};
 }
 
+function cargarCohortes() {
+    if (fs.existsSync(COHORTES_FILE)) {
+        try {
+            return JSON.parse(fs.readFileSync(COHORTES_FILE, 'utf8'));
+        } catch (e) {
+            return {};
+        }
+    }
+    return {};
+}
+
 let saveInterval = null;
 let needsSave = false;
+let botActivo = true;
 
 function marcarParaGuardar() {
     needsSave = true;
@@ -253,16 +267,24 @@ function guardarUsuarios() {
     try {
         fs.writeFileSync(DATA_FILE, JSON.stringify(usuarios, null, 2), 'utf8');
         needsSave = false;
-        console.log('💾 Datos guardados');
     } catch (error) {
         console.error('Error guardando usuarios:', error);
     }
 }
 
+function guardarCohortes() {
+    try {
+        fs.writeFileSync(COHORTES_FILE, JSON.stringify(cohortes, null, 2), 'utf8');
+    } catch (error) {
+        console.error('Error guardando cohortes:', error);
+    }
+}
+
 const usuarios = cargarUsuarios();
+let cohortes = cargarCohortes();
 
 // =========================
-// UTILIDAD: EXTRAE ID LIMPIA
+// UTILIDAD: extrae el ID limpio
 // =========================
 
 function extractUserId(jid) {
@@ -292,9 +314,8 @@ function getMentionedUsers(message) {
 
 function obtenerAspectoAleatorio(rango) {
     const aspectosDisponibles = Object.values(ASPECTOS_LEGADOS).filter(a => {
-        const rangos = ['durmiente', 'despierto', 'maestro', 'santo', 'supremo', 'sagrado', 'divino'];
-        const rangoUserIndex = rangos.indexOf(rango);
-        const rangoMinIndex = rangos.indexOf(a.rangoMinimo);
+        const rangoUserIndex = RANGOS.indexOf(rango);
+        const rangoMinIndex = RANGOS.indexOf(a.rangoMinimo);
         return rangoUserIndex >= rangoMinIndex;
     });
     
@@ -312,7 +333,7 @@ function calcularPuntuacionRango(rango, xp) {
 }
 
 // =========================
-// FUNCIÓN: Añadir XP
+// FUNCIÓN: Añadir XP (mensajes normales)
 // =========================
 
 function añadirXP(userId, cantidad) {
@@ -326,7 +347,6 @@ function añadirXP(userId, cantidad) {
     
     let xpGanada = Math.floor(cantidad * config.multiplicador);
     
-    // Aplicar multiplicador del aspecto legado
     if (user.aspectoLegado) {
         const aspecto = ASPECTOS_LEGADOS[user.aspectoLegado];
         if (aspecto && user.pasosAspecto >= aspecto.pasos) {
@@ -344,16 +364,18 @@ function añadirXP(userId, cantidad) {
         user.rango = nuevoRango;
         user.xp = 0;
         
-        // Verificar si obtiene aspecto legado
         let tieneAspecto = false;
         if (!user.aspectoLegado) {
             const random = Math.random();
             const probabilidad = nuevoRango === 'despierto' ? 0.3 : nuevoRango === 'maestro' ? 0.4 : nuevoRango === 'santo' ? 0.5 : 0.6;
             
             if (random < probabilidad) {
-                user.aspectoLegado = obtenerAspectoAleatorio(nuevoRango).nombre;
-                user.pasosAspecto = 0;
-                tieneAspecto = true;
+                const aspecto = obtenerAspectoAleatorio(nuevoRango);
+                if (aspecto) {
+                    user.aspectoLegado = aspecto.nombre;
+                    user.pasosAspecto = 0;
+                    tieneAspecto = true;
+                }
             }
         }
         
@@ -403,15 +425,17 @@ function añadirXPDirecto(userId, cantidad) {
             user.xp -= config.xpRequerida;
             ascensos.push({ anterior, nuevo: user.rango });
             
-            // Verificar aspecto
             if (!user.aspectoLegado) {
                 const random = Math.random();
                 const probabilidad = user.rango === 'despierto' ? 0.3 : user.rango === 'maestro' ? 0.4 : user.rango === 'santo' ? 0.5 : 0.6;
                 
                 if (random < probabilidad) {
-                    user.aspectoLegado = obtenerAspectoAleatorio(user.rango).nombre;
-                    user.pasosAspecto = 0;
-                    nuevoAspecto = user.aspectoLegado;
+                    const aspecto = obtenerAspectoAleatorio(user.rango);
+                    if (aspecto) {
+                        user.aspectoLegado = aspecto.nombre;
+                        user.pasosAspecto = 0;
+                        nuevoAspecto = user.aspectoLegado;
+                    }
                 }
             }
         } else {
@@ -432,6 +456,77 @@ function añadirXPDirecto(userId, cantidad) {
     marcarParaGuardar();
     
     return { ascensos, rangoFinal: user.rango, xpFinal: user.xp, nuevoAspecto };
+}
+
+// =========================
+// COMANDOS DE COHORTE
+// =========================
+
+function crearCohorte(nombre, lider) {
+    if (Object.values(cohortes).some(c => c.nombre === nombre)) {
+        return { error: true, msg: '⚠️ Ese nombre de cohorte ya existe.' };
+    }
+    
+    const cohortId = Math.random().toString(36).substring(7);
+    cohortes[cohortId] = {
+        id: cohortId,
+        nombre,
+        lider,
+        miembros: [lider],
+        xpTotal: 0,
+        nivel: 1,
+        creada: new Date().toISOString()
+    };
+    guardarCohortes();
+    
+    usuarios[lider].cohorte = cohortId;
+    marcarParaGuardar();
+    
+    return { error: false, id: cohortId, msg: `✨ Cohorte "${nombre}" creada (ID: ${cohortId})` };
+}
+
+function unirseCohorte(userId, cohortId) {
+    if (!cohortes[cohortId]) {
+        return { error: true, msg: '⚠️ Cohorte no encontrada.' };
+    }
+    
+    if (usuarios[userId]?.cohorte) {
+        return { error: true, msg: '⚠️ Ya estás en una cohorte.' };
+    }
+    
+    if (cohortes[cohortId].miembros.length >= 5) {
+        return { error: true, msg: '⚠️ Cohorte llena (máx 5 miembros).' };
+    }
+    
+    cohortes[cohortId].miembros.push(userId);
+    usuarios[userId].cohorte = cohortId;
+    guardarCohortes();
+    marcarParaGuardar();
+    
+    return { error: false, msg: `✨ Te has unido a "${cohortes[cohortId].nombre}"` };
+}
+
+function salirCohorte(userId) {
+    const cohortId = usuarios[userId]?.cohorte;
+    if (!cohortId) return { error: true, msg: '⚠️ No estás en una cohorte.' };
+    
+    const cohorte = cohortes[cohortId];
+    if (cohorte.lider === userId) {
+        delete cohortes[cohortId];
+        Object.keys(usuarios).forEach(k => {
+            if (usuarios[k].cohorte === cohortId) usuarios[k].cohorte = null;
+        });
+        guardarCohortes();
+        marcarParaGuardar();
+        return { error: false, msg: `🔄 Cohorte "${cohorte.nombre}" eliminada.` };
+    }
+    
+    cohorte.miembros = cohorte.miembros.filter(m => m !== userId);
+    usuarios[userId].cohorte = null;
+    guardarCohortes();
+    marcarParaGuardar();
+    
+    return { error: false, msg: `✨ Saliste de "${cohorte.nombre}"` };
 }
 
 // =========================
@@ -565,7 +660,8 @@ function createUser() {
         ecos: [],
         atributos: [],
         aspectoLegado: null,
-        pasosAspecto: 0
+        pasosAspecto: 0,
+        cohorte: null
     };
 }
 
@@ -579,7 +675,10 @@ async function start() {
     const sock = makeWASocket({
         auth: state,
         logger: pino({ level: 'silent' }),
-        printQRInTerminal: true
+        printQRInTerminal: true,
+        browser: ['Hechizo Bot', 'Chrome', '120.0.0.0'],
+        maxMsgsInMemory: 100,
+        shouldIgnoreJid: (jid) => jid.includes('status@broadcast')
     });
 
     sock.ev.on('connection.update', (update) => {
@@ -592,7 +691,7 @@ async function start() {
         if (connection === 'open') {
             console.log(`
 🔮══════════════════════🔮
-   HECHIZO ESTABLE
+   HECHIZO ESTABLE ✅
    RUNAS ACTIVAS
    MODO OPTIMIZADO ⚡
 🔮══════════════════════🔮
@@ -603,10 +702,12 @@ async function start() {
         }
         
         if (connection === 'close') {
-            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-            console.log('Desconectado, reintentando...');
+            const shouldReconnect = (lastDisconnect?.error)?.output?.statusCode !== DisconnectReason.loggedOut;
             if (shouldReconnect) {
+                console.log('🔄 Reconectando...');
                 setTimeout(() => start(), 3000);
+            } else {
+                console.log('❌ Desconectado permanentemente');
             }
         }
     });
@@ -618,6 +719,13 @@ async function start() {
             const message = m.messages[0];
             if (!message.message) return;
             if (message.key.fromMe) return;
+
+            // Si bot desactivado, solo owners pueden usar
+            if (!botActivo) {
+                const rawFrom = message.key.remoteJid;
+                const userId = extractUserId(message.key.participant || rawFrom);
+                if (!OWNERS.has(userId)) return;
+            }
 
             const rawFrom = message.key.remoteJid;
             const userId = extractUserId(message.key.participant || rawFrom);
@@ -655,7 +763,7 @@ async function start() {
             // SISTEMA DE XP
             // =========================
             
-            if (!body.startsWith(PREFIX) && body.length > 0) {
+            if (!body.startsWith(PREFIX) && body.length > 0 && botActivo) {
                 const resultadoXP = añadirXP(userId, XP_CONFIG[user.rango].xpPorMensaje);
                 
                 if (resultadoXP.subioDe) {
@@ -678,6 +786,28 @@ async function start() {
             const [cmdRaw, ...argsArr] = body.slice(PREFIX.length).split(' ');
             const cmd = cmdRaw.toLowerCase();
             const args = argsArr.join(' ').trim();
+
+            // =========================
+            // COMANDOS OWNER ESPECIALES
+            // =========================
+
+            if (cmd === 'activarbot') {
+                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners' });
+                botActivo = true;
+                return sock.sendMessage(rawFrom, { text: '✅ Bot ACTIVADO - XP activo' });
+            }
+
+            if (cmd === 'desactivarbot') {
+                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners' });
+                botActivo = false;
+                return sock.sendMessage(rawFrom, { text: '❌ Bot DESACTIVADO - Solo owners pueden usar comandos' });
+            }
+
+            if (cmd === 'estadobot') {
+                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners' });
+                const estado = botActivo ? '✅ ACTIVO' : '❌ DESACTIVADO';
+                return sock.sendMessage(rawFrom, { text: `Estado del bot: ${estado}` });
+            }
 
             // =========================
             // DEBUG ID
@@ -714,10 +844,20 @@ async function start() {
 !setnucleo @user <nucleo>
 !setverdadero <nombre>
 !xp @user <cantidad>
-!reset
-!desbloquearaspecto @user - Avanza paso del aspecto
+!reset @user
+!desbloquearaspecto @user
 
-📌 SOLO OWNER
+🌑 COHORTE
+!crearcohorte <nombre>
+!unirseco <id>
+!salirco
+!miscohortes
+!vercohorte
+
+👑 OWNER SOLO
+!activarbot
+!desactivarbot
+!estadobot
 !resetall
 
 🎯 RANGOS
@@ -728,7 +868,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // TOP 10 (CON MENCIONES)
+            // TOP 10
             // =========================
 
             if (cmd === 'top') {
@@ -786,7 +926,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // LEGADO - Ver aspecto legado
+            // LEGADO
             // =========================
 
             if (cmd === 'legado') {
@@ -799,25 +939,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 const barra = crearBarra(progreso);
                 
                 return sock.sendMessage(rawFrom, {
-                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    🌑 ${aspecto.nombre.toUpperCase()} 🌑
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${aspecto.rareza}
-
-"${aspecto.descripcion}"
-
-───────────────────────
-💫 DESBLOQUEANDO PODER
-
-${barra}
-
-Pasos: ${user.pasosAspecto}/${aspecto.pasos}
-
-⚡ Cuando se desbloquee:
-${aspecto.efectos.descripcionEfecto}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    🌑 ${aspecto.nombre.toUpperCase()} 🌑\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${aspecto.rareza}\n\n"${aspecto.descripcion}"\n\n───────────────────────\n💫 DESBLOQUEANDO PODER\n\n${barra}\n\nPasos: ${user.pasosAspecto}/${aspecto.pasos}\n\n⚡ Cuando se desbloquee:\n${aspecto.efectos.descripcionEfecto}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
                 });
             }
 
@@ -883,7 +1005,7 @@ ${aspecto.efectos.descripcionEfecto}
                 'setrango', 'setnucleo', 'setverdadero', 'descverdadero',
                 'addatributo', 'addrecuerdo', 'addeco',
                 'delatributo', 'delrecuerdo', 'deleco',
-                'reset', 'xp', 'desbloquearaspecto'
+                'reset', 'xp', 'desbloquearaspecto', 'crearcohorte'
             ];
 
             const ownerOnlyCmds = ['resetall'];
@@ -892,12 +1014,12 @@ ${aspecto.efectos.descripcionEfecto}
                 if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
             } else if (ownerOnlyCmds.includes(cmd)) {
                 if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
-            } else if (![  'help', 'top', 'nivel', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'legado'].includes(cmd)) {
+            } else if (![  'help', 'top', 'nivel', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre', 'legado', 'unirseco', 'salirco', 'miscohortes', 'vercohorte'].includes(cmd)) {
                 return;
             }
 
             // =========================
-            // OBTENER TARGET CON MENCIÓN
+            // OBTENER TARGET
             // =========================
 
             let targetId = userId;
@@ -911,7 +1033,7 @@ ${aspecto.efectos.descripcionEfecto}
             const target = usuarios[targetId];
 
             // =========================
-            // COMANDOS ADMIN
+            // COMANDOS
             // =========================
 
             switch (cmd) {
@@ -1075,7 +1197,7 @@ ${aspecto.efectos.descripcionEfecto}
                 }
 
                 case 'xp': {
-                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp @user <cantidad> o !xp <cantidad>' });
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp @user <cantidad>' });
                     
                     const partes = args.split(' ');
                     const cantidad = parseInt(partes[partes.length - 1]);
@@ -1106,12 +1228,48 @@ ${aspecto.efectos.descripcionEfecto}
                     });
                 }
 
+                // COHORTES
+                case 'crearcohorte': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !crearcohorte <nombre>' });
+                    const res = crearCohorte(args, userId);
+                    return sock.sendMessage(rawFrom, { text: res.msg });
+                }
+
+                case 'unirseco': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !unirseco <id>' });
+                    const res = unirseCohorte(userId, args);
+                    return sock.sendMessage(rawFrom, { text: res.msg });
+                }
+
+                case 'salirco': {
+                    const res = salirCohorte(userId);
+                    return sock.sendMessage(rawFrom, { text: res.msg });
+                }
+
+                case 'miscohortes': {
+                    const misCohort = Object.values(cohortes).filter(c => c.miembros.includes(userId));
+                    if (misCohort.length === 0) return sock.sendMessage(rawFrom, { text: '⚠️ Sin cohortes' });
+                    const cohortesInfo = misCohort.map(c => `${c.nombre} (${c.miembros.length}/5)\nID: ${c.id}`).join('\n\n');
+                    return sock.sendMessage(rawFrom, { text: `🌑 Mis Cohortes:\n\n${cohortesInfo}` });
+                }
+
+                case 'vercohorte': {
+                    const userCohorte = usuarios[userId]?.cohorte;
+                    if (!userCohorte || !cohortes[userCohorte]) return sock.sendMessage(rawFrom, { text: '⚠️ No estás en cohorte' });
+                    const c = cohortes[userCohorte];
+                    const miembrosInfo = c.miembros.map(m => `@${m} - ${usuarios[m]?.nombre || 'Desconocido'} (${usuarios[m]?.rango})`).join('\n');
+                    return sock.sendMessage(rawFrom, { 
+                        text: `🌑 ${c.nombre}\n\n👑 Lider: @${c.lider}\n\nMiembros:\n${miembrosInfo}`,
+                        mentions: [c.lider + '@s.whatsapp.net', ...c.miembros.map(m => m + '@s.whatsapp.net')]
+                    });
+                }
+
                 default:
                     return;
             }
 
         } catch (error) {
-            console.error('Error en mensaje:', error);
+            console.error('Error en mensaje:', error.message);
         }
 
     });
