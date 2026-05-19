@@ -1,5 +1,5 @@
 const pino = require('pino');
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, proto } = require('@whiskeysockets/baileys');
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, proto, jidDecode } = require('@whiskeysockets/baileys');
 const fs = require('fs');
 const path = require('path');
 const qrcode = require('qrcode-terminal');
@@ -110,13 +110,29 @@ function guardarUsuarios() {
 const usuarios = cargarUsuarios();
 
 // =========================
-// UTILIDAD: extrae el ID limpio
+// UTILIDAD: EXTRAE ID LIMPIA (CORREGIDA)
 // =========================
 
-function extractUserId(raw) {
-    if (!raw) return null;
-    const base = raw.includes('@') ? raw.split('@')[0] : raw;
-    return base.replace(/\D/g, '') || null;
+function extractUserId(jid) {
+    if (!jid) return null;
+    // Elimina @s.whatsapp.net, @c.us, @g.us
+    return jid.split('@')[0];
+}
+
+// =========================
+// UTILIDAD: Obtiene menciones correctamente
+// =========================
+
+function getMentionedUsers(message) {
+    const mentions = [];
+    
+    if (message.message?.extendedTextMessage?.contextInfo?.mentionedJid) {
+        message.message.extendedTextMessage.contextInfo.mentionedJid.forEach(jid => {
+            mentions.push(extractUserId(jid));
+        });
+    }
+    
+    return mentions;
 }
 
 // =========================
@@ -387,13 +403,28 @@ async function start() {
         if (message.key.fromMe) return;
 
         const rawFrom = message.key.remoteJid;
-        const userId = extractUserId(rawFrom);
+        const userId = extractUserId(message.key.participant || rawFrom);
         const isGroup = rawFrom.includes('@g.us');
         
         if (!userId) return;
 
         const isOwner = OWNERS.has(userId);
         let isAdmin = false;
+        
+        // Detectar admin del grupo
+        if (isGroup) {
+            try {
+                const groupMetadata = await sock.groupMetadata(rawFrom);
+                const participant = groupMetadata.participants.find(p => extractUserId(p.id) === userId);
+                if (participant && (participant.admin === 'admin' || participant.admin === 'superadmin')) {
+                    isAdmin = true;
+                }
+            } catch (error) {
+                //
+            }
+        }
+        
+        const canUseAdminCmds = isOwner || isAdmin;
         
         if (!usuarios[userId]) usuarios[userId] = createUser();
         const user = usuarios[userId];
@@ -434,7 +465,7 @@ async function start() {
 
         if (cmd === 'miid') {
             return sock.sendMessage(rawFrom, {
-                text: `🔮 Tu Hechizo ID:\n${userId}\n\nNombre: ${user.nombre}\nIs Owner: ${isOwner}`
+                text: `🔮 Tu Hechizo ID:\n${userId}\n\nNombre: ${user.nombre}\nIs Owner: ${isOwner}\nIs Admin: ${isAdmin}`
             });
         }
 
@@ -458,10 +489,14 @@ async function start() {
 !setnombre <name>
 
 ⚙️ ADMIN/OWNER
-!setrango, !setnucleo, !setverdadero
-!addatributo, !addrecuerdo, !addeco
-!delatributo, !delrecuerdo, !deleco
-!reset, !resetall, !xp
+!setrango @user <rango>
+!setnucleo @user <nucleo>
+!setverdadero <nombre>
+!xp @user <cantidad>
+!reset
+
+📌 SOLO OWNER
+!resetall
 
 🎯 RANGOS
 ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
@@ -582,20 +617,35 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
         // =========================
 
         const adminCmds = [
-            'setverdadero', 'descverdadero',
-            'setrango', 'setnucleo',
+            'setrango', 'setnucleo', 'setverdadero', 'descverdadero',
             'addatributo', 'addrecuerdo', 'addeco',
             'delatributo', 'delrecuerdo', 'deleco',
-            'reset', 'resetall', 'xp',
-            'otorgar', 'impulsar', 'castigar',
-            'estadisticas', 'recompensar', 'invocar'
+            'reset', 'xp'
         ];
 
+        const ownerOnlyCmds = ['resetall'];
+
         if (adminCmds.includes(cmd)) {
-            if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo owners.' });
-        } else {
+            if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
+        } else if (ownerOnlyCmds.includes(cmd)) {
+            if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
+        } else if (cmd !== 'help' && cmd !== 'top' && cmd !== 'nivel' && cmd !== 'miid' && cmd !== 'runas' && cmd !== 'vernombre' && cmd !== 'veratributos' && cmd !== 'verrecuerdos' && cmd !== 'verecos' && cmd !== 'setnombre') {
             return;
         }
+
+        // =========================
+        // OBTENER TARGET CON MENCIÓN
+        // =========================
+
+        let targetId = userId;
+        const mentions = getMentionedUsers(message);
+        
+        if (mentions.length > 0) {
+            targetId = mentions[0];
+        }
+
+        if (!usuarios[targetId]) usuarios[targetId] = createUser();
+        const target = usuarios[targetId];
 
         // =========================
         // COMANDOS ADMIN
@@ -605,48 +655,51 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
             case 'setverdadero':
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setverdadero <nombre>' });
-                user.nombreVerdadero = args;
+                target.nombreVerdadero = args;
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✨ Nombre verdadero → ${args}` });
 
             case 'descverdadero':
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !descverdadero <descripcion>' });
-                user.descVerdadero = args;
+                target.descVerdadero = args;
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✨ Descripción actualizada.` });
 
             case 'setrango': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setrango <rango>' });
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setrango @user <rango>' });
                 
-                const rango = args.toLowerCase();
+                const rango = args.split(' ').pop().toLowerCase();
                 
                 if (!RANGOS.includes(rango)) {
                     return sock.sendMessage(rawFrom, { text: `⚠️ Rango inválido.\n\n${RANGOS.join('\n')}` });
                 }
                 
-                user.rango = rango;
-                user.xp = 0;
+                target.rango = rango;
+                target.xp = 0;
                 marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Rango → ${rango.toUpperCase()}` });
+                return sock.sendMessage(rawFrom, { text: `✨ Rango de ${target.nombre} → ${rango.toUpperCase()}` });
             }
 
             case 'setnucleo': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnucleo <nucleo>' });
-                user.nucleo = args;
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnucleo @user <nucleo>' });
+                
+                const nucleo = args.split(' ').pop();
+                
+                target.nucleo = nucleo;
                 marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Núcleo → ${args}` });
+                return sock.sendMessage(rawFrom, { text: `✨ Núcleo de ${target.nombre} → ${nucleo}` });
             }
 
             case 'addatributo': {
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addatributo "nombre" "desc"' });
                 const { nombre, desc } = parseNombreDesc(args);
-                const found = user.atributos.find(a => a.nombre.toLowerCase() === nombre.toLowerCase());
+                const found = target.atributos.find(a => a.nombre.toLowerCase() === nombre.toLowerCase());
                 if (found) { 
                     if (desc) found.desc = desc;
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" actualizado.` });
                 }
-                user.atributos.push({ nombre, desc: desc || null });
+                target.atributos.push({ nombre, desc: desc || null });
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" agregado.` });
             }
@@ -654,13 +707,13 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             case 'addrecuerdo': {
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addrecuerdo "nombre" "desc"' });
                 const { nombre, desc } = parseNombreDesc(args);
-                const found = user.recuerdos.find(r => r.nombre.toLowerCase() === nombre.toLowerCase());
+                const found = target.recuerdos.find(r => r.nombre.toLowerCase() === nombre.toLowerCase());
                 if (found) { 
                     if (desc) found.desc = desc;
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" actualizado.` });
                 }
-                user.recuerdos.push({ nombre, desc: desc || null });
+                target.recuerdos.push({ nombre, desc: desc || null });
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" agregado.` });
             }
@@ -668,53 +721,52 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             case 'addeco': {
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addeco "nombre" "desc"' });
                 const { nombre, desc } = parseNombreDesc(args);
-                const found = user.ecos.find(e => e.nombre.toLowerCase() === nombre.toLowerCase());
+                const found = target.ecos.find(e => e.nombre.toLowerCase() === nombre.toLowerCase());
                 if (found) { 
                     if (desc) found.desc = desc;
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" actualizado.` });
                 }
-                user.ecos.push({ nombre, desc: desc || null });
+                target.ecos.push({ nombre, desc: desc || null });
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" agregado.` });
             }
 
             case 'delatributo': {
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delatributo <nombre>' });
-                const index = user.atributos.findIndex(a => a.nombre.toLowerCase() === args.toLowerCase());
+                const index = target.atributos.findIndex(a => a.nombre.toLowerCase() === args.toLowerCase());
                 if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese atributo no existe.' });
-                const removed = user.atributos.splice(index, 1)[0];
+                const removed = target.atributos.splice(index, 1)[0];
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✅ Atributo "${removed.nombre}" eliminado.` });
             }
 
             case 'delrecuerdo': {
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delrecuerdo <nombre>' });
-                const index = user.recuerdos.findIndex(r => r.nombre.toLowerCase() === args.toLowerCase());
+                const index = target.recuerdos.findIndex(r => r.nombre.toLowerCase() === args.toLowerCase());
                 if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese recuerdo no existe.' });
-                const removed = user.recuerdos.splice(index, 1)[0];
+                const removed = target.recuerdos.splice(index, 1)[0];
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✅ Recuerdo "${removed.nombre}" eliminado.` });
             }
 
             case 'deleco': {
                 if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !deleco <nombre>' });
-                const index = user.ecos.findIndex(e => e.nombre.toLowerCase() === args.toLowerCase());
+                const index = target.ecos.findIndex(e => e.nombre.toLowerCase() === args.toLowerCase());
                 if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese eco no existe.' });
-                const removed = user.ecos.splice(index, 1)[0];
+                const removed = target.ecos.splice(index, 1)[0];
                 marcarParaGuardar();
                 return sock.sendMessage(rawFrom, { text: `✅ Eco "${removed.nombre}" eliminado.` });
             }
 
             case 'reset': {
-                usuarios[userId] = createUser();
+                usuarios[targetId] = createUser();
                 marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `🔄 Tus runas han sido reseteadas.` });
+                const quien = targetId === userId ? 'Tus runas' : `Runas de ${targetId}`;
+                return sock.sendMessage(rawFrom, { text: `🔄 ${quien} han sido reseteadas.` });
             }
 
             case 'resetall': {
-                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
-                
                 for (let key in usuarios) {
                     delete usuarios[key];
                 }
@@ -724,16 +776,17 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             case 'xp': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp <cantidad>' });
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp @user <cantidad> o !xp <cantidad>' });
                 
-                const cantidad = parseInt(args.split(' ')[0]);
+                const partes = args.split(' ');
+                const cantidad = parseInt(partes[partes.length - 1]);
                 
                 if (isNaN(cantidad)) return sock.sendMessage(rawFrom, { text: '⚠️ Debe ser un número.' });
                 
-                const resultado = añadirXPDirecto(userId, cantidad);
+                const resultado = añadirXPDirecto(targetId, cantidad);
                 const config = XP_CONFIG[resultado.rangoFinal];
                 
-                let respuesta = `${cantidad > 0 ? '✨ +' : '⚡'}${cantidad} XP\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
+                let respuesta = `${cantidad > 0 ? '✨ +' : '⚡'}${cantidad} XP a ${target.nombre}\n\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
                 
                 if (resultado.ascensos.length > 0) {
                     respuesta = `🎆 ¡ASCENSO! 🎆\n\n`;
@@ -744,34 +797,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 }
                 
                 return sock.sendMessage(rawFrom, { text: respuesta });
-            }
-
-            case 'estadisticas': {
-                if (user.rango !== 'divino') {
-                    return sock.sendMessage(rawFrom, { text: '⚠️ Solo rango DIVINO.' });
-                }
-                
-                const usuariosArray = Object.entries(usuarios).map(([id, u]) => ({
-                    id,
-                    nombre: u.nombre,
-                    rango: u.rango,
-                    xp: u.xp || 0,
-                    puntuacion: calcularPuntuacionRango(u.rango, u.xp || 0)
-                }));
-                
-                usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
-                
-                const top5 = usuariosArray.slice(0, 5);
-                const xpTotal = usuariosArray.reduce((sum, u) => sum + u.xp, 0);
-                
-                const top5Lista = top5.map((u, i) => {
-                    const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}.`;
-                    return `${medal} ${u.nombre} - ${u.rango.toUpperCase()}`;
-                }).join('\n');
-                
-                return sock.sendMessage(rawFrom, {
-                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    📊 ESTADÍSTICAS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👥 USUARIOS: ${usuariosArray.length}\n\n🏆 TOP 5\n${top5Lista}\n\n💫 XP TOTAL: ${xpTotal.toLocaleString()}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-                });
             }
 
             default:
