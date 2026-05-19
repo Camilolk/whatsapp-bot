@@ -5,7 +5,7 @@
     "descVerdadero": null,
     "rango": "maestro",
     "nucleo": "apagado",
-    "xp": 2476,
+    "xp": 2516,
     "recuerdos": [
       {
         "nombre": "[Silla Sombria] @125022890909792",
@@ -34,7 +34,10 @@
         "nombre": "_Ha sido marcado por el sello de bibliotecario por aquel que todo lo sabe, su existencia ya no es la misma, ahora es una hoja más en si biblioteca_",
         "desc": null
       }
-    ]
+    ],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "269355065585709": {
     "nombre": "oblivion",
@@ -42,7 +45,7 @@
     "descVerdadero": null,
     "rango": "maestro",
     "nucleo": "apagado",
-    "xp": 3160,
+    "xp": 3172,
     "recuerdos": [
       {
         "nombre": "@269355065585709 [piedra extraordinaria]",
@@ -55,7 +58,10 @@
         "nombre": "guarda un inmenso amor a su amado",
         "desc": null
       }
-    ]
+    ],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "45062830428357": {
     "nombre": "Camilolk",
@@ -63,10 +69,13 @@
     "descVerdadero": null,
     "rango": "divino",
     "nucleo": "apagado",
-    "xp": 1305,
+    "xp": 1485,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "201859235115260": {
     "nombre": "C",
@@ -74,7 +83,7 @@
     "descVerdadero": null,
     "rango": "despierto",
     "nucleo": "apagado",
-    "xp": 336,
+    "xp": 344,
     "recuerdos": [
       {
         "nombre": "[Paraguas plegable] \n@201859235115260",
@@ -86,7 +95,10 @@
       }
     ],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "129819748634773": {
     "nombre": "Alain",
@@ -102,7 +114,10 @@
       }
     ],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "130258523160812": {
     "nombre": "Lolimancer",
@@ -110,10 +125,13 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 680,
+    "xp": 700,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "123587767881813": {
     "nombre": "…",
@@ -134,7 +152,10 @@
         "nombre": "[Marca de Divinidad] @123587767881813",
         "desc": null
       }
-    ]
+    ],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "211419815526560": {
     "nombre": "…",
@@ -142,10 +163,13 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 100,
+    "xp": 125,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "146497358307412": {
     "nombre": "…",
@@ -156,7 +180,10 @@
     "xp": 195,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "58523744493748": {
     "nombre": "…",
@@ -167,7 +194,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "5665883959486": {
     "nombre": "Ascarlt",
@@ -178,7 +208,10 @@
     "xp": 320,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "212468022395083": {
     "nombre": "sovereign of the femboys",
@@ -189,7 +222,10 @@
     "xp": 1050,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "123047239516388": {
     "nombre": "…",
@@ -200,7 +236,10 @@
     "xp": 115,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "45321132458024": {
     "nombre": "Ruperto",
@@ -211,14 +250,17 @@
     "xp": 170,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "212970869133436": {
     "nombre": "…",
     "nombreVerdadero": "God of Comunity",
     "descVerdadero": null,
     "rango": "divino",
-    "nucleo": "Divino",
+    "nucleo": "Titan",
     "xp": 10000615,
     "recuerdos": [
       {
@@ -261,7 +303,10 @@
         "nombre": "[Dios del nuevo mundo]",
         "desc": null
       }
-    ]
+    ],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "128123186184222": {
     "nombre": "Sebastián Ceron",
@@ -277,7 +322,10 @@
       }
     ],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "27767215284224": {
     "nombre": "…",
@@ -288,7 +336,10 @@
     "xp": 200,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "91491410145355": {
     "nombre": "…",
@@ -299,7 +350,10 @@
     "xp": 80,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "105545214198015": {
     "nombre": "<NameLess>",
@@ -310,7 +364,10 @@
     "xp": 40,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "256151933468880": {
     "nombre": "…",
@@ -321,7 +378,10 @@
     "xp": 115,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "128690507751634": {
     "nombre": "…",
@@ -332,7 +392,10 @@
     "xp": 20,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "126036318666953": {
     "nombre": "…",
@@ -343,7 +406,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "16793607360600": {
     "nombre": "Kaeby",
@@ -354,7 +420,10 @@
     "xp": 790,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "207283845914781": {
     "nombre": "…",
@@ -365,7 +434,10 @@
     "xp": 85,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "8577150415023": {
     "nombre": "Fabrizio",
@@ -386,7 +458,10 @@
         "nombre": "[marcado por el dios de la comunidad] @8577150415023",
         "desc": null
       }
-    ]
+    ],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "81346764472441": {
     "nombre": "elcalientito",
@@ -397,7 +472,10 @@
     "xp": 275,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "139080352452821": {
     "nombre": "…",
@@ -408,7 +486,10 @@
     "xp": 20,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "228518231310518": {
     "nombre": "…",
@@ -419,7 +500,10 @@
     "xp": 35,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "87608893919346": {
     "nombre": "B",
@@ -430,7 +514,10 @@
     "xp": 150,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "81574615859372": {
     "nombre": "…",
@@ -441,7 +528,10 @@
     "xp": 10,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "23712648695839": {
     "nombre": "…",
@@ -452,7 +542,10 @@
     "xp": 220,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "64077305016420": {
     "nombre": "…",
@@ -463,7 +556,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "127419231023296": {
     "nombre": "Oliver",
@@ -483,7 +579,10 @@
       }
     ],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "173387964006558": {
     "nombre": "…",
@@ -494,7 +593,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "187828147384331": {
     "nombre": "…",
@@ -505,7 +607,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "10617226268873": {
     "nombre": "…",
@@ -516,7 +621,10 @@
     "xp": 20,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "131417459708051": {
     "nombre": "…",
@@ -527,7 +635,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "249649873072305": {
     "nombre": "…",
@@ -538,7 +649,10 @@
     "xp": 70,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "279916021068008": {
     "nombre": "…",
@@ -552,7 +666,10 @@
     "atributos": [],
     "titulo": null,
     "aura": null,
-    "conjuros": []
+    "conjuros": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "176463076716776": {
     "nombre": "…",
@@ -566,7 +683,10 @@
     "atributos": [],
     "titulo": null,
     "aura": null,
-    "conjuros": []
+    "conjuros": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "124429698871549": {
     "nombre": "…",
@@ -577,7 +697,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "169445200814093": {
     "nombre": "…",
@@ -585,10 +708,13 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 225,
+    "xp": 235,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "163815001960582": {
     "nombre": "…",
@@ -599,7 +725,10 @@
     "xp": 70,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "38989797056686": {
     "nombre": "…",
@@ -610,7 +739,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "48898454380676": {
     "nombre": "…",
@@ -621,7 +753,10 @@
     "xp": 10,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "130168161079303": {
     "nombre": "…",
@@ -632,7 +767,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "121663656083611": {
     "nombre": "…",
@@ -643,7 +781,10 @@
     "xp": 195,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "2809411944534": {
     "nombre": "…",
@@ -654,7 +795,10 @@
     "xp": 40,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "261632848580692": {
     "nombre": "…",
@@ -665,7 +809,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "120363402640768422": {
     "nombre": "…",
@@ -676,7 +823,10 @@
     "xp": 605,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "46673426432035": {
     "nombre": "…",
@@ -687,7 +837,10 @@
     "xp": 225,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "164411952115901": {
     "nombre": "…",
@@ -698,7 +851,10 @@
     "xp": 50,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "81347217481952": {
     "nombre": "mata sapos",
@@ -709,7 +865,10 @@
     "xp": 190,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "76421141643505": {
     "nombre": "…",
@@ -720,7 +879,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "13610919162038": {
     "nombre": "Devorador Mamario",
@@ -731,7 +893,10 @@
     "xp": 1068,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "235579123990686": {
     "nombre": "…",
@@ -742,7 +907,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "93063418511440": {
     "nombre": "…",
@@ -753,7 +921,10 @@
     "xp": 45,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "52656634597614": {
     "nombre": "…",
@@ -764,7 +935,10 @@
     "xp": 10,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "154696853508261": {
     "nombre": "…",
@@ -775,7 +949,10 @@
     "xp": 35,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "54611129966830": {
     "nombre": "…",
@@ -786,7 +963,10 @@
     "xp": 30,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "107876794294306": {
     "nombre": "…",
@@ -797,7 +977,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "221126575800575": {
     "nombre": "…",
@@ -808,7 +991,10 @@
     "xp": 20,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "249692973723895": {
     "nombre": "…",
@@ -819,7 +1005,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "270604548763754": {
     "nombre": "…",
@@ -830,7 +1019,10 @@
     "xp": 10,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "47399661777069": {
     "nombre": "…",
@@ -841,7 +1033,10 @@
     "xp": 10,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "573117415491": {
     "nombre": "…",
@@ -852,7 +1047,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "120363426037808444": {
     "nombre": "…",
@@ -863,7 +1061,10 @@
     "xp": 75,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "120363422708847390": {
     "nombre": "…",
@@ -874,7 +1075,10 @@
     "xp": 20,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "120363399971031775": {
     "nombre": "…",
@@ -885,7 +1089,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "78877309329441": {
     "nombre": "…",
@@ -893,10 +1100,13 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 420,
+    "xp": 445,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "57235002671347": {
     "nombre": "…",
@@ -907,7 +1117,10 @@
     "xp": 15,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "262409818226795": {
     "nombre": "…",
@@ -918,7 +1131,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "172400037621827": {
     "nombre": "…",
@@ -929,7 +1145,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "131400816705641": {
     "nombre": "…",
@@ -940,7 +1159,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "241634977575001": {
     "nombre": "…",
@@ -951,7 +1173,10 @@
     "xp": 10,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "112115910209784": {
     "nombre": "…",
@@ -962,7 +1187,10 @@
     "xp": 20,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "248038656368692": {
     "nombre": "…",
@@ -973,7 +1201,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "211376899367072": {
     "nombre": "…",
@@ -984,7 +1215,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "259034007470082": {
     "nombre": "…",
@@ -995,7 +1229,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "278717741961395": {
     "nombre": "…",
@@ -1006,7 +1243,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "87184161915111": {
     "nombre": "…",
@@ -1017,7 +1257,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "168934116471036": {
     "nombre": "…",
@@ -1028,7 +1271,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "81162013774040": {
     "nombre": "…",
@@ -1039,7 +1285,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "25130222772418": {
     "nombre": "…",
@@ -1050,7 +1299,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "51982039560238": {
     "nombre": "…",
@@ -1061,7 +1313,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "61259185700879": {
     "nombre": "…",
@@ -1072,7 +1327,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "164072079290391": {
     "nombre": "…",
@@ -1083,7 +1341,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "220417889415246": {
     "nombre": "…",
@@ -1094,7 +1355,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "211265196675112": {
     "nombre": "…",
@@ -1105,7 +1369,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "90933618016323": {
     "nombre": "…",
@@ -1116,7 +1383,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "261825769824377": {
     "nombre": "…",
@@ -1127,7 +1397,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "177682880958706": {
     "nombre": "…",
@@ -1138,7 +1411,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "211896640761921": {
     "nombre": "…",
@@ -1149,7 +1425,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "47328563285": {
     "nombre": "…",
@@ -1160,7 +1439,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "74380310773774": {
     "nombre": "…",
@@ -1171,7 +1453,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "47979113255061": {
     "nombre": "…",
@@ -1182,7 +1467,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "126886285942917": {
     "nombre": "…",
@@ -1193,7 +1481,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "49310754422905": {
     "nombre": "…",
@@ -1204,7 +1495,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "97212340142243": {
     "nombre": "…",
@@ -1215,7 +1509,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "168960255348819": {
     "nombre": "…",
@@ -1226,7 +1523,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "120903748853806": {
     "nombre": "…",
@@ -1237,7 +1537,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "252282268577998": {
     "nombre": "…",
@@ -1248,7 +1551,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "26912281858272": {
     "nombre": "…",
@@ -1259,7 +1565,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "196859876348105": {
     "nombre": "…",
@@ -1270,7 +1579,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "165069283401962": {
     "nombre": "…",
@@ -1281,7 +1593,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "136661983875084": {
     "nombre": "…",
@@ -1292,7 +1607,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "20379737260167": {
     "nombre": "…",
@@ -1303,7 +1621,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "196078192345172": {
     "nombre": "…",
@@ -1314,7 +1635,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "61714989093075": {
     "nombre": "…",
@@ -1325,7 +1649,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "215615965024350": {
     "nombre": "…",
@@ -1336,7 +1663,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "116316891553947": {
     "nombre": "…",
@@ -1347,7 +1677,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "21766927814901": {
     "nombre": "…",
@@ -1358,7 +1691,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "203779236491427": {
     "nombre": "…",
@@ -1369,7 +1705,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "22656271311084": {
     "nombre": "…",
@@ -1380,7 +1719,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "240922566590636": {
     "nombre": "…",
@@ -1391,7 +1733,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "164192371884163": {
     "nombre": "…",
@@ -1402,7 +1747,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "62792925208587": {
     "nombre": "…",
@@ -1413,7 +1761,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "90173006188606": {
     "nombre": "…",
@@ -1424,7 +1775,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "59992170344682": {
     "nombre": "…",
@@ -1435,7 +1789,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "146600236159067": {
     "nombre": "…",
@@ -1446,7 +1803,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "39204478275713": {
     "nombre": "…",
@@ -1457,7 +1817,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "55371423060126": {
     "nombre": "…",
@@ -1468,7 +1831,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "51668590792954": {
     "nombre": "…",
@@ -1479,7 +1845,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "45342020120652": {
     "nombre": "…",
@@ -1490,7 +1859,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "253051050930371": {
     "nombre": "…",
@@ -1501,7 +1873,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "201619169915096": {
     "nombre": "…",
@@ -1512,7 +1887,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "257707365924885": {
     "nombre": "…",
@@ -1523,7 +1901,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "53116296810529": {
     "nombre": "…",
@@ -1534,7 +1915,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "47743561162874": {
     "nombre": "…",
@@ -1545,7 +1929,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "14375322673326": {
     "nombre": "…",
@@ -1556,7 +1943,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "82562206662709": {
     "nombre": "…",
@@ -1567,7 +1957,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "259102542430308": {
     "nombre": "…",
@@ -1578,7 +1971,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "226817508171966": {
     "nombre": "…",
@@ -1589,7 +1985,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "209375411060966": {
     "nombre": "…",
@@ -1600,7 +1999,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "280255222780001": {
     "nombre": "…",
@@ -1611,7 +2013,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "9311673688190": {
     "nombre": "…",
@@ -1622,7 +2027,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "101288314421475": {
     "nombre": "…",
@@ -1633,7 +2041,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "227723528134880": {
     "nombre": "…",
@@ -1644,7 +2055,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "179576961503374": {
     "nombre": "…",
@@ -1655,7 +2069,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "25426676203634": {
     "nombre": "…",
@@ -1666,7 +2083,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "67758058385566": {
     "nombre": "…",
@@ -1677,7 +2097,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "92406523404296": {
     "nombre": "…",
@@ -1688,7 +2111,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "209968099794971": {
     "nombre": "…",
@@ -1699,7 +2125,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "109311682441262": {
     "nombre": "…",
@@ -1710,7 +2139,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "54825391755452": {
     "nombre": "…",
@@ -1721,7 +2153,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "125769711919318": {
     "nombre": "…",
@@ -1732,7 +2167,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "68479562547406": {
     "nombre": "…",
@@ -1743,7 +2181,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "5089620164711": {
     "nombre": "…",
@@ -1754,7 +2195,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "86415379587258": {
     "nombre": "…",
@@ -1765,7 +2209,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "17411898122384": {
     "nombre": "…",
@@ -1776,7 +2223,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "168422897922083": {
     "nombre": "…",
@@ -1787,7 +2237,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "113627805790292": {
     "nombre": "…",
@@ -1798,7 +2251,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "75411035840741": {
     "nombre": "…",
@@ -1809,7 +2265,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "111725554737230": {
     "nombre": "…",
@@ -1820,7 +2279,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "120675712925884": {
     "nombre": "…",
@@ -1831,7 +2293,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "21921630576693": {
     "nombre": "…",
@@ -1842,7 +2307,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "123295693324470": {
     "nombre": "…",
@@ -1853,7 +2321,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "116029279711233": {
     "nombre": "…",
@@ -1864,7 +2335,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "281123158536424": {
     "nombre": "…",
@@ -1875,7 +2349,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "191096080613530": {
     "nombre": "…",
@@ -1886,7 +2363,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "8388238913721": {
     "nombre": "…",
@@ -1897,7 +2377,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "203680502534218": {
     "nombre": "…",
@@ -1908,7 +2391,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "275917674909756": {
     "nombre": "…",
@@ -1919,7 +2405,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "243799590727807": {
     "nombre": "…",
@@ -1930,7 +2419,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "135188491296983": {
     "nombre": "…",
@@ -1941,7 +2433,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "212687518707960": {
     "nombre": "…",
@@ -1952,7 +2447,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "230824427397192": {
     "nombre": "…",
@@ -1963,7 +2461,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "56908551569440": {
     "nombre": "…",
@@ -1974,7 +2475,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "40716893990946": {
     "nombre": "…",
@@ -1985,7 +2489,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "58343204880424": {
     "nombre": "…",
@@ -1996,7 +2503,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "34759321337991": {
     "nombre": "…",
@@ -2007,7 +2517,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "102482332147794": {
     "nombre": "…",
@@ -2018,7 +2531,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "25237697605704": {
     "nombre": "…",
@@ -2029,7 +2545,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "113048371130411": {
     "nombre": "…",
@@ -2040,7 +2559,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "21548001960183": {
     "nombre": "…",
@@ -2051,7 +2573,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "125331558129669": {
     "nombre": "…",
@@ -2062,7 +2587,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "10140518449239": {
     "nombre": "…",
@@ -2073,7 +2601,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "85568683806784": {
     "nombre": "…",
@@ -2084,7 +2615,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "49353653809358": {
     "nombre": "…",
@@ -2095,7 +2629,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "239092440797359": {
     "nombre": "…",
@@ -2106,7 +2643,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "171734317670461": {
     "nombre": "…",
@@ -2117,7 +2657,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "211303884963896": {
     "nombre": "…",
@@ -2128,7 +2671,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "194287711031488": {
     "nombre": "…",
@@ -2139,7 +2685,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "43460891558021": {
     "nombre": "…",
@@ -2150,7 +2699,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "205462762950895": {
     "nombre": "…",
@@ -2161,7 +2713,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "174161175511084": {
     "nombre": "…",
@@ -2172,7 +2727,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "77181283733607": {
     "nombre": "…",
@@ -2183,7 +2741,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "89825113858167": {
     "nombre": "…",
@@ -2194,7 +2755,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "88077062123597": {
     "nombre": "…",
@@ -2205,7 +2769,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "89769698660571": {
     "nombre": "…",
@@ -2216,7 +2783,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "5287339651072": {
     "nombre": "…",
@@ -2227,7 +2797,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "249086661906572": {
     "nombre": "…",
@@ -2238,7 +2811,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "135287225237686": {
     "nombre": "…",
@@ -2249,7 +2825,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "156049130663938": {
     "nombre": "…",
@@ -2260,7 +2839,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "275458079867027": {
     "nombre": "…",
@@ -2271,7 +2853,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "243112681160804": {
     "nombre": "…",
@@ -2282,7 +2867,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "269470710919326": {
     "nombre": "…",
@@ -2293,7 +2881,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "116578750320670": {
     "nombre": "…",
@@ -2304,7 +2895,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "184009334214801": {
     "nombre": "…",
@@ -2315,7 +2909,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "232396402233593": {
     "nombre": "…",
@@ -2326,7 +2923,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "122415896080624": {
     "nombre": "…",
@@ -2337,7 +2937,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "269539363295435": {
     "nombre": "…",
@@ -2348,7 +2951,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "141562457657473": {
     "nombre": "…",
@@ -2359,7 +2965,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "111312734535703": {
     "nombre": "…",
@@ -2370,7 +2979,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "269354998452367": {
     "nombre": "…",
@@ -2381,7 +2993,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "234445151940734": {
     "nombre": "…",
@@ -2392,7 +3007,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "39118578962678": {
     "nombre": "…",
@@ -2403,7 +3021,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "48490398920771": {
     "nombre": "…",
@@ -2414,7 +3035,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "12945216020691": {
     "nombre": "…",
@@ -2425,7 +3049,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "102409351209129": {
     "nombre": "…",
@@ -2436,7 +3063,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "16982787231917": {
     "nombre": "…",
@@ -2447,7 +3077,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "212841399353503": {
     "nombre": "…",
@@ -2458,7 +3091,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "132959839502516": {
     "nombre": "…",
@@ -2469,7 +3105,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "238091696660721": {
     "nombre": "…",
@@ -2480,7 +3119,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "254339406934248": {
     "nombre": "…",
@@ -2491,7 +3133,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "190026684080226": {
     "nombre": "…",
@@ -2502,7 +3147,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "51814519058616": {
     "nombre": "…",
@@ -2513,7 +3161,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "201597376282872": {
     "nombre": "…",
@@ -2524,7 +3175,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "21857440927768": {
     "nombre": "…",
@@ -2535,7 +3189,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "35949497081883": {
     "nombre": "…",
@@ -2546,7 +3203,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "35008446234855": {
     "nombre": "…",
@@ -2557,7 +3217,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "59756517581041": {
     "nombre": "…",
@@ -2568,7 +3231,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "47562635612410": {
     "nombre": "…",
@@ -2579,7 +3245,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "153253190873101": {
     "nombre": "…",
@@ -2590,7 +3259,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "113825357508750": {
     "nombre": "…",
@@ -2601,7 +3273,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "150375445307525": {
     "nombre": "…",
@@ -2612,7 +3287,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "57432839614704": {
     "nombre": "…",
@@ -2623,7 +3301,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "67551262429354": {
     "nombre": "…",
@@ -2634,7 +3315,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "221324328841402": {
     "nombre": "…",
@@ -2645,7 +3329,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "246325249581168": {
     "nombre": "…",
@@ -2656,7 +3343,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "68539239125079": {
     "nombre": "…",
@@ -2667,7 +3357,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "66778151571682": {
     "nombre": "…",
@@ -2678,7 +3371,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "242339905826893": {
     "nombre": "…",
@@ -2689,7 +3385,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "85973182505152": {
     "nombre": "…",
@@ -2700,7 +3399,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "258153941868664": {
     "nombre": "…",
@@ -2711,7 +3413,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "66189858455573": {
     "nombre": "…",
@@ -2722,7 +3427,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "272138237952051": {
     "nombre": "…",
@@ -2733,7 +3441,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "164785077379149": {
     "nombre": "…",
@@ -2744,7 +3455,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "249348738805898": {
     "nombre": "…",
@@ -2755,7 +3469,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "41845967028289": {
     "nombre": "…",
@@ -2766,7 +3483,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "208597971685579": {
     "nombre": "…",
@@ -2777,7 +3497,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "37709896790145": {
     "nombre": "…",
@@ -2788,7 +3511,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "247493614956711": {
     "nombre": "…",
@@ -2799,7 +3525,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "74835761844237": {
     "nombre": "…",
@@ -2810,7 +3539,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "111673679597614": {
     "nombre": "…",
@@ -2821,7 +3553,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "189026225102993": {
     "nombre": "…",
@@ -2832,7 +3567,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "224940657766438": {
     "nombre": "…",
@@ -2843,7 +3581,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "216917725999257": {
     "nombre": "…",
@@ -2854,7 +3595,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "240204719911015": {
     "nombre": "…",
@@ -2865,7 +3609,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "73478736756795": {
     "nombre": "…",
@@ -2876,7 +3623,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "158184249536589": {
     "nombre": "…",
@@ -2887,7 +3637,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "269891902914602": {
     "nombre": "…",
@@ -2898,7 +3651,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "182574831919319": {
     "nombre": "…",
@@ -2909,7 +3665,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "105652034777148": {
     "nombre": "…",
@@ -2920,7 +3679,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "52816018182360": {
     "nombre": "…",
@@ -2931,7 +3693,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "273817855328462": {
     "nombre": "…",
@@ -2942,7 +3707,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "249606336208903": {
     "nombre": "…",
@@ -2953,7 +3721,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "22497273585876": {
     "nombre": "…",
@@ -2964,7 +3735,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "229227320344704": {
     "nombre": "…",
@@ -2975,7 +3749,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "97264601137380": {
     "nombre": "…",
@@ -2986,7 +3763,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "141923369091149": {
     "nombre": "…",
@@ -2997,7 +3777,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "69574678568971": {
     "nombre": "…",
@@ -3008,7 +3791,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "82966000717895": {
     "nombre": "…",
@@ -3019,7 +3805,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "208894441832464": {
     "nombre": "…",
@@ -3030,7 +3819,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "146763428184139": {
     "nombre": "…",
@@ -3041,7 +3833,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "86625312866512": {
     "nombre": "…",
@@ -3052,7 +3847,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "260605780988098": {
     "nombre": "…",
@@ -3063,7 +3861,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "226929227624629": {
     "nombre": "…",
@@ -3074,7 +3875,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "206390442344478": {
     "nombre": "…",
@@ -3085,7 +3889,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "72310119768073": {
     "nombre": "…",
@@ -3096,7 +3903,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "227109968580811": {
     "nombre": "…",
@@ -3107,7 +3917,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "131438968090759": {
     "nombre": "…",
@@ -3118,7 +3931,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "204934565879950": {
     "nombre": "…",
@@ -3129,7 +3945,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "106249051983913": {
     "nombre": "…",
@@ -3140,7 +3959,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "181720720638030": {
     "nombre": "…",
@@ -3151,7 +3973,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "149396545077340": {
     "nombre": "…",
@@ -3162,7 +3987,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "202478079455334": {
     "nombre": "…",
@@ -3173,7 +4001,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "202263465353344": {
     "nombre": "…",
@@ -3184,7 +4015,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "20504257810623": {
     "nombre": "…",
@@ -3195,7 +4029,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "169887448232088": {
     "nombre": "…",
@@ -3206,7 +4043,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "202074050568444": {
     "nombre": "…",
@@ -3217,7 +4057,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "228707075653730": {
     "nombre": "…",
@@ -3228,7 +4071,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "148189306998906": {
     "nombre": "…",
@@ -3239,7 +4085,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "87084891123769": {
     "nombre": "…",
@@ -3250,7 +4099,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "30507404370158": {
     "nombre": "…",
@@ -3261,7 +4113,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "199260796657762": {
     "nombre": "…",
@@ -3272,7 +4127,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "96194466443361": {
     "nombre": "…",
@@ -3283,7 +4141,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "113370510450940": {
     "nombre": "…",
@@ -3294,7 +4155,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "235673898475639": {
     "nombre": "…",
@@ -3305,7 +4169,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "108967766302940": {
     "nombre": "…",
@@ -3316,7 +4183,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "136000189784269": {
     "nombre": "…",
@@ -3327,7 +4197,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "201919482089660": {
     "nombre": "…",
@@ -3338,7 +4211,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "26637521399932": {
     "nombre": "…",
@@ -3349,7 +4225,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "150542915514418": {
     "nombre": "…",
@@ -3360,7 +4239,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "63179103178913": {
     "nombre": "…",
@@ -3371,7 +4253,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "112403639443637": {
     "nombre": "…",
@@ -3382,7 +4267,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "32113520840712": {
     "nombre": "…",
@@ -3393,7 +4281,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "238276581531685": {
     "nombre": "…",
@@ -3404,7 +4295,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "200464025026805": {
     "nombre": "…",
@@ -3415,7 +4309,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "55748860100736": {
     "nombre": "…",
@@ -3426,7 +4323,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "23957965111514": {
     "nombre": "…",
@@ -3437,7 +4337,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "19190031364227": {
     "nombre": "…",
@@ -3448,7 +4351,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "267310275281001": {
     "nombre": "…",
@@ -3459,7 +4365,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "277798669267198": {
     "nombre": "…",
@@ -3470,7 +4379,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "115286032290034": {
     "nombre": "…",
@@ -3481,7 +4393,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "13826120527992": {
     "nombre": "…",
@@ -3492,7 +4407,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "243624000409695": {
     "nombre": "…",
@@ -3503,7 +4421,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "248648709500995": {
     "nombre": "…",
@@ -3514,7 +4435,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "219211406262436": {
     "nombre": "…",
@@ -3525,7 +4449,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "259330158919796": {
     "nombre": "…",
@@ -3536,7 +4463,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "98518060552317": {
     "nombre": "…",
@@ -3547,7 +4477,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "78443433750683": {
     "nombre": "…",
@@ -3558,7 +4491,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "99828495294713": {
     "nombre": "…",
@@ -3569,7 +4505,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "214675417501879": {
     "nombre": "…",
@@ -3580,7 +4519,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "244676233842805": {
     "nombre": "…",
@@ -3591,7 +4533,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "117411588132955": {
     "nombre": "…",
@@ -3602,7 +4547,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "58484771029149": {
     "nombre": "…",
@@ -3613,7 +4561,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "122428629983253": {
     "nombre": "…",
@@ -3624,7 +4575,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "120310758134015": {
     "nombre": "…",
@@ -3635,7 +4589,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "226413881864276": {
     "nombre": "…",
@@ -3646,7 +4603,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "88377844084764": {
     "nombre": "…",
@@ -3657,7 +4617,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "87900851028169": {
     "nombre": "…",
@@ -3668,7 +4631,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "112618371031105": {
     "nombre": "…",
@@ -3679,7 +4645,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "123995856863266": {
     "nombre": "…",
@@ -3690,7 +4659,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "154988223438923": {
     "nombre": "…",
@@ -3701,7 +4673,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "59576145682443": {
     "nombre": "…",
@@ -3712,7 +4687,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "80599389831357": {
     "nombre": "…",
@@ -3723,7 +4701,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "168195298197646": {
     "nombre": "…",
@@ -3734,7 +4715,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "126199124746387": {
     "nombre": "…",
@@ -3745,7 +4729,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "56045716156453": {
     "nombre": "…",
@@ -3756,7 +4743,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "279009866842240": {
     "nombre": "…",
@@ -3767,7 +4757,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "48422098845792": {
     "nombre": "…",
@@ -3778,7 +4771,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "86625346441278": {
     "nombre": "…",
@@ -3789,7 +4785,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "181213830607087": {
     "nombre": "…",
@@ -3800,7 +4799,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "147330447704282": {
     "nombre": "…",
@@ -3811,7 +4813,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "196550789718213": {
     "nombre": "…",
@@ -3822,7 +4827,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "63917854355688": {
     "nombre": "…",
@@ -3833,7 +4841,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "42580909793362": {
     "nombre": "…",
@@ -3844,7 +4855,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "55559998967884": {
     "nombre": "…",
@@ -3855,7 +4869,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "262435588063401": {
     "nombre": "…",
@@ -3866,7 +4883,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "18632155349230": {
     "nombre": "…",
@@ -3877,7 +4897,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "38233933095145": {
     "nombre": "…",
@@ -3888,7 +4911,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "236558611402797": {
     "nombre": "…",
@@ -3899,7 +4925,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "112103260221674": {
     "nombre": "…",
@@ -3910,7 +4939,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "111407710400583": {
     "nombre": "…",
@@ -3921,7 +4953,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "107279709958206": {
     "nombre": "…",
@@ -3932,7 +4967,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "160477476831422": {
     "nombre": "…",
@@ -3943,7 +4981,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "93535864922199": {
     "nombre": "…",
@@ -3954,7 +4995,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "278885212143729": {
     "nombre": "…",
@@ -3965,7 +5009,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "76639731978245": {
     "nombre": "…",
@@ -3976,7 +5023,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "145105990201560": {
     "nombre": "…",
@@ -3987,7 +5037,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "239942944948326": {
     "nombre": "…",
@@ -3998,7 +5051,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "153777831194625": {
     "nombre": "…",
@@ -4009,7 +5065,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "58300020306099": {
     "nombre": "…",
@@ -4020,7 +5079,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "71167742324870": {
     "nombre": "…",
@@ -4031,7 +5093,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "39707392143522": {
     "nombre": "…",
@@ -4042,7 +5107,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "17227784945838": {
     "nombre": "…",
@@ -4053,7 +5121,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "195068925374713": {
     "nombre": "…",
@@ -4064,7 +5135,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "246363954630722": {
     "nombre": "…",
@@ -4075,7 +5149,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "217368395518190": {
     "nombre": "…",
@@ -4086,7 +5163,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "211390086283384": {
     "nombre": "…",
@@ -4097,7 +5177,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "128230627520655": {
     "nombre": "…",
@@ -4108,7 +5191,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "90809047249056": {
     "nombre": "…",
@@ -4119,7 +5205,10 @@
     "xp": 5,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "258347165077541": {
     "nombre": "…",
@@ -4130,7 +5219,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "33672795316319": {
     "nombre": "…",
@@ -4141,7 +5233,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "36357351174213": {
     "nombre": "…",
@@ -4152,7 +5247,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "180590708015201": {
     "nombre": "…",
@@ -4163,7 +5261,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "121608274473214": {
     "nombre": "…",
@@ -4174,7 +5275,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "281213034082458": {
     "nombre": "…",
@@ -4185,7 +5289,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "171541077716998": {
     "nombre": "…",
@@ -4196,7 +5303,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "229802292342820": {
     "nombre": "…",
@@ -4207,7 +5317,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "187973572264056": {
     "nombre": "…",
@@ -4218,7 +5331,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "122961038160071": {
     "nombre": "…",
@@ -4229,7 +5345,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "64579178651888": {
     "nombre": "…",
@@ -4240,7 +5359,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "50298462703833": {
     "nombre": "…",
@@ -4251,7 +5373,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "263938725961821": {
     "nombre": "…",
@@ -4262,7 +5387,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "16935223828728": {
     "nombre": "…",
@@ -4273,7 +5401,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "43413646909621": {
     "nombre": "…",
@@ -4284,7 +5415,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "188798256324756": {
     "nombre": "…",
@@ -4295,7 +5429,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "113082512736480": {
     "nombre": "…",
@@ -4306,7 +5443,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "205617465712690": {
     "nombre": "…",
@@ -4317,7 +5457,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "191860903518277": {
     "nombre": "…",
@@ -4328,7 +5471,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "165871637028911": {
     "nombre": "…",
@@ -4339,7 +5485,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "126512774778929": {
     "nombre": "…",
@@ -4350,7 +5499,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "112984064004116": {
     "nombre": "…",
@@ -4361,7 +5513,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "103788337754367": {
     "nombre": "…",
@@ -4372,7 +5527,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "267602366595279": {
     "nombre": "…",
@@ -4383,7 +5541,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "22166426878027": {
     "nombre": "…",
@@ -4394,7 +5555,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "16539952636099": {
     "nombre": "…",
@@ -4405,7 +5569,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "158188359929946": {
     "nombre": "…",
@@ -4416,7 +5583,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "33964785971443": {
     "nombre": "…",
@@ -4427,7 +5597,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "273851829223555": {
     "nombre": "…",
@@ -4438,7 +5611,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "191611543760932": {
     "nombre": "…",
@@ -4449,7 +5625,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "178735265407226": {
     "nombre": "…",
@@ -4460,7 +5639,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "124309339152638": {
     "nombre": "…",
@@ -4471,7 +5653,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "124236559577163": {
     "nombre": "…",
@@ -4482,7 +5667,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "215010928271579": {
     "nombre": "…",
@@ -4493,7 +5681,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "7911514341377": {
     "nombre": "…",
@@ -4504,7 +5695,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "27797766541504": {
     "nombre": "…",
@@ -4515,7 +5709,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "191727507927099": {
     "nombre": "…",
@@ -4526,7 +5723,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "240213259477186": {
     "nombre": "…",
@@ -4537,7 +5737,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "137726749876254": {
     "nombre": "…",
@@ -4548,7 +5751,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "5751061876794": {
     "nombre": "…",
@@ -4559,7 +5765,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "122810445901826": {
     "nombre": "…",
@@ -4570,7 +5779,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "75346628104369": {
     "nombre": "…",
@@ -4581,7 +5793,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "65627385511987": {
     "nombre": "…",
@@ -4592,7 +5807,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "229737918124287": {
     "nombre": "…",
@@ -4603,7 +5821,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "221878060884111": {
     "nombre": "…",
@@ -4614,7 +5835,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "267237747331096": {
     "nombre": "…",
@@ -4625,7 +5849,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "113460184666245": {
     "nombre": "…",
@@ -4636,7 +5863,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "68977443217622": {
     "nombre": "…",
@@ -4647,7 +5877,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "201816469967065": {
     "nombre": "…",
@@ -4658,7 +5891,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "174848772964574": {
     "nombre": "…",
@@ -4669,7 +5905,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "309304811630": {
     "nombre": "…",
@@ -4680,7 +5919,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "165103374700600": {
     "nombre": "…",
@@ -4691,7 +5933,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "110497143758995": {
     "nombre": "…",
@@ -4702,7 +5947,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "28115359264810": {
     "nombre": "…",
@@ -4713,7 +5961,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "143464926826535": {
     "nombre": "…",
@@ -4724,7 +5975,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "229115063984159": {
     "nombre": "…",
@@ -4735,7 +5989,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "193342281400444": {
     "nombre": "…",
@@ -4746,7 +6003,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "77310116024335": {
     "nombre": "…",
@@ -4757,7 +6017,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "213116411506917": {
     "nombre": "…",
@@ -4768,7 +6031,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "247093797085190": {
     "nombre": "…",
@@ -4779,7 +6045,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "240544559161345": {
     "nombre": "…",
@@ -4790,7 +6059,10 @@
     "xp": 0,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   },
   "231885519196233": {
     "nombre": "…",
@@ -4801,6 +6073,9 @@
     "xp": 75,
     "recuerdos": [],
     "ecos": [],
-    "atributos": []
+    "atributos": [],
+    "aspectoLegado": null,
+    "pasosAspecto": 0,
+    "cohorte": null
   }
 }
