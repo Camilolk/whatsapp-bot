@@ -110,12 +110,11 @@ function guardarUsuarios() {
 const usuarios = cargarUsuarios();
 
 // =========================
-// UTILIDAD: EXTRAE ID LIMPIA (CORREGIDA)
+// UTILIDAD: EXTRAE ID LIMPIA
 // =========================
 
 function extractUserId(jid) {
     if (!jid) return null;
-    // Elimina @s.whatsapp.net, @c.us, @g.us
     return jid.split('@')[0];
 }
 
@@ -383,7 +382,9 @@ async function start() {
    MODO OPTIMIZADO ⚡
 🔮══════════════════════🔮
             `);
-            saveInterval = setInterval(guardarUsuarios, 120000);
+            if (!saveInterval) {
+                saveInterval = setInterval(guardarUsuarios, 120000);
+            }
         }
         
         if (connection === 'close') {
@@ -398,84 +399,85 @@ async function start() {
     sock.ev.on('creds.update', saveCreds);
 
     sock.ev.on('messages.upsert', async (m) => {
-        const message = m.messages[0];
-        if (!message.message) return;
-        if (message.key.fromMe) return;
+        try {
+            const message = m.messages[0];
+            if (!message.message) return;
+            if (message.key.fromMe) return;
 
-        const rawFrom = message.key.remoteJid;
-        const userId = extractUserId(message.key.participant || rawFrom);
-        const isGroup = rawFrom.includes('@g.us');
-        
-        if (!userId) return;
-
-        const isOwner = OWNERS.has(userId);
-        let isAdmin = false;
-        
-        // Detectar admin del grupo
-        if (isGroup) {
-            try {
-                const groupMetadata = await sock.groupMetadata(rawFrom);
-                const participant = groupMetadata.participants.find(p => extractUserId(p.id) === userId);
-                if (participant && (participant.admin === 'admin' || participant.admin === 'superadmin')) {
-                    isAdmin = true;
-                }
-            } catch (error) {
-                //
-            }
-        }
-        
-        const canUseAdminCmds = isOwner || isAdmin;
-        
-        if (!usuarios[userId]) usuarios[userId] = createUser();
-        const user = usuarios[userId];
-
-        let body = '';
-        if (message.message.conversation) body = message.message.conversation;
-        else if (message.message.extendedTextMessage?.text) body = message.message.extendedTextMessage.text;
-        
-        body = body.trim();
-        
-        // =========================
-        // SISTEMA DE XP
-        // =========================
-        
-        if (!body.startsWith(PREFIX) && body.length > 0) {
-            const resultadoXP = añadirXP(userId, XP_CONFIG[user.rango].xpPorMensaje);
+            const rawFrom = message.key.remoteJid;
+            const userId = extractUserId(message.key.participant || rawFrom);
+            const isGroup = rawFrom.includes('@g.us');
             
-            if (resultadoXP.subioDe) {
-                const nombre = user.nombre;
+            if (!userId) return;
+
+            const isOwner = OWNERS.has(userId);
+            let isAdmin = false;
+            
+            // Detectar admin del grupo
+            if (isGroup) {
+                try {
+                    const groupMetadata = await sock.groupMetadata(rawFrom);
+                    const participant = groupMetadata.participants.find(p => extractUserId(p.id) === userId);
+                    if (participant && (participant.admin === 'admin' || participant.admin === 'superadmin')) {
+                        isAdmin = true;
+                    }
+                } catch (error) {
+                    //
+                }
+            }
+            
+            const canUseAdminCmds = isOwner || isAdmin;
+            
+            if (!usuarios[userId]) usuarios[userId] = createUser();
+            const user = usuarios[userId];
+
+            let body = '';
+            if (message.message.conversation) body = message.message.conversation;
+            else if (message.message.extendedTextMessage?.text) body = message.message.extendedTextMessage.text;
+            
+            body = body.trim();
+            
+            // =========================
+            // SISTEMA DE XP
+            // =========================
+            
+            if (!body.startsWith(PREFIX) && body.length > 0) {
+                const resultadoXP = añadirXP(userId, XP_CONFIG[user.rango].xpPorMensaje);
                 
-                await sock.sendMessage(rawFrom, {
-                    text: `🎆 ¡ASCENSO! 🎆\n\n${nombre} ha ascendido de rango\n\n${resultadoXP.rangoAnterior.toUpperCase()} → ${resultadoXP.rangoNuevo.toUpperCase()}\n\n⭐ ¡Felicidades! ⭐`
+                if (resultadoXP.subioDe) {
+                    const nombre = user.nombre;
+                    
+                    await sock.sendMessage(rawFrom, {
+                        text: `🎆 ¡ASCENSO! 🎆\n\n${nombre} ha ascendido de rango\n\n${resultadoXP.rangoAnterior.toUpperCase()} → ${resultadoXP.rangoNuevo.toUpperCase()}\n\n⭐ ¡Felicidades! ⭐`
+                    });
+                }
+                
+                return;
+            }
+
+            if (!body.startsWith(PREFIX)) return;
+
+            const [cmdRaw, ...argsArr] = body.slice(PREFIX.length).split(' ');
+            const cmd = cmdRaw.toLowerCase();
+            const args = argsArr.join(' ').trim();
+
+            // =========================
+            // DEBUG ID
+            // =========================
+
+            if (cmd === 'miid') {
+                return sock.sendMessage(rawFrom, {
+                    text: `🔮 Tu Hechizo ID:\n${userId}\n\nNombre: ${user.nombre}\nIs Owner: ${isOwner}\nIs Admin: ${isAdmin}`
                 });
             }
-            
-            return;
-        }
 
-        if (!body.startsWith(PREFIX)) return;
+            // =========================
+            // HELP
+            // =========================
 
-        const [cmdRaw, ...argsArr] = body.slice(PREFIX.length).split(' ');
-        const cmd = cmdRaw.toLowerCase();
-        const args = argsArr.join(' ').trim();
-
-        // =========================
-        // DEBUG ID
-        // =========================
-
-        if (cmd === 'miid') {
-            return sock.sendMessage(rawFrom, {
-                text: `🔮 Tu Hechizo ID:\n${userId}\n\nNombre: ${user.nombre}\nIs Owner: ${isOwner}\nIs Admin: ${isAdmin}`
-            });
-        }
-
-        // =========================
-        // HELP
-        // =========================
-
-        if (cmd === 'help' && args === '') {
-            return sock.sendMessage(rawFrom, {
-                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            if (cmd === 'help' && args === '') {
+                return sock.sendMessage(rawFrom, {
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━
         🔮 R U N A S 🔮
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -502,305 +504,323 @@ async function start() {
 ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-            });
-        }
-
-        // =========================
-        // TOP 10
-        // =========================
-
-        if (cmd === 'top') {
-            const usuariosArray = Object.entries(usuarios).map(([id, user]) => ({
-                id,
-                nombre: user.nombre,
-                rango: user.rango,
-                xp: user.xp || 0,
-                puntuacion: calcularPuntuacionRango(user.rango, user.xp || 0)
-            }));
-
-            usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
-            const top10 = usuariosArray.slice(0, 10);
-
-            if (top10.length === 0) {
-                return sock.sendMessage(rawFrom, { text: '⚠️ No hay usuarios con runas aún.' });
+                });
             }
 
-            const topLista = top10.map((user, index) => {
-                const config = XP_CONFIG[user.rango];
-                const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
-                return `${medal} ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   💫 ${user.xp}/${config.xpRequerida} XP`;
-            }).join('\n\n');
+            // =========================
+            // TOP 10
+            // =========================
 
-            return sock.sendMessage(rawFrom, {
-                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    🏆 TOP 10 PODEROSOS 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${topLista}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-            });
-        }
+            if (cmd === 'top') {
+                const usuariosArray = Object.entries(usuarios).map(([id, user]) => ({
+                    id,
+                    nombre: user.nombre,
+                    rango: user.rango,
+                    xp: user.xp || 0,
+                    puntuacion: calcularPuntuacionRango(user.rango, user.xp || 0)
+                }));
 
-        // =========================
-        // NIVEL
-        // =========================
+                usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
+                const top10 = usuariosArray.slice(0, 10);
 
-        if (cmd === 'nivel') {
-            const targetId = userId;
-            
-            if (!usuarios[targetId]) {
-                return sock.sendMessage(rawFrom, { text: '⚠️ Ese usuario aún no tiene runas.' });
+                if (top10.length === 0) {
+                    return sock.sendMessage(rawFrom, { text: '⚠️ No hay usuarios con runas aún.' });
+                }
+
+                const topLista = top10.map((user, index) => {
+                    const config = XP_CONFIG[user.rango];
+                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
+                    return `${medal} ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   💫 ${user.xp}/${config.xpRequerida} XP`;
+                }).join('\n\n');
+
+                return sock.sendMessage(rawFrom, {
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    🏆 TOP 10 PODEROSOS 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${topLista}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                });
             }
-            
-            const target = usuarios[targetId];
-            const xpActual = target.xp || 0;
-            const config = XP_CONFIG[target.rango];
-            const porcentajeXP = Math.round((xpActual / config.xpRequerida) * 100);
-            const barraXP = crearBarra(porcentajeXP);
-            
-            return sock.sendMessage(rawFrom, {
-                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    📊 ESTADÍSTICAS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👤 ${target.nombre}\n⭐ ${target.rango.toUpperCase()}\n💫 ${target.nucleo}\n\n${barraXP}\n\n${xpActual} / ${config.xpRequerida} XP\nProgreso: ${porcentajeXP}%\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-            });
-        }
 
-        // =========================
-        // SETNOMBRE
-        // =========================
+            // =========================
+            // NIVEL
+            // =========================
 
-        if (cmd === 'setnombre') {
-            if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnombre <nombre>' });
-            user.nombre = args;
-            marcarParaGuardar();
-            return sock.sendMessage(rawFrom, { text: `✨ Tu nombre ha sido cambiado a: ${args}` });
-        }
-
-        // =========================
-        // RUNAS
-        // =========================
-
-        if (cmd === 'runas') {
-            return sock.sendMessage(rawFrom, { text: format(user) });
-        }
-
-        // =========================
-        // VERNOMBRE
-        // =========================
-
-        if (cmd === 'vernombre') {
-            const desc = user.descVerdadero ? `${user.descVerdadero}` : 'Sin descripción.';
-            return sock.sendMessage(rawFrom, {
-                text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    ◈ NOMBRE VERDADERO ◈\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${user.nombreVerdadero}\n\n───────────────────────\n${desc}\n───────────────────────`
-            });
-        }
-
-        // =========================
-        // VERATRIBUTOS
-        // =========================
-
-        if (cmd === 'veratributos') {
-            return sock.sendMessage(rawFrom, { text: formatDetalle('ATRIBUTOS', user.atributos) });
-        }
-
-        // =========================
-        // VERRECUERDOS
-        // =========================
-
-        if (cmd === 'verrecuerdos') {
-            return sock.sendMessage(rawFrom, { text: formatDetalle('RECUERDOS', user.recuerdos) });
-        }
-
-        // =========================
-        // VERECOS
-        // =========================
-
-        if (cmd === 'verecos') {
-            return sock.sendMessage(rawFrom, { text: formatDetalle('ECOS', user.ecos) });
-        }
-
-        // =========================
-        // PROTECCIÓN ADMIN/OWNER
-        // =========================
-
-        const adminCmds = [
-            'setrango', 'setnucleo', 'setverdadero', 'descverdadero',
-            'addatributo', 'addrecuerdo', 'addeco',
-            'delatributo', 'delrecuerdo', 'deleco',
-            'reset', 'xp'
-        ];
-
-        const ownerOnlyCmds = ['resetall'];
-
-        if (adminCmds.includes(cmd)) {
-            if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
-        } else if (ownerOnlyCmds.includes(cmd)) {
-            if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
-        } else if (cmd !== 'help' && cmd !== 'top' && cmd !== 'nivel' && cmd !== 'miid' && cmd !== 'runas' && cmd !== 'vernombre' && cmd !== 'veratributos' && cmd !== 'verrecuerdos' && cmd !== 'verecos' && cmd !== 'setnombre') {
-            return;
-        }
-
-        // =========================
-        // OBTENER TARGET CON MENCIÓN
-        // =========================
-
-        let targetId = userId;
-        const mentions = getMentionedUsers(message);
-        
-        if (mentions.length > 0) {
-            targetId = mentions[0];
-        }
-
-        if (!usuarios[targetId]) usuarios[targetId] = createUser();
-        const target = usuarios[targetId];
-
-        // =========================
-        // COMANDOS ADMIN
-        // =========================
-
-        switch (cmd) {
-
-            case 'setverdadero':
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setverdadero <nombre>' });
-                target.nombreVerdadero = args;
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Nombre verdadero → ${args}` });
-
-            case 'descverdadero':
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !descverdadero <descripcion>' });
-                target.descVerdadero = args;
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Descripción actualizada.` });
-
-            case 'setrango': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setrango @user <rango>' });
+            if (cmd === 'nivel') {
+                const targetId = userId;
                 
-                const rango = args.split(' ').pop().toLowerCase();
-                
-                if (!RANGOS.includes(rango)) {
-                    return sock.sendMessage(rawFrom, { text: `⚠️ Rango inválido.\n\n${RANGOS.join('\n')}` });
+                if (!usuarios[targetId]) {
+                    return sock.sendMessage(rawFrom, { text: '⚠️ Ese usuario aún no tiene runas.' });
                 }
                 
-                target.rango = rango;
-                target.xp = 0;
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Rango de ${target.nombre} → ${rango.toUpperCase()}` });
-            }
-
-            case 'setnucleo': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnucleo @user <nucleo>' });
+                const target = usuarios[targetId];
+                const xpActual = target.xp || 0;
+                const config = XP_CONFIG[target.rango];
+                const porcentajeXP = Math.round((xpActual / config.xpRequerida) * 100);
+                const barraXP = crearBarra(porcentajeXP);
                 
-                const nucleo = args.split(' ').pop();
-                
-                target.nucleo = nucleo;
+                return sock.sendMessage(rawFrom, {
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    📊 ESTADÍSTICAS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👤 ${target.nombre}\n⭐ ${target.rango.toUpperCase()}\n💫 ${target.nucleo}\n\n${barraXP}\n\n${xpActual} / ${config.xpRequerida} XP\nProgreso: ${porcentajeXP}%\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                });
+            }
+
+            // =========================
+            // SETNOMBRE
+            // =========================
+
+            if (cmd === 'setnombre') {
+                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnombre <nombre>' });
+                user.nombre = args;
                 marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Núcleo de ${target.nombre} → ${nucleo}` });
+                return sock.sendMessage(rawFrom, { text: `✨ Tu nombre ha sido cambiado a: ${args}` });
             }
 
-            case 'addatributo': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addatributo "nombre" "desc"' });
-                const { nombre, desc } = parseNombreDesc(args);
-                const found = target.atributos.find(a => a.nombre.toLowerCase() === nombre.toLowerCase());
-                if (found) { 
-                    if (desc) found.desc = desc;
-                    marcarParaGuardar();
-                    return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" actualizado.` });
-                }
-                target.atributos.push({ nombre, desc: desc || null });
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" agregado.` });
+            // =========================
+            // RUNAS
+            // =========================
+
+            if (cmd === 'runas') {
+                return sock.sendMessage(rawFrom, { text: format(user) });
             }
 
-            case 'addrecuerdo': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addrecuerdo "nombre" "desc"' });
-                const { nombre, desc } = parseNombreDesc(args);
-                const found = target.recuerdos.find(r => r.nombre.toLowerCase() === nombre.toLowerCase());
-                if (found) { 
-                    if (desc) found.desc = desc;
-                    marcarParaGuardar();
-                    return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" actualizado.` });
-                }
-                target.recuerdos.push({ nombre, desc: desc || null });
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" agregado.` });
+            // =========================
+            // VERNOMBRE
+            // =========================
+
+            if (cmd === 'vernombre') {
+                const desc = user.descVerdadero ? `${user.descVerdadero}` : 'Sin descripción.';
+                return sock.sendMessage(rawFrom, {
+                    text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n    ◈ NOMBRE VERDADERO ◈\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n${user.nombreVerdadero}\n\n───────────────────────\n${desc}\n───────────────────────`
+                });
             }
 
-            case 'addeco': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addeco "nombre" "desc"' });
-                const { nombre, desc } = parseNombreDesc(args);
-                const found = target.ecos.find(e => e.nombre.toLowerCase() === nombre.toLowerCase());
-                if (found) { 
-                    if (desc) found.desc = desc;
-                    marcarParaGuardar();
-                    return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" actualizado.` });
-                }
-                target.ecos.push({ nombre, desc: desc || null });
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" agregado.` });
+            // =========================
+            // VERATRIBUTOS
+            // =========================
+
+            if (cmd === 'veratributos') {
+                return sock.sendMessage(rawFrom, { text: formatDetalle('ATRIBUTOS', user.atributos) });
             }
 
-            case 'delatributo': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delatributo <nombre>' });
-                const index = target.atributos.findIndex(a => a.nombre.toLowerCase() === args.toLowerCase());
-                if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese atributo no existe.' });
-                const removed = target.atributos.splice(index, 1)[0];
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✅ Atributo "${removed.nombre}" eliminado.` });
+            // =========================
+            // VERRECUERDOS
+            // =========================
+
+            if (cmd === 'verrecuerdos') {
+                return sock.sendMessage(rawFrom, { text: formatDetalle('RECUERDOS', user.recuerdos) });
             }
 
-            case 'delrecuerdo': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delrecuerdo <nombre>' });
-                const index = target.recuerdos.findIndex(r => r.nombre.toLowerCase() === args.toLowerCase());
-                if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese recuerdo no existe.' });
-                const removed = target.recuerdos.splice(index, 1)[0];
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✅ Recuerdo "${removed.nombre}" eliminado.` });
+            // =========================
+            // VERECOS
+            // =========================
+
+            if (cmd === 'verecos') {
+                return sock.sendMessage(rawFrom, { text: formatDetalle('ECOS', user.ecos) });
             }
 
-            case 'deleco': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !deleco <nombre>' });
-                const index = target.ecos.findIndex(e => e.nombre.toLowerCase() === args.toLowerCase());
-                if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese eco no existe.' });
-                const removed = target.ecos.splice(index, 1)[0];
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `✅ Eco "${removed.nombre}" eliminado.` });
-            }
+            // =========================
+            // PROTECCIÓN ADMIN/OWNER
+            // =========================
 
-            case 'reset': {
-                usuarios[targetId] = createUser();
-                marcarParaGuardar();
-                const quien = targetId === userId ? 'Tus runas' : `Runas de ${targetId}`;
-                return sock.sendMessage(rawFrom, { text: `🔄 ${quien} han sido reseteadas.` });
-            }
+            const adminCmds = [
+                'setrango', 'setnucleo', 'setverdadero', 'descverdadero',
+                'addatributo', 'addrecuerdo', 'addeco',
+                'delatributo', 'delrecuerdo', 'deleco',
+                'reset', 'xp'
+            ];
 
-            case 'resetall': {
-                for (let key in usuarios) {
-                    delete usuarios[key];
-                }
-                
-                marcarParaGuardar();
-                return sock.sendMessage(rawFrom, { text: `🔄 TODAS las runas han sido reseteadas.` });
-            }
+            const ownerOnlyCmds = ['resetall'];
 
-            case 'xp': {
-                if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp @user <cantidad> o !xp <cantidad>' });
-                
-                const partes = args.split(' ');
-                const cantidad = parseInt(partes[partes.length - 1]);
-                
-                if (isNaN(cantidad)) return sock.sendMessage(rawFrom, { text: '⚠️ Debe ser un número.' });
-                
-                const resultado = añadirXPDirecto(targetId, cantidad);
-                const config = XP_CONFIG[resultado.rangoFinal];
-                
-                let respuesta = `${cantidad > 0 ? '✨ +' : '⚡'}${cantidad} XP a ${target.nombre}\n\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
-                
-                if (resultado.ascensos.length > 0) {
-                    respuesta = `🎆 ¡ASCENSO! 🎆\n\n`;
-                    resultado.ascensos.forEach(a => {
-                        respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
-                    });
-                    respuesta += `\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
-                }
-                
-                return sock.sendMessage(rawFrom, { text: respuesta });
-            }
-
-            default:
+            if (adminCmds.includes(cmd)) {
+                if (!canUseAdminCmds) return sock.sendMessage(rawFrom, { text: '⚠️ No tienes permiso. Solo admins y owners.' });
+            } else if (ownerOnlyCmds.includes(cmd)) {
+                if (!isOwner) return sock.sendMessage(rawFrom, { text: '⚠️ Solo owners.' });
+            } else if (![  'help', 'top', 'nivel', 'miid', 'runas', 'vernombre', 'veratributos', 'verrecuerdos', 'verecos', 'setnombre'].includes(cmd)) {
                 return;
+            }
+
+            // =========================
+            // OBTENER TARGET CON MENCIÓN
+            // =========================
+
+            let targetId = userId;
+            const mentions = getMentionedUsers(message);
+            
+            if (mentions.length > 0) {
+                targetId = mentions[0];
+            }
+
+            if (!usuarios[targetId]) usuarios[targetId] = createUser();
+            const target = usuarios[targetId];
+
+            // =========================
+            // COMANDOS ADMIN
+            // =========================
+
+            switch (cmd) {
+
+                case 'setverdadero':
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setverdadero <nombre>' });
+                    target.nombreVerdadero = args;
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { 
+                        text: `✨ Nombre verdadero → ${args}`,
+                        mentions: [targetId + '@s.whatsapp.net']
+                    });
+
+                case 'descverdadero':
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !descverdadero <descripcion>' });
+                    target.descVerdadero = args;
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✨ Descripción actualizada.` });
+
+                case 'setrango': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setrango @user <rango>' });
+                    
+                    const rango = args.split(' ').pop().toLowerCase();
+                    
+                    if (!RANGOS.includes(rango)) {
+                        return sock.sendMessage(rawFrom, { text: `⚠️ Rango inválido.\n\n${RANGOS.join('\n')}` });
+                    }
+                    
+                    target.rango = rango;
+                    target.xp = 0;
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { 
+                        text: `✨ @${targetId} ahora es ${rango.toUpperCase()}`,
+                        mentions: [targetId + '@s.whatsapp.net']
+                    });
+                }
+
+                case 'setnucleo': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !setnucleo @user <nucleo>' });
+                    
+                    const nucleo = args.split(' ').pop();
+                    
+                    target.nucleo = nucleo;
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { 
+                        text: `✨ Núcleo de @${targetId} → ${nucleo}`,
+                        mentions: [targetId + '@s.whatsapp.net']
+                    });
+                }
+
+                case 'addatributo': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addatributo "nombre" "desc"' });
+                    const { nombre, desc } = parseNombreDesc(args);
+                    const found = target.atributos.find(a => a.nombre.toLowerCase() === nombre.toLowerCase());
+                    if (found) { 
+                        if (desc) found.desc = desc;
+                        marcarParaGuardar();
+                        return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" actualizado.` });
+                    }
+                    target.atributos.push({ nombre, desc: desc || null });
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✨ Atributo "${nombre}" agregado.` });
+                }
+
+                case 'addrecuerdo': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addrecuerdo "nombre" "desc"' });
+                    const { nombre, desc } = parseNombreDesc(args);
+                    const found = target.recuerdos.find(r => r.nombre.toLowerCase() === nombre.toLowerCase());
+                    if (found) { 
+                        if (desc) found.desc = desc;
+                        marcarParaGuardar();
+                        return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" actualizado.` });
+                    }
+                    target.recuerdos.push({ nombre, desc: desc || null });
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✨ Recuerdo "${nombre}" agregado.` });
+                }
+
+                case 'addeco': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !addeco "nombre" "desc"' });
+                    const { nombre, desc } = parseNombreDesc(args);
+                    const found = target.ecos.find(e => e.nombre.toLowerCase() === nombre.toLowerCase());
+                    if (found) { 
+                        if (desc) found.desc = desc;
+                        marcarParaGuardar();
+                        return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" actualizado.` });
+                    }
+                    target.ecos.push({ nombre, desc: desc || null });
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✨ Eco "${nombre}" agregado.` });
+                }
+
+                case 'delatributo': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delatributo <nombre>' });
+                    const index = target.atributos.findIndex(a => a.nombre.toLowerCase() === args.toLowerCase());
+                    if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese atributo no existe.' });
+                    const removed = target.atributos.splice(index, 1)[0];
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✅ Atributo "${removed.nombre}" eliminado.` });
+                }
+
+                case 'delrecuerdo': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !delrecuerdo <nombre>' });
+                    const index = target.recuerdos.findIndex(r => r.nombre.toLowerCase() === args.toLowerCase());
+                    if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese recuerdo no existe.' });
+                    const removed = target.recuerdos.splice(index, 1)[0];
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✅ Recuerdo "${removed.nombre}" eliminado.` });
+                }
+
+                case 'deleco': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !deleco <nombre>' });
+                    const index = target.ecos.findIndex(e => e.nombre.toLowerCase() === args.toLowerCase());
+                    if (index === -1) return sock.sendMessage(rawFrom, { text: '⚠️ Ese eco no existe.' });
+                    const removed = target.ecos.splice(index, 1)[0];
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `✅ Eco "${removed.nombre}" eliminado.` });
+                }
+
+                case 'reset': {
+                    usuarios[targetId] = createUser();
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { 
+                        text: `🔄 Runas de @${targetId} han sido reseteadas.`,
+                        mentions: [targetId + '@s.whatsapp.net']
+                    });
+                }
+
+                case 'resetall': {
+                    for (let key in usuarios) {
+                        delete usuarios[key];
+                    }
+                    
+                    marcarParaGuardar();
+                    return sock.sendMessage(rawFrom, { text: `🔄 TODAS las runas han sido reseteadas.` });
+                }
+
+                case 'xp': {
+                    if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp @user <cantidad> o !xp <cantidad>' });
+                    
+                    const partes = args.split(' ');
+                    const cantidad = parseInt(partes[partes.length - 1]);
+                    
+                    if (isNaN(cantidad)) return sock.sendMessage(rawFrom, { text: '⚠️ Debe ser un número.' });
+                    
+                    const resultado = añadirXPDirecto(targetId, cantidad);
+                    const config = XP_CONFIG[resultado.rangoFinal];
+                    
+                    let respuesta = `${cantidad > 0 ? '✨ +' : '⚡'}${cantidad} XP para @${targetId}\n\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
+                    
+                    if (resultado.ascensos.length > 0) {
+                        respuesta = `🎆 ¡ASCENSO! 🎆\n\n`;
+                        resultado.ascensos.forEach(a => {
+                            respuesta += `${a.anterior.toUpperCase()} → ${a.nuevo.toUpperCase()}\n`;
+                        });
+                        respuesta += `\n⭐ ${resultado.rangoFinal.toUpperCase()}\n💫 ${resultado.xpFinal}/${config.xpRequerida}`;
+                    }
+                    
+                    return sock.sendMessage(rawFrom, { 
+                        text: respuesta,
+                        mentions: [targetId + '@s.whatsapp.net']
+                    });
+                }
+
+                default:
+                    return;
+            }
+
+        } catch (error) {
+            console.error('Error en mensaje:', error);
         }
 
     });
