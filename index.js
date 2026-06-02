@@ -240,18 +240,18 @@ function cargarUsuarios() {
 
 function normalizarUsuario(user) {
     return {
-        nombre: user.nombre || 'Sin nombre',
-        nombreVerdadero: user.nombreVerdadero || '???',
-        descVerdadero: user.descVerdadero || null,
-        rango: user.rango || 'durmiente',
-        clase: user.clase || 'sin clase',
-        xp: user.xp || 0,
-        recuerdos: user.recuerdos || [],
-        ecos: user.ecos || [],
-        atributos: user.atributos || [],
-        aspectoLegado: user.aspectoLegado || null,
-        pasosAspecto: user.pasosAspecto || 0,
-        cohorte: user.cohorte || null
+        nombre: String(user.nombre || 'Sin nombre'),
+        nombreVerdadero: String(user.nombreVerdadero || '???'),
+        descVerdadero: user.descVerdadero ? String(user.descVerdadero) : null,
+        rango: (RANGOS.includes(user.rango) ? user.rango : 'durmiente'),
+        clase: String(user.clase || 'sin clase'),
+        xp: Math.max(0, Math.floor(Number(user.xp) || 0)),
+        recuerdos: Array.isArray(user.recuerdos) ? user.recuerdos : [],
+        ecos: Array.isArray(user.ecos) ? user.ecos : [],
+        atributos: Array.isArray(user.atributos) ? user.atributos : [],
+        aspectoLegado: user.aspectoLegado && ASPECTOS_LEGADOS[user.aspectoLegado] ? user.aspectoLegado : null,
+        pasosAspecto: Math.max(0, Math.floor(Number(user.pasosAspecto) || 0)),
+        cohorte: user.cohorte ? String(user.cohorte) : null
     };
 }
 
@@ -362,111 +362,29 @@ function createUser() {
 }
 
 // =========================
-// FUNCIÓN: Validar y normalizar rango XP
+// FUNCIÓN CRÍTICA: Procesar ascensos/descensos de rango
 // =========================
 
-function asegurarXPValido(user) {
-    if (!user.xp || user.xp < 0) user.xp = 0;
-    if (!user.rango || !RANGOS.includes(user.rango)) user.rango = 'durmiente';
-    if (!user.pasosAspecto) user.pasosAspecto = 0;
-}
-
-// =========================
-// FUNCIÓN: Añadir XP (mensajes normales)
-// =========================
-
-function añadirXP(userId, cantidad) {
-    if (!usuarios[userId]) usuarios[userId] = createUser();
-    
-    const user = usuarios[userId];
-    asegurarXPValido(user);
-    
-    const rangoActual = user.rango;
-    const config = XP_CONFIG[rangoActual];
-    
-    let xpGanada = Math.floor(cantidad * config.multiplicador);
-    
-    // Aplicar multiplicador de aspecto solo si está completamente desbloqueado
-    if (user.aspectoLegado) {
-        const aspecto = ASPECTOS_LEGADOS[user.aspectoLegado];
-        if (aspecto && user.pasosAspecto >= aspecto.pasos) {
-            xpGanada = Math.floor(xpGanada * aspecto.efectos.multiplicadorXP);
-        }
-    }
-    
-    const xpFinal = user.rango === 'divino' ? xpGanada * 3 : xpGanada;
-    user.xp += xpFinal;
-    
-    const rangoIndex = RANGOS.indexOf(rangoActual);
-    
-    // Verificar ascenso
-    if (rangoIndex < RANGOS.length - 1 && user.xp >= config.xpRequerida) {
-        const nuevoRango = RANGOS[rangoIndex + 1];
-        user.rango = nuevoRango;
-        user.xp = 0;
-        
-        let tieneAspecto = false;
-        if (!user.aspectoLegado) {
-            const random = Math.random();
-            const probabilidad = nuevoRango === 'despierto' ? 0.3 : nuevoRango === 'maestro' ? 0.4 : nuevoRango === 'santo' ? 0.5 : 0.6;
-            
-            if (random < probabilidad) {
-                const aspecto = obtenerAspectoAleatorio(nuevoRango);
-                if (aspecto) {
-                    user.aspectoLegado = aspecto.nombre;
-                    user.pasosAspecto = 0;
-                    tieneAspecto = true;
-                }
-            }
-        }
-        
-        marcarParaGuardar();
-        
-        return {
-            subioDe: true,
-            rangoAnterior: rangoActual,
-            rangoNuevo: nuevoRango,
-            xpGanada: xpFinal,
-            tieneAspecto,
-            aspecto: user.aspectoLegado
-        };
-    }
-    
-    marcarParaGuardar();
-    return {
-        subioDe: false,
-        xpGanada: xpFinal,
-        xpActual: user.xp,
-        xpRequerida: config.xpRequerida
-    };
-}
-
-// =========================
-// FUNCIÓN: Añadir XP directo (comando !xp)
-// =========================
-
-function añadirXPDirecto(userId, cantidad) {
-    if (!usuarios[userId]) usuarios[userId] = createUser();
-    
-    const user = usuarios[userId];
-    asegurarXPValido(user);
-    
-    const ascensos = [];
+function procesarAscensos(user) {
+    let ascensos = [];
     let nuevoAspecto = null;
-    user.xp += cantidad;
     
-    // Procesar ascensos
     while (true) {
         const rangoIndex = RANGOS.indexOf(user.rango);
+        
+        // Si ya estamos en el rango máximo, salir
         if (rangoIndex >= RANGOS.length - 1) break;
         
         const config = XP_CONFIG[user.rango];
+        
+        // Si tenemos suficiente XP para ascender
         if (user.xp >= config.xpRequerida) {
             const anterior = user.rango;
             user.rango = RANGOS[rangoIndex + 1];
             user.xp -= config.xpRequerida;
             ascensos.push({ anterior, nuevo: user.rango });
             
+            // Dar aspecto si no lo tiene
             if (!user.aspectoLegado) {
                 const random = Math.random();
                 const probabilidad = user.rango === 'despierto' ? 0.3 : user.rango === 'maestro' ? 0.4 : user.rango === 'santo' ? 0.5 : 0.6;
@@ -485,18 +403,78 @@ function añadirXPDirecto(userId, cantidad) {
         }
     }
     
-    // Procesar descensos (si XP negativo)
-    while (user.xp < 0 && RANGOS.indexOf(user.rango) > 0) {
-        const rangoIndex = RANGOS.indexOf(user.rango);
-        const rangoAnterior = RANGOS[rangoIndex - 1];
-        const configAnterior = XP_CONFIG[rangoAnterior];
-        
-        user.xp += configAnterior.xpRequerida;
-        user.rango = rangoAnterior;
+    return { ascensos, nuevoAspecto };
+}
+
+// =========================
+// FUNCIÓN: Añadir XP (mensajes normales)
+// =========================
+
+function añadirXP(userId, cantidad) {
+    if (!usuarios[userId]) usuarios[userId] = createUser();
+    
+    const user = usuarios[userId];
+    
+    const rangoActual = user.rango;
+    const config = XP_CONFIG[rangoActual];
+    
+    let xpGanada = Math.floor(cantidad * config.multiplicador);
+    
+    // Aplicar multiplicador de aspecto solo si está completamente desbloqueado
+    if (user.aspectoLegado) {
+        const aspecto = ASPECTOS_LEGADOS[user.aspectoLegado];
+        if (aspecto && user.pasosAspecto >= aspecto.pasos) {
+            xpGanada = Math.floor(xpGanada * aspecto.efectos.multiplicadorXP);
+        }
     }
     
-    // Asegurar valores válidos finales
-    if (user.xp < 0) user.xp = 0;
+    const xpFinal = user.rango === 'divino' ? xpGanada * 3 : xpGanada;
+    user.xp += xpFinal;
+    user.xp = Math.max(0, Math.floor(user.xp)); // Asegurar que sea número válido
+    
+    // Procesar ascensos
+    const { ascensos, nuevoAspecto } = procesarAscensos(user);
+    
+    marcarParaGuardar();
+    
+    if (ascensos.length > 0) {
+        return {
+            subioDe: true,
+            rangoAnterior: rangoActual,
+            rangoNuevo: user.rango,
+            xpGanada: xpFinal,
+            tieneAspecto: !!nuevoAspecto,
+            aspecto: nuevoAspecto
+        };
+    }
+    
+    return {
+        subioDe: false,
+        xpGanada: xpFinal,
+        xpActual: user.xp,
+        xpRequerida: config.xpRequerida
+    };
+}
+
+// =========================
+// FUNCIÓN: Añadir XP directo (comando !xp) - MEJORADO
+// =========================
+
+function añadirXPDirecto(userId, cantidad) {
+    if (!usuarios[userId]) usuarios[userId] = createUser();
+    
+    const user = usuarios[userId];
+    
+    // Validación estricta de entrada
+    cantidad = parseInt(cantidad);
+    if (isNaN(cantidad) || !isFinite(cantidad)) cantidad = 0;
+    
+    // Sumar XP
+    user.xp += cantidad;
+    user.xp = Math.max(0, Math.floor(user.xp)); // Nunca permitir XP negativo
+    
+    // Procesar ascensos
+    const { ascensos, nuevoAspecto } = procesarAscensos(user);
     
     marcarParaGuardar();
     
@@ -504,8 +482,7 @@ function añadirXPDirecto(userId, cantidad) {
         ascensos, 
         rangoFinal: user.rango, 
         xpFinal: user.xp, 
-        nuevoAspecto,
-        xpAnterior: user.xp - cantidad // Para mostrar cambio
+        nuevoAspecto
     };
 }
 
@@ -601,6 +578,7 @@ function parseNombreDesc(args) {
 // =========================
 
 function crearBarra(porcentaje) {
+    porcentaje = Math.max(0, Math.min(100, Math.floor(porcentaje)));
     const largo = 20;
     const lleno = Math.round((porcentaje / 100) * largo);
     const vacio = largo - lleno;
@@ -623,9 +601,7 @@ function formatSoloNombres(lista) {
 // =========================
 
 function format(u) {
-    asegurarXPValido(u);
-    
-    const xpActual = u.xp;
+    const xpActual = Math.max(0, Math.floor(u.xp));
     const xpRequerida = XP_CONFIG[u.rango].xpRequerida;
     const barraXP = crearBarra(Math.round((xpActual / xpRequerida) * 100));
     
@@ -800,7 +776,6 @@ async function start() {
             
             if (!usuarios[userId]) usuarios[userId] = createUser();
             const user = usuarios[userId];
-            asegurarXPValido(user);
 
             let body = '';
             if (message.message.conversation) body = message.message.conversation;
@@ -978,13 +953,12 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
             if (cmd === 'top') {
                 const usuariosArray = Object.entries(usuarios).map(([id, u]) => {
-                    asegurarXPValido(u);
                     return {
                         id,
                         nombre: u.nombre,
                         rango: u.rango,
                         clase: u.clase,
-                        xp: u.xp,
+                        xp: Math.max(0, Math.floor(u.xp)),
                         aspectoLegado: u.aspectoLegado,
                         puntuacion: calcularPuntuacionRango(u.rango, u.xp)
                     };
@@ -1120,7 +1094,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
             if (!usuarios[targetId]) usuarios[targetId] = createUser();
             const target = usuarios[targetId];
-            asegurarXPValido(target);
 
             // =========================
             // COMANDOS (Switch)
@@ -1334,9 +1307,16 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     if (!args) return sock.sendMessage(rawFrom, { text: '⚠️ Uso: !xp @user <cantidad>' });
                     
                     const partes = args.split(' ');
-                    const cantidad = parseInt(partes[partes.length - 1]);
+                    let cantidad = parseInt(partes[partes.length - 1]);
                     
-                    if (isNaN(cantidad)) return sock.sendMessage(rawFrom, { text: '⚠️ Debe ser un número.' });
+                    if (isNaN(cantidad) || !isFinite(cantidad)) {
+                        return sock.sendMessage(rawFrom, { text: '⚠️ Debe ser un número válido.' });
+                    }
+                    
+                    // Limitar XP máximo a un valor razonable
+                    if (Math.abs(cantidad) > 10000000) {
+                        return sock.sendMessage(rawFrom, { text: '⚠️ XP demasiado alto/bajo. Máximo: ±10,000,000' });
+                    }
                     
                     const resultado = añadirXPDirecto(targetId, cantidad);
                     const config = XP_CONFIG[resultado.rangoFinal];
