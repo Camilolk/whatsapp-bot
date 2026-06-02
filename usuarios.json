@@ -5,7 +5,7 @@
     "descVerdadero": null,
     "rango": "maestro",
     "nucleo": "apagado",
-    "xp": 2516,
+    "xp": 2520,
     "recuerdos": [
       {
         "nombre": "[Silla Sombria] @125022890909792",
@@ -66,16 +66,16 @@
     "clase": "sin clase"
   },
   "45062830428357": {
-    "nombre": "Camilolk",
+    "nombre": "Jhonny @212970869133436",
     "nombreVerdadero": "???",
     "descVerdadero": null,
     "rango": "divino",
     "nucleo": "apagado",
-    "xp": 2010,
+    "xp": 5000315,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
-    "aspectoLegado": null,
+    "aspectoLegado": "Divino Degenerado",
     "pasosAspecto": 0,
     "cohorte": null,
     "clase": "sin clase"
@@ -86,7 +86,7 @@
     "descVerdadero": null,
     "rango": "despierto",
     "nucleo": "apagado",
-    "xp": 384,
+    "xp": 448,
     "recuerdos": [
       {
         "nombre": "[Paraguas plegable] \n@201859235115260",
@@ -130,7 +130,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 725,
+    "xp": 730,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
@@ -170,7 +170,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 125,
+    "xp": 130,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
@@ -230,7 +230,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 1060,
+    "xp": 1095,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
@@ -245,7 +245,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 125,
+    "xp": 160,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
@@ -260,7 +260,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 230,
+    "xp": 260,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
@@ -270,58 +270,18 @@
     "clase": "sin clase"
   },
   "212970869133436": {
-    "nombre": "…",
-    "nombreVerdadero": "God of Comunity",
+    "nombre": "MarRojo",
+    "nombreVerdadero": "???",
     "descVerdadero": null,
     "rango": "divino",
-    "nucleo": "Titan",
-    "xp": 10000795,
-    "recuerdos": [
-      {
-        "nombre": "[Acero perforante]",
-        "desc": null
-      },
-      {
-        "nombre": "[Manto Sacrilegico]",
-        "desc": null
-      },
-      {
-        "nombre": "[Aretes De Parias]",
-        "desc": null
-      },
-      {
-        "nombre": "[Red Dragon]",
-        "desc": null
-      }
-    ],
-    "ecos": [
-      {
-        "nombre": "[Parias]",
-        "desc": null
-      },
-      {
-        "nombre": "[■■■■ mas ■■■guo]",
-        "desc": null
-      }
-    ],
-    "atributos": [
-      {
-        "nombre": "[Fuente de Divinidad]",
-        "desc": null
-      },
-      {
-        "nombre": "[Llama primordial]",
-        "desc": null
-      },
-      {
-        "nombre": "[Dios del nuevo mundo]",
-        "desc": null
-      }
-    ],
+    "clase": "sin clase",
+    "xp": 30,
+    "recuerdos": [],
+    "ecos": [],
+    "atributos": [],
     "aspectoLegado": null,
     "pasosAspecto": 0,
-    "cohorte": null,
-    "clase": "sin clase"
+    "cohorte": null
   },
   "128123186184222": {
     "nombre": "Sebastián Ceron",
@@ -539,7 +499,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 235,
+    "xp": 330,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
@@ -824,7 +784,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 270,
+    "xp": 280,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
@@ -1169,7 +1129,7 @@
     "descVerdadero": null,
     "rango": "durmiente",
     "nucleo": "apagado",
-    "xp": 495,
+    "xp": 500,
     "recuerdos": [],
     "ecos": [],
     "atributos": [],
