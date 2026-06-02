@@ -226,11 +226,7 @@ function cargarUsuarios() {
             const usuariosData = JSON.parse(data);
             
             for (let key in usuariosData) {
-                if (usuariosData[key].xp === undefined) usuariosData[key].xp = 0;
-                if (usuariosData[key].clase === undefined) usuariosData[key].clase = 'sin clase';
-                if (usuariosData[key].aspectoLegado === undefined) usuariosData[key].aspectoLegado = null;
-                if (usuariosData[key].pasosAspecto === undefined) usuariosData[key].pasosAspecto = 0;
-                if (usuariosData[key].cohorte === undefined) usuariosData[key].cohorte = null;
+                usuariosData[key] = normalizarUsuario(usuariosData[key]);
             }
             
             return usuariosData;
@@ -240,6 +236,23 @@ function cargarUsuarios() {
         }
     }
     return {};
+}
+
+function normalizarUsuario(user) {
+    return {
+        nombre: user.nombre || 'Sin nombre',
+        nombreVerdadero: user.nombreVerdadero || '???',
+        descVerdadero: user.descVerdadero || null,
+        rango: user.rango || 'durmiente',
+        clase: user.clase || 'sin clase',
+        xp: user.xp || 0,
+        recuerdos: user.recuerdos || [],
+        ecos: user.ecos || [],
+        atributos: user.atributos || [],
+        aspectoLegado: user.aspectoLegado || null,
+        pasosAspecto: user.pasosAspecto || 0,
+        cohorte: user.cohorte || null
+    };
 }
 
 function cargarCohortes() {
@@ -341,6 +354,24 @@ function calcularPuntuacionRango(rango, xp) {
 }
 
 // =========================
+// FUNCIÓN: Crear usuario nuevo
+// =========================
+
+function createUser() {
+    return normalizarUsuario({});
+}
+
+// =========================
+// FUNCIÓN: Validar y normalizar rango XP
+// =========================
+
+function asegurarXPValido(user) {
+    if (!user.xp || user.xp < 0) user.xp = 0;
+    if (!user.rango || !RANGOS.includes(user.rango)) user.rango = 'durmiente';
+    if (!user.pasosAspecto) user.pasosAspecto = 0;
+}
+
+// =========================
 // FUNCIÓN: Añadir XP (mensajes normales)
 // =========================
 
@@ -348,13 +379,14 @@ function añadirXP(userId, cantidad) {
     if (!usuarios[userId]) usuarios[userId] = createUser();
     
     const user = usuarios[userId];
-    if (user.xp === undefined) user.xp = 0;
+    asegurarXPValido(user);
     
     const rangoActual = user.rango;
     const config = XP_CONFIG[rangoActual];
     
     let xpGanada = Math.floor(cantidad * config.multiplicador);
     
+    // Aplicar multiplicador de aspecto solo si está completamente desbloqueado
     if (user.aspectoLegado) {
         const aspecto = ASPECTOS_LEGADOS[user.aspectoLegado];
         if (aspecto && user.pasosAspecto >= aspecto.pasos) {
@@ -367,6 +399,7 @@ function añadirXP(userId, cantidad) {
     
     const rangoIndex = RANGOS.indexOf(rangoActual);
     
+    // Verificar ascenso
     if (rangoIndex < RANGOS.length - 1 && user.xp >= config.xpRequerida) {
         const nuevoRango = RANGOS[rangoIndex + 1];
         user.rango = nuevoRango;
@@ -409,19 +442,20 @@ function añadirXP(userId, cantidad) {
 }
 
 // =========================
-// FUNCIÓN: Añadir XP directo
+// FUNCIÓN: Añadir XP directo (comando !xp)
 // =========================
 
 function añadirXPDirecto(userId, cantidad) {
     if (!usuarios[userId]) usuarios[userId] = createUser();
     
     const user = usuarios[userId];
-    if (user.xp === undefined) user.xp = 0;
+    asegurarXPValido(user);
     
     const ascensos = [];
     let nuevoAspecto = null;
     user.xp += cantidad;
     
+    // Procesar ascensos
     while (true) {
         const rangoIndex = RANGOS.indexOf(user.rango);
         if (rangoIndex >= RANGOS.length - 1) break;
@@ -451,6 +485,7 @@ function añadirXPDirecto(userId, cantidad) {
         }
     }
     
+    // Procesar descensos (si XP negativo)
     while (user.xp < 0 && RANGOS.indexOf(user.rango) > 0) {
         const rangoIndex = RANGOS.indexOf(user.rango);
         const rangoAnterior = RANGOS[rangoIndex - 1];
@@ -460,10 +495,18 @@ function añadirXPDirecto(userId, cantidad) {
         user.rango = rangoAnterior;
     }
     
+    // Asegurar valores válidos finales
     if (user.xp < 0) user.xp = 0;
+    
     marcarParaGuardar();
     
-    return { ascensos, rangoFinal: user.rango, xpFinal: user.xp, nuevoAspecto };
+    return { 
+        ascensos, 
+        rangoFinal: user.rango, 
+        xpFinal: user.xp, 
+        nuevoAspecto,
+        xpAnterior: user.xp - cantidad // Para mostrar cambio
+    };
 }
 
 // =========================
@@ -487,6 +530,7 @@ function crearCohorte(nombre, lider) {
     };
     guardarCohortes();
     
+    if (!usuarios[lider]) usuarios[lider] = createUser();
     usuarios[lider].cohorte = cohortId;
     marcarParaGuardar();
     
@@ -579,7 +623,9 @@ function formatSoloNombres(lista) {
 // =========================
 
 function format(u) {
-    const xpActual = u.xp || 0;
+    asegurarXPValido(u);
+    
+    const xpActual = u.xp;
     const xpRequerida = XP_CONFIG[u.rango].xpRequerida;
     const barraXP = crearBarra(Math.round((xpActual / xpRequerida) * 100));
     
@@ -588,17 +634,19 @@ function format(u) {
     
     if (u.aspectoLegado) {
         const aspecto = ASPECTOS_LEGADOS[u.aspectoLegado];
-        rangoAspecto = aspecto.rareza;
-        
-        const progreso = Math.round((u.pasosAspecto / aspecto.pasos) * 100);
-        const barraAspecto = crearBarra(progreso);
-        
-        aspectoLegadoInfo = `
+        if (aspecto) {
+            rangoAspecto = aspecto.rareza;
+            
+            const progreso = Math.round((u.pasosAspecto / aspecto.pasos) * 100);
+            const barraAspecto = crearBarra(progreso);
+            
+            aspectoLegadoInfo = `
 
 🌑 ASPECTO LEGADO: ${aspecto.nombre}
    ${aspecto.rareza}
    Progreso: ${barraAspecto}
    ${u.pasosAspecto}/${aspecto.pasos}`;
+        }
     }
     
     let cohortInfo = '';
@@ -668,27 +716,6 @@ ${items}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━`
     );
-}
-
-// =========================
-// MODELO
-// =========================
-
-function createUser() {
-    return {
-        nombre: 'Sin nombre',
-        nombreVerdadero: '???',
-        descVerdadero: null,
-        rango: 'durmiente',
-        clase: 'sin clase',
-        xp: 0,
-        recuerdos: [],
-        ecos: [],
-        atributos: [],
-        aspectoLegado: null,
-        pasosAspecto: 0,
-        cohorte: null
-    };
 }
 
 // =========================
@@ -773,6 +800,7 @@ async function start() {
             
             if (!usuarios[userId]) usuarios[userId] = createUser();
             const user = usuarios[userId];
+            asegurarXPValido(user);
 
             let body = '';
             if (message.message.conversation) body = message.message.conversation;
@@ -949,15 +977,18 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             // =========================
 
             if (cmd === 'top') {
-                const usuariosArray = Object.entries(usuarios).map(([id, user]) => ({
-                    id,
-                    nombre: user.nombre,
-                    rango: user.rango,
-                    clase: user.clase,
-                    xp: user.xp || 0,
-                    aspectoLegado: user.aspectoLegado,
-                    puntuacion: calcularPuntuacionRango(user.rango, user.xp || 0)
-                }));
+                const usuariosArray = Object.entries(usuarios).map(([id, u]) => {
+                    asegurarXPValido(u);
+                    return {
+                        id,
+                        nombre: u.nombre,
+                        rango: u.rango,
+                        clase: u.clase,
+                        xp: u.xp,
+                        aspectoLegado: u.aspectoLegado,
+                        puntuacion: calcularPuntuacionRango(u.rango, u.xp)
+                    };
+                });
 
                 usuariosArray.sort((a, b) => b.puntuacion - a.puntuacion);
                 const top10 = usuariosArray.slice(0, 10);
@@ -966,11 +997,11 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     return sock.sendMessage(rawFrom, { text: '⚠️ No hay usuarios aún.' });
                 }
 
-                const topLista = top10.map((user, index) => {
-                    const config = XP_CONFIG[user.rango];
+                const topLista = top10.map((u, index) => {
+                    const config = XP_CONFIG[u.rango];
                     const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
-                    const aspectoInfo = user.aspectoLegado ? `\n   🌑 ${user.aspectoLegado}` : '';
-                    return `${medal} @${user.id}\n   📝 ${user.nombre}\n   ⭐ ${user.rango.toUpperCase()}\n   🎓 ${user.clase}\n   💫 ${user.xp}/${config.xpRequerida} XP${aspectoInfo}`;
+                    const aspectoInfo = u.aspectoLegado ? `\n   🌑 ${u.aspectoLegado}` : '';
+                    return `${medal} @${u.id}\n   📝 ${u.nombre}\n   ⭐ ${u.rango.toUpperCase()}\n   🎓 ${u.clase}\n   💫 ${u.xp}/${config.xpRequerida} XP${aspectoInfo}`;
                 }).join('\n\n');
 
                 const mentions = top10.map(u => u.id + '@s.whatsapp.net');
@@ -986,10 +1017,6 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             // =========================
 
             if (cmd === 'perfil' || cmd === 'nivel') {
-                if (!usuarios[userId]) {
-                    return sock.sendMessage(rawFrom, { text: '⚠️ Usuario no encontrado.' });
-                }
-                
                 return sock.sendMessage(rawFrom, { text: format(user) });
             }
 
@@ -1003,6 +1030,10 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 }
                 
                 const aspecto = ASPECTOS_LEGADOS[user.aspectoLegado];
+                if (!aspecto) {
+                    return sock.sendMessage(rawFrom, { text: '⚠️ Tu aspecto legado no existe en el sistema.' });
+                }
+                
                 const progreso = Math.round((user.pasosAspecto / aspecto.pasos) * 100);
                 const barra = crearBarra(progreso);
                 
@@ -1023,7 +1054,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // SETCLASE
+            // SETCLASE (PERSONAL)
             // =========================
 
             if (cmd === 'setclase') {
@@ -1077,7 +1108,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
             }
 
             // =========================
-            // OBTENER TARGET
+            // OBTENER TARGET (para menciones)
             // =========================
 
             let targetId = userId;
@@ -1089,6 +1120,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
             if (!usuarios[targetId]) usuarios[targetId] = createUser();
             const target = usuarios[targetId];
+            asegurarXPValido(target);
 
             // =========================
             // COMANDOS (Switch)
@@ -1101,7 +1133,7 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     target.nombreVerdadero = args;
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { 
-                        text: `✨ Nombre verdadero → ${args}`,
+                        text: `✨ Nombre verdadero de @${targetId} → ${args}`,
                         mentions: [targetId + '@s.whatsapp.net']
                     });
 
@@ -1259,6 +1291,10 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                     
                     const aspecto = ASPECTOS_LEGADOS[target.aspectoLegado];
                     
+                    if (!aspecto) {
+                        return sock.sendMessage(rawFrom, { text: '⚠️ El aspecto del usuario no existe en el sistema.' });
+                    }
+                    
                     if (target.pasosAspecto >= aspecto.pasos) {
                         return sock.sendMessage(rawFrom, { text: '✨ Este aspecto ya está completamente desbloqueado.' });
                     }
@@ -1286,9 +1322,9 @@ ${RANGOS.map((r, i) => `${i + 1}. ${r}`).join('\n')}
                 }
 
                 case 'resetall': {
-                    for (let key in usuarios) {
+                    Object.keys(usuarios).forEach(key => {
                         delete usuarios[key];
-                    }
+                    });
                     
                     marcarParaGuardar();
                     return sock.sendMessage(rawFrom, { text: `🔄 TODOS los perfiles han sido reseteados.` });
